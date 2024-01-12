@@ -1,4 +1,6 @@
 <!--- SPDX-License-Identifier: Apache-2.0 -->
+# MIGraphX version
+This version contains the evaluation of the ONNX Zoo models for the [AMDMIGraphX](https://github.com/ROCm/AMDMIGraphX) backend. [FP32 and pre-quintized model results](./MIGRAPHX.md) as well ass [FP16 results](./MIGRAPHX_FP16.md). The results were created with a [modified test_models.py](./workflow_scripts/test_models.py) using the `workflow_scripts/test_models.py --all_models --target migraphx [--fp16]` command.
 
 # ONNX Model Zoo
 

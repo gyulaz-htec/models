@@ -7,6 +7,7 @@ import subprocess
 import sys
 import test_utils
 import os
+import markdown_utils
 
 
 tar_ext_name = ".tar.gz"
@@ -48,7 +49,7 @@ def main():
     # if target is specified, only test by the specified one
     parser.add_argument("--target", required=False, default="all", type=str,
                         help="Test the model by which (onnx/onnxruntime)?",
-                        choices=["onnx", "onnxruntime", "all"])
+                        choices=["onnx", "onnxruntime", "migraphx", "all"])
     # use python workflow_scripts\test_models.py --create --all_models to create broken test data by ORT
     parser.add_argument("--create", required=False, default=False, action="store_true",
                         help="Create new test data by ORT if it fails with existing test data")
@@ -56,6 +57,8 @@ def main():
                         help="Test all ONNX Model Zoo models instead of only chnaged models")
     parser.add_argument("--drop", required=False, default=False, action="store_true",
                         help="Drop downloaded models after verification. (For space limitation in CIs)")
+    parser.add_argument("--fp16", required=False, default=False, action="store_true",
+                        help="Enable fp16 quantization for migraphx")
     args = parser.parse_args()
 
     model_list = get_all_models() if args.all_models else get_changed_models()
@@ -64,6 +67,7 @@ def main():
 
     print("\n=== Running test on ONNX models ===\n")
     failed_models = []
+    statistics = {}
     for model_path in model_list:
         model_name = model_path.split("/")[-1]
         print("==============Testing {}==============".format(model_name))
@@ -98,6 +102,17 @@ def main():
                 if args.target == "onnx" or args.target == "all":
                     check_model.run_onnx_checker(model_path_from_tar)
                     print("[PASS] {} is checked by onnx. ".format(model_name))
+                # Step 3 check models with migraphx backend
+                if args.target == "migraphx" or args.target == "all":
+                    # Skip prequantized models for fp16
+                    if args.fp16 and ("int8" in model_name or "qdq" in model_name):
+                        continue
+                    try:
+                        stats = check_model.run_backend_mgx(model_path_from_tar, test_data_set, args.fp16)
+                        statistics[model_path] = stats
+                    except Exception as e:
+                        print(f"Something went wrong with {model_name}: {e}")                        
+                    print(f"[PASS] {model_name} is checked by migraphx.")
             # check uploaded standalone ONNX model by ONNX
             elif onnx_ext_name in model_name:
                 if args.target == "onnx" or args.target == "all":
@@ -116,6 +131,7 @@ def main():
         test_utils.remove_tar_dir()
         test_utils.run_lfs_prune()
 
+    markdown_utils.save_to_markdown(statistics, args.fp16)
     if len(failed_models) == 0:
         print("{} models have been checked. ".format(len(model_list)))
     else:
