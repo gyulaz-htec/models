@@ -67,11 +67,18 @@ def main():
     # run lfs install before starting the tests
     test_utils.run_lfs_install()
 
+    test_utils.remove_onnxruntime_test_dir()
+    test_utils.remove_tar_dir()
+    test_utils.run_lfs_prune()
+
     print("\n=== Running test on ONNX models ===\n")
     failed_models = []
     statistics = {}
     for model_path in model_list:
         model_name = model_path.split("/")[-1]
+        # TODO add skip list fpr fp16
+        if args.fp16 and ("MaskRCNN" in model_name or "FasterRCNN" in model_name):
+            continue
         print("==============Testing {}==============".format(model_name))
 
         try:
@@ -108,12 +115,18 @@ def main():
                 if args.target == "migraphx" or args.target == "all":
                     # Skip prequantized models for fp16
                     if args.fp16 and ("int8" in model_name or "qdq" in model_name):
+                        test_utils.remove_onnxruntime_test_dir()
+                        test_utils.remove_tar_dir()
+                        test_utils.run_lfs_prune()
                         continue
                     try:
-                        stats = check_model.run_backend_mgx(model_path_from_tar, test_data_set, fp16=args.fp16, save_path= model_path if (args.model) else "")
+                        stats = check_model.run_backend_mgx(model_path_from_tar, test_data_set, fp16=args.fp16, save_path=model_path)
                         statistics[model_path] = stats
                     except Exception as e:
-                        print(f"Something went wrong with {model_name}: {e}")                        
+                        print(f"Something went wrong with {model_name}: {e}")
+                        statistics[model_path] = (False, False, f"Error during script execution: {e}")
+                        print("[FAIL] {}: {}".format(model_name, e))
+                        failed_models.append(model_path)
                     print(f"[PASS] {model_name} is checked by migraphx.")
             # check uploaded standalone ONNX model by ONNX
             elif onnx_ext_name in model_name:

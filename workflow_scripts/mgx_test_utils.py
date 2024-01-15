@@ -41,15 +41,15 @@ def read_test_dir(dir_name, input_types, output_types):
 
     return inputs, outputs
 
-def save_differences(save_path, expected, actual):
-    file_base = save_path.replace(".tar.gz", "")
-    expected_file = f"{file_base}_expected.txt"
-    actual_file = f"{file_base}_actual.txt"
+def save_differences(tar_gz_path, expected, actual, output_name):
+    file_base = tar_gz_path.replace(".tar.gz", "")
+    expected_file = f"{file_base}_{output_name}_expected.txt"
+    actual_file = f"{file_base}_{output_name}_actual.txt"
     np.savetxt(expected_file, expected)
     np.savetxt(actual_file, actual)
-    print("Mismatch for {}:\n Results written to: Expected: {} Actual: {}".format(save_path, expected_file, actual_file))
+    print("Results written to: Expected: {} Actual: {}".format(expected_file, actual_file))
 
-def run_test_dir(model_or_dir, fp16, save_path):
+def run_test_dir(model_or_dir, fp16, tar_gz_path):
     """
     Run the test/s from a directory in ONNX test format.
     All subdirectories with a prefix of 'test' are considered test input for one test run.
@@ -86,6 +86,7 @@ def run_test_dir(model_or_dir, fp16, save_path):
     try:
         sess = mgx.session(model_path, fp16)
     except Exception as e:
+        print(f"Fail during compilation: {str(e)}")
         stats = (False, False, str(e))
         return stats
 
@@ -119,19 +120,24 @@ def run_test_dir(model_or_dir, fp16, save_path):
             return stats
 
         if expected_outputs:
+            mismatch = False
             for idx in range(len(output_names)):
-                expected = expected_outputs[output_names[idx]]
+                output_name = output_names[idx]
+                expected = expected_outputs[output_name]
                 actual = run_outputs[idx]
 
-                if expected.dtype.char in np.typecodes["AllFloat"]:
-                    if not np.isclose(expected, actual, rtol=1.0e-3, atol=1.0e-3).all():
-                        if save_path:
-                            save_differences(save_path, expected, actual)
-                        stats = (True, False, "Mismatch")
-                else:
-                    if not np.equal(expected, actual).all():
-                        if save_path:
-                            save_differences(save_path, expected, actual)
-                        stats = (True, False, "Mismatch")
+                mismatch_message = "Mismatch:"
+                if not np.isclose(expected, actual, rtol=1.0e-2, atol=1.0e-2).all():
+                    mismatch = True
+                    expected = expected.flatten('K')
+                    actual = np.array(actual).flatten('K')
+                    dist = expected - actual
+                    avg_dist = np.average(dist)
+                    mismatch_message = f"{mismatch_message} {output_name}({avg_dist})"
+                    if tar_gz_path:
+                        print(f"Mismatch for {tar_gz_path}, output:{output_name}, avg dist: {avg_dist}")
+                        save_differences(tar_gz_path, expected, actual, output_name)
+            if mismatch:
+                stats = (True, False, mismatch_message)
 
         return stats

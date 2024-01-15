@@ -17,7 +17,7 @@ def get_category_from_path(path):
             return v
     raise ValueError(f"No category found for {path}")
 
-def group_statistics(statistics):
+def group_statistics(statistics, fp16):
     grouped_data = {}
     for path, stats in statistics.items():
         category = get_category_from_path(path)
@@ -31,7 +31,8 @@ def group_statistics(statistics):
         error = str(stats[2])
         repro_command = ''
         if not stats[1]:
-            repro_command = f"python3 workflow_scripts/test_models.py --target migraphx --model {path}"
+            fp16_option = "--fp16" if fp16 else ""
+            repro_command = f"python3 workflow_scripts/test_models.py --target migraphx --model {path} {fp16_option}"
         record = {'Model': link, 'Opset': opset, 'Compilation': compiles, 'Validation': valid, 'Error': error, 'Reproduce step': repro_command}
         if category in grouped_data:
             grouped_data[category].append(record)
@@ -41,7 +42,7 @@ def group_statistics(statistics):
     return grouped_data
 
 def save_to_markdown(statistics, fp16=False):
-    grouped_data = group_statistics(statistics)
+    grouped_data = group_statistics(statistics, fp16)
     if len(grouped_data) == 0:
         return
     file_name_ending = "_FP16" if fp16 else '';
