@@ -41,7 +41,15 @@ def read_test_dir(dir_name, input_types, output_types):
 
     return inputs, outputs
 
-def run_test_dir(model_or_dir, fp16):
+def save_differences(save_path, expected, actual):
+    file_base = save_path.replace(".tar.gz", "")
+    expected_file = f"{file_base}_expected.txt"
+    actual_file = f"{file_base}_actual.txt"
+    np.savetxt(expected_file, expected)
+    np.savetxt(actual_file, actual)
+    print("Mismatch for {}:\n Results written to: Expected: {} Actual: {}".format(save_path, expected_file, actual_file))
+
+def run_test_dir(model_or_dir, fp16, save_path):
     """
     Run the test/s from a directory in ONNX test format.
     All subdirectories with a prefix of 'test' are considered test input for one test run.
@@ -117,11 +125,13 @@ def run_test_dir(model_or_dir, fp16):
 
                 if expected.dtype.char in np.typecodes["AllFloat"]:
                     if not np.isclose(expected, actual, rtol=1.0e-3, atol=1.0e-3).all():
-                        # print("Mismatch for {}:\nExpected:{}\nGot:{}".format(output_names[idx], expected, actual))
+                        if save_path:
+                            save_differences(save_path, expected, actual)
                         stats = (True, False, "Mismatch")
                 else:
                     if not np.equal(expected, actual).all():
-                        # print("Mismatch for {}:\nExpected:{}\nGot:{}".format(output_names[idx], expected, actual))
+                        if save_path:
+                            save_differences(save_path, expected, actual)
                         stats = (True, False, "Mismatch")
 
         return stats

@@ -29,7 +29,10 @@ def group_statistics(statistics):
         compiles = ':green_heart:' if stats[0] else ':broken_heart:'
         valid = ':green_heart:' if stats[1] else ':broken_heart:'
         error = str(stats[2])
-        record = {'Model': link, 'Opset': opset, 'Compilation': compiles, 'Validation': valid, 'Error': error}
+        repro_command = ''
+        if not stats[1]:
+            repro_command = f"python3 workflow_scripts/test_models.py --target migraphx --model {path}"
+        record = {'Model': link, 'Opset': opset, 'Compilation': compiles, 'Validation': valid, 'Error': error, 'Reproduce step': repro_command}
         if category in grouped_data:
             grouped_data[category].append(record)
         else:

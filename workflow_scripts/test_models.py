@@ -59,9 +59,11 @@ def main():
                         help="Drop downloaded models after verification. (For space limitation in CIs)")
     parser.add_argument("--fp16", required=False, default=False, action="store_true",
                         help="Enable fp16 quantization for migraphx")
+    parser.add_argument("--model", required=False, default="", type=str,
+                        help="Specify a target .tar.gz to run")
     args = parser.parse_args()
 
-    model_list = get_all_models() if args.all_models else get_changed_models()
+    model_list = [args.model] if args.model else get_all_models() if args.all_models else get_changed_models()
     # run lfs install before starting the tests
     test_utils.run_lfs_install()
 
@@ -108,7 +110,7 @@ def main():
                     if args.fp16 and ("int8" in model_name or "qdq" in model_name):
                         continue
                     try:
-                        stats = check_model.run_backend_mgx(model_path_from_tar, test_data_set, args.fp16)
+                        stats = check_model.run_backend_mgx(model_path_from_tar, test_data_set, fp16=args.fp16, save_path= model_path if (args.model) else "")
                         statistics[model_path] = stats
                     except Exception as e:
                         print(f"Something went wrong with {model_name}: {e}")                        
