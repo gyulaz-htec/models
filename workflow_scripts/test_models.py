@@ -42,6 +42,11 @@ def get_changed_models():
                   for model in diff_list if onnx_ext_name in str(model) or tar_ext_name in str(model)]
     return model_list
 
+def clean_up():
+    test_utils.remove_onnxruntime_test_dir()
+    test_utils.remove_tar_dir()
+    test_utils.run_lfs_prune()
+
 
 def main():
     parser = argparse.ArgumentParser(description="Test settings")
@@ -60,16 +65,17 @@ def main():
     parser.add_argument("--fp16", required=False, default=False, action="store_true",
                         help="Enable fp16 quantization for migraphx")
     parser.add_argument("--model", required=False, default="", type=str,
-                        help="Specify a target .tar.gz to run")
+                        help="Specify a target .tar.gz to run. Also enables save option.")
+    parser.add_argument("--save", required=False, default=False, action="store_true",
+                        help="Save expected and actual outputs for failing models")
     args = parser.parse_args()
 
     model_list = [args.model] if args.model else get_all_models() if args.all_models else get_changed_models()
+    save = True if args.model else args.save
     # run lfs install before starting the tests
     test_utils.run_lfs_install()
 
-    test_utils.remove_onnxruntime_test_dir()
-    test_utils.remove_tar_dir()
-    test_utils.run_lfs_prune()
+    clean_up()
 
     print("\n=== Running test on ONNX models ===\n")
     failed_models = []
@@ -115,19 +121,23 @@ def main():
                 if args.target == "migraphx" or args.target == "all":
                     # Skip prequantized models for fp16
                     if args.fp16 and ("int8" in model_name or "qdq" in model_name):
-                        test_utils.remove_onnxruntime_test_dir()
-                        test_utils.remove_tar_dir()
-                        test_utils.run_lfs_prune()
+                        clean_up()
                         continue
                     try:
-                        stats = check_model.run_backend_mgx(model_path_from_tar, test_data_set, fp16=args.fp16, save_path=model_path)
+                        stats = check_model.run_backend_mgx(model_path_from_tar, test_data_set, model_path, args.fp16, save)
                         statistics[model_path] = stats
                     except Exception as e:
-                        print(f"Something went wrong with {model_name}: {e}")
-                        statistics[model_path] = (False, False, f"Error during script execution: {e}")
                         print("[FAIL] {}: {}".format(model_name, e))
                         failed_models.append(model_path)
-                    print(f"[PASS] {model_name} is checked by migraphx.")
+                        statistics[model_path] = (False, False, f"Error during script execution: {e}")
+                        clean_up()
+                        continue
+
+                    if stats[1]:
+                        print(f"[PASS] {model_name} is checked by migraphx.")
+                    else:
+                        print(f"[FAIL] {model_name}: {str(stats[2])}")
+                        failed_models.append(model_path)
             # check uploaded standalone ONNX model by ONNX
             elif onnx_ext_name in model_name:
                 if args.target == "onnx" or args.target == "all":
@@ -142,9 +152,8 @@ def main():
         # remove checked models and directories to save space in CIs
         if os.path.exists(model_path) and args.drop:
             os.remove(model_path)
-        test_utils.remove_onnxruntime_test_dir()
-        test_utils.remove_tar_dir()
-        test_utils.run_lfs_prune()
+
+        clean_up()
 
     markdown_utils.save_to_markdown(statistics, args.fp16)
     if len(failed_models) == 0:
