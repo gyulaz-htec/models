@@ -121,6 +121,11 @@ def main():
                     print("[PASS] {} is checked by onnx. ".format(model_name))
                 # Step 3 check models with migraphx backend
                 if args.target == "migraphx" or args.target == "all":
+                    # Skip models with below opset 7
+                    opset = mgx_stats.get_opset(model_path_from_tar)
+                    if opset < 7:
+                        clean_up()
+                        continue
                     # Skip prequantized models for fp16
                     if args.fp16 and ("int8" in model_name or "qdq" in model_name):
                         clean_up()
