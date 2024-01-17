@@ -7,6 +7,7 @@ import numpy as np
 import onnx
 import onnx_test_data_utils
 from onnx import numpy_helper
+from mgx_stats import MGXRunStats
 
 
 def read_test_dir(dir_name, input_types, output_types):
@@ -83,7 +84,7 @@ def run_test_dir(model_or_dir, tar_gz_path, fp16, save_results):
         model_path = os.path.abspath(model_or_dir)
         model_dir = os.path.dirname(model_path)
 
-    stats = (True, True, "")
+    stats = MGXRunStats(model_path)
     print("Running tests in {} for {}".format(model_dir, model_path))
 
     test_dirs = [d for d in glob.glob(os.path.join(model_dir, "test*")) if os.path.isdir(d)]
@@ -94,7 +95,7 @@ def run_test_dir(model_or_dir, tar_gz_path, fp16, save_results):
         sess = mgx.session(model_path, fp16)
     except Exception as e:
         print(f"Fail during compilation: {str(e)}")
-        stats = (False, False, str(e))
+        stats.set_not_compiles(str(e))
         return stats
 
     input_types = [str(inp.type()) for inp in sess.get_inputs()]
@@ -121,7 +122,7 @@ def run_test_dir(model_or_dir, tar_gz_path, fp16, save_results):
         try:
             run_outputs = sess.run(inputs)
         except Exception as e:
-            stats = (True, False, str(e))
+            stats.set_invalid(str(e))
             return stats
 
         if expected_outputs:
@@ -143,6 +144,6 @@ def run_test_dir(model_or_dir, tar_gz_path, fp16, save_results):
                     if save_results:
                         save_outputs(tar_gz_path, expected, actual, output_name)
             if mismatch:
-                stats = (True, False, mismatch_message)
+                stats.set_invalid(mismatch_message)
 
         return stats

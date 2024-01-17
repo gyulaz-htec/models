@@ -25,15 +25,13 @@ def group_statistics(statistics, fp16):
         model = tar_file_name.replace('.tar.gz', '')
         url = f"{ONNX_ZOO_URL_START}{path}"
         link = f"[{model}.onnx]({url})"
-        opset = model.replace('-int8', '').replace('-qdq', '').split('-')[-1]
-        compiles = ':green_heart:' if stats[0] else ':broken_heart:'
-        valid = ':green_heart:' if stats[1] else ':broken_heart:'
-        error = str(stats[2])
+        compiles = ':green_heart:' if stats.compiles else ':broken_heart:'
+        valid = ':green_heart:' if stats.valid else ':broken_heart:'
         repro_command = ''
-        if not stats[1]:
+        if not stats.valid:
             fp16_option = "--fp16" if fp16 else ""
             repro_command = f"python3 workflow_scripts/test_models.py --target migraphx --model {path} {fp16_option}"
-        record = {'Model': link, 'Opset': opset, 'Compilation': compiles, 'Validation': valid, 'Error': error, 'Reproduce step': repro_command}
+        record = {'Model': link, 'Opset': stats.opset, 'Compilation': compiles, 'Validation': valid, 'Error': stats.error, 'Reproduce step': repro_command}
         if category in grouped_data:
             grouped_data[category].append(record)
         else:

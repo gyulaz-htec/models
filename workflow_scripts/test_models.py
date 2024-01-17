@@ -9,6 +9,8 @@ import test_utils
 import os
 import markdown_utils
 
+from mgx_stats import MGXRunStats
+
 
 tar_ext_name = ".tar.gz"
 onnx_ext_name = ".onnx"
@@ -129,14 +131,14 @@ def main():
                     except Exception as e:
                         print("[FAIL] {}: {}".format(model_name, e))
                         failed_models.append(model_path)
-                        statistics[model_path] = (False, False, f"Error during script execution: {e}")
+                        statistics[model_path] = MGXRunStats(model_path_from_tar, False, False, f"Error during script execution: {e}")
                         clean_up()
                         continue
 
-                    if stats[1]:
+                    if stats.valid:
                         print(f"[PASS] {model_name} is checked by migraphx.")
                     else:
-                        print(f"[FAIL] {model_name}: {str(stats[2])}")
+                        print(f"[FAIL] {model_name}: {stats.error}")
                         failed_models.append(model_path)
             # check uploaded standalone ONNX model by ONNX
             elif onnx_ext_name in model_name:
