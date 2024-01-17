@@ -127,20 +127,20 @@ def run_test_dir(model_or_dir, tar_gz_path, fp16, save_results):
 
         if expected_outputs:
             mismatch = False
+            mismatch_message = "Max diffs:"
             for idx in range(len(output_names)):
                 output_name = output_names[idx]
                 expected = expected_outputs[output_name]
                 actual = run_outputs[idx]
 
-                mismatch_message = "Mismatch:"
                 if not np.isclose(expected, actual, rtol=1.0e-2, atol=1.0e-2).all():
                     mismatch = True
                     expected = expected.flatten('K')
                     actual = np.array(actual).flatten('K')
-                    dist = expected - actual
-                    avg_dist = np.average(dist)
-                    mismatch_message = f"{mismatch_message} {output_name}({avg_dist})"
-                    print(f"Mismatch for {tar_gz_path}, output:{output_name}, avg dist: {avg_dist}")
+                    diff = expected - actual
+                    max_diff = np.max(np.abs(diff))
+                    mismatch_message = f"{mismatch_message} '{output_name}': {max_diff},"
+                    print(f"Mismatch for {tar_gz_path}, output:{output_name}, max diff: {max_diff}")
                     if save_results:
                         save_outputs(tar_gz_path, expected, actual, output_name)
             if mismatch:

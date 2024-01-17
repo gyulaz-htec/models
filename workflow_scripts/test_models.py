@@ -8,8 +8,8 @@ import sys
 import test_utils
 import os
 import markdown_utils
+import mgx_stats
 
-from mgx_stats import MGXRunStats
 
 
 tar_ext_name = ".tar.gz"
@@ -131,7 +131,7 @@ def main():
                     except Exception as e:
                         print("[FAIL] {}: {}".format(model_name, e))
                         failed_models.append(model_path)
-                        statistics[model_path] = MGXRunStats(model_path_from_tar, False, False, f"Error during script execution: {e}")
+                        statistics[model_path] = mgx_stats.MGXRunStats(model_path_from_tar, False, False, f"Error during script execution: {e}")
                         clean_up()
                         continue
 
