@@ -81,6 +81,7 @@ def main():
 
     print("\n=== Running test on ONNX models ===\n")
     failed_models = []
+    skipped_models = []
     statistics = {}
     for model_path in model_list:
         model_name = model_path.split("/")[-1]
@@ -124,6 +125,7 @@ def main():
                     # Skip models with below opset 7
                     opset = mgx_stats.get_opset(model_path_from_tar)
                     if opset < 7:
+                        skipped_models.append(model_path)
                         clean_up()
                         continue
                     # Skip prequantized models for fp16
@@ -163,11 +165,8 @@ def main():
         clean_up()
 
     markdown_utils.save_to_markdown(statistics, args.fp16)
-    if len(failed_models) == 0:
-        print("{} models have been checked. ".format(len(model_list)))
-    else:
-        print("In all {} models, {} models failed. ".format(len(model_list), len(failed_models)))
-        sys.exit(1)
+    print("In all {} models, {} models failed and {} models were skipped. ".format(len(model_list), len(failed_models), len(skipped_models)))
+    sys.exit(1)
 
 
 if __name__ == "__main__":

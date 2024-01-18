@@ -1,13 +1,28 @@
 import glob
 import os
 import shutil
-
 import mgx_inference as mgx
 import numpy as np
 import onnx
-import onnx_test_data_utils
 from onnx import numpy_helper
+import json
+import onnx_test_data_utils
 from mgx_stats import MGXRunStats
+
+def read_model_data_from_manifest(tar_gz_path):
+    manifest_data = []
+    with open('ONNX_HUB_MANIFEST.json') as f:
+        manifest_data = json.load(f)
+    model_data = next(filter(lambda model: model['metadata']['model_with_data_path'] == tar_gz_path, manifest_data), None)
+    return model_data
+
+def get_output_names_from_manifest(tar_gz_path):
+    model_data = read_model_data_from_manifest(tar_gz_path)
+    if not model_data:
+        raise ValueError(f"No model data found in the manifest for archive: {tar_gz_path}")
+    outputs = model_data['metadata']["io_ports"]["outputs"]
+    output_names = [o["name"] for o in outputs]
+    return output_names
 
 
 def read_test_dir(dir_name, input_types, output_types):
@@ -91,6 +106,8 @@ def run_test_dir(model_or_dir, tar_gz_path, fp16, save_results):
     if not test_dirs:
         raise ValueError("No directories with name starting with 'test' were found in {}.".format(model_dir))
 
+    output_names_from_manifest = get_output_names_from_manifest(tar_gz_path)
+
     try:
         sess = mgx.session(model_path, fp16)
     except Exception as e:
@@ -105,19 +122,14 @@ def run_test_dir(model_or_dir, tar_gz_path, fp16, save_results):
         print(d)
         inputs, expected_outputs = read_test_dir(d, input_types, output_types)
 
-        output_names = []
         if expected_outputs:
             output_names = list(expected_outputs.keys())
             # handle case where there's a single expected output file but no name in it (empty string for name)
             # e.g. ONNX test models 20190729\opset8\tf_mobilenet_v2_1.4_224
             if len(output_names) == 1 and output_names[0] == "":
                 assert len(sess.get_outputs()) == 1, "There should be single output_name."
-                expected_outputs["output_0"] = expected_outputs[""]
+                expected_outputs[output_names_from_manifest[0]] = expected_outputs[""]
                 expected_outputs.pop("")
-
-        else:
-            for idx in range(len(output_names)):
-                output_names.append(f"output_{idx}")
 
         try:
             run_outputs = sess.run(inputs)
@@ -128,8 +140,8 @@ def run_test_dir(model_or_dir, tar_gz_path, fp16, save_results):
         if expected_outputs:
             mismatch = False
             mismatch_message = "Max diffs:"
-            for idx in range(len(output_names)):
-                output_name = output_names[idx]
+            for idx in range(len(output_names_from_manifest)):
+                output_name = output_names_from_manifest[idx]
                 expected = expected_outputs[output_name]
                 actual = run_outputs[idx]
 
