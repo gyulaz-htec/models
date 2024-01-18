@@ -17,6 +17,8 @@ def load_mgx_model(path, fp16, shapes={}):
 
 class MGXSession():
     def __init__(self, path, fp16):
+        self.path = path
+        self.fp16 = fp16
         self.program = load_mgx_model(path, fp16)
 
     def get_inputs(self):
@@ -29,6 +31,14 @@ class MGXSession():
         return outputs
 
     def run(self, inputs):
+        expected = [(k, v.lens()) for k, v  in self.program.get_parameter_shapes().items()]
+        expected.sort(key=lambda a: a[0])
+        actual = [(k, list(v.shape)) for k, v in inputs.items()]
+        actual.sort(key=lambda a: a[0])
+        if (actual != expected):
+            print(f"Actual input shape differs from expected, reloading model with correct shapes")
+            self.program = load_mgx_model(self.path, self.fp16, dict(actual))
+        print("Running migraphx inference")
         return self.program.run(inputs)
 
 def session(path, fp16):
