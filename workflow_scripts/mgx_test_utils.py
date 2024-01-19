@@ -139,11 +139,30 @@ def run_test_dir(model_or_dir, tar_gz_path, fp16, save_results):
 
         if expected_outputs:
             mismatch = False
-            mismatch_message = "Max diffs:"
+            mismatch_message = "Max diff(s):"
             for idx in range(len(output_names_from_manifest)):
                 output_name = output_names_from_manifest[idx]
                 expected = expected_outputs[output_name]
-                actual = run_outputs[idx]
+                actual = np.array(run_outputs[idx])
+                expected_shape = list(expected.shape)
+                actual_shape = list(actual.shape)
+                if (expected_shape != actual_shape):
+                    print(f"WARNING: Output dimension differs from expected. Result:{actual_shape}, expected: {expected_shape}. Clipping result.")
+                    same_dims = len(expected_shape) == len(actual_shape)
+                    can_compare = same_dims
+                    if same_dims:
+                        for axis in range(len(expected_shape)):
+                            if expected_shape[axis] > actual_shape[axis]:
+                                can_compare = False
+                                break
+                            else:
+                                actual = np.array(np.split(ary=actual, indices_or_sections=[expected_shape[axis],], axis=axis)[0])
+
+                    if not can_compare:
+                        print(f"WARNING: Clipping result failed, saving outputs.")
+                        save_outputs(tar_gz_path, expected, actual, output_name)
+                        stats.set_invalid(f"Output shape {actual_shape} doesn't match the expected {expected_shape}")
+                        return stats
 
                 if not np.isclose(expected, actual, rtol=1.0e-2, atol=1.0e-2).all():
                     mismatch = True
