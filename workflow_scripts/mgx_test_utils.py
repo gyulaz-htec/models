@@ -24,6 +24,14 @@ def get_output_names_from_manifest(tar_gz_path):
     output_names = [o["name"] for o in outputs]
     return output_names
 
+def get_input_names_from_manifest(tar_gz_path,):
+    model_data = read_model_data_from_manifest(tar_gz_path)
+    if not model_data:
+        raise ValueError(f"No model data found in the manifest for archive: {tar_gz_path}")
+    inputs = model_data["metadata"]["io_ports"]["inputs"]
+    input_names = [o["name"] for o in inputs]
+    return input_names
+
 
 def read_test_dir(dir_name, input_types, output_types):
     """
@@ -107,7 +115,7 @@ def run_test_dir(model_or_dir, tar_gz_path, fp16, save_results):
         raise ValueError("No directories with name starting with 'test' were found in {}.".format(model_dir))
 
     output_names_from_manifest = get_output_names_from_manifest(tar_gz_path)
-
+    input_names_from_manifest = get_input_names_from_manifest(tar_gz_path)
     try:
         sess = mgx.session(model_path, fp16)
     except Exception as e:
@@ -122,14 +130,24 @@ def run_test_dir(model_or_dir, tar_gz_path, fp16, save_results):
         print(d)
         inputs, expected_outputs = read_test_dir(d, input_types, output_types)
 
+        if set(inputs.keys()) != set(input_names_from_manifest):
+            input_names = list(inputs.keys())
+            input_names.sort()
+            print(f"WARNING: Input names {input_names} are different from expected {input_names_from_manifest}. Trying to adjust them.")
+            for i, name in enumerate(input_names):
+                print(f"\tRenaming {name} to {input_names_from_manifest[i]}.")
+                inputs[input_names_from_manifest[i]] = inputs[name]
+                inputs.pop(name)
+
         if expected_outputs:
-            output_names = list(expected_outputs.keys())
-            # handle case where there's a single expected output file but no name in it (empty string for name)
-            # e.g. ONNX test models 20190729\opset8\tf_mobilenet_v2_1.4_224
-            if len(output_names) == 1 and output_names[0] == "":
-                assert len(sess.get_outputs()) == 1, "There should be single output_name."
-                expected_outputs[output_names_from_manifest[0]] = expected_outputs[""]
-                expected_outputs.pop("")
+            if set(expected_outputs.keys()) != set(output_names_from_manifest):
+                output_names = list(expected_outputs.keys())
+                output_names.sort()
+                print(f"WARNING: Output names {output_names} are different from expected {output_names_from_manifest}. Trying to adjust them.")
+                for i, name in enumerate(output_names):
+                    print(f"\tRenaming {name} ({expected_outputs[name].shape}) to {output_names_from_manifest[i]}.")
+                    expected_outputs[output_names_from_manifest[i]] = expected_outputs[name]
+                    expected_outputs.pop(name)
 
         try:
             run_outputs = sess.run(inputs)
@@ -138,14 +156,17 @@ def run_test_dir(model_or_dir, tar_gz_path, fp16, save_results):
             return stats
 
         if expected_outputs:
+            print("Inference done. Validating outputs.")
             mismatch = False
             mismatch_message = "Max diff(s):"
+            print('## 1')
             for idx in range(len(output_names_from_manifest)):
                 output_name = output_names_from_manifest[idx]
                 expected = expected_outputs[output_name]
                 actual = np.array(run_outputs[idx])
                 expected_shape = list(expected.shape)
                 actual_shape = list(actual.shape)
+                print(f'## 2 {output_name}')
                 if (expected_shape != actual_shape):
                     print(f"WARNING: Output dimension differs from expected. Result:{actual_shape}, expected: {expected_shape}. Clipping result.")
                     same_dims = len(expected_shape) == len(actual_shape)
@@ -164,6 +185,7 @@ def run_test_dir(model_or_dir, tar_gz_path, fp16, save_results):
                         stats.set_invalid(f"Output shape {actual_shape} doesn't match the expected {expected_shape}")
                         return stats
 
+                print('## 3')
                 if not np.isclose(expected, actual, rtol=1.0e-2, atol=1.0e-2).all():
                     mismatch = True
                     expected = expected.flatten('K')
@@ -174,6 +196,8 @@ def run_test_dir(model_or_dir, tar_gz_path, fp16, save_results):
                     print(f"Mismatch for {tar_gz_path}, output:{output_name}, max diff: {max_diff}")
                     if save_results:
                         save_outputs(tar_gz_path, expected, actual, output_name)
+
+                print('## 4')
             if mismatch:
                 stats.set_invalid(mismatch_message)
 

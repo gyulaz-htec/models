@@ -35,6 +35,7 @@ class MGXSession():
         expected.sort(key=lambda a: a[0])
         actual = [(k, list(v.shape)) for k, v in inputs.items()]
         actual.sort(key=lambda a: a[0])
+        print(f"## Actual {actual}")
         if (actual != expected):
             print(f"Actual input shape differs from expected, reloading model with correct shapes")
             self.program = load_mgx_model(self.path, self.fp16, dict(actual))
