@@ -69,10 +69,11 @@ def read_test_dir(dir_name, input_types, output_types):
 
     return inputs, outputs
 
-def save_outputs(tar_gz_path, expected, actual, output_name):
+def save_outputs(tar_gz_path, expected, actual, output_name, fp16):
     file_base = tar_gz_path.replace(".tar.gz", "")
+    fp16_tag = "_fp16" if fp16 else ""
     expected_file = f"{file_base}_{output_name}_expected.txt"
-    actual_file = f"{file_base}_{output_name}_actual.txt"
+    actual_file = f"{file_base}_{output_name}{fp16_tag}_actual.txt"
     np.savetxt(expected_file, expected)
     np.savetxt(actual_file, actual)
     print("Results written to:\n\tExpected:\t{}\n\tActual:\t\t{}".format(expected_file, actual_file))
@@ -179,7 +180,7 @@ def run_test_dir(model_or_dir, tar_gz_path, fp16, save_results):
 
                     if not can_compare:
                         print(f"WARNING: Clipping result failed, saving outputs.")
-                        save_outputs(tar_gz_path, expected, actual, output_name)
+                        save_outputs(tar_gz_path, expected, actual, output_name, fp16)
                         stats.set_invalid(f"Output shape {actual_shape} doesn't match the expected {expected_shape}")
                         return stats
 
