@@ -49,6 +49,21 @@ def clean_up():
     test_utils.remove_tar_dir()
     test_utils.run_lfs_prune()
 
+def check_migraphx_skip(model_name, fp16, opset):
+    if "bertsquad-8.tar.gz" in model_name:
+        print("Skipping model because it has mislabeled input/output proto buffer files.")
+        return True
+    if fp16:
+        if ("MaskRCNN" in model_name or "FasterRCNN" in model_name):
+            print("Skipping model because MaskRCNN and FasterRCNN models are crashing with --fp16.")
+            return True
+        if "int8" in model_name or "qdq" in model_name:
+            print("Skipping model for --fp16 because it's already quantized.")
+            return True
+    if opset < 7:
+        print("Skipping model because it has opset older than 7.")
+        return True
+    return False
 
 def main():
     parser = argparse.ArgumentParser(description="Test settings")
@@ -85,9 +100,6 @@ def main():
     statistics = {}
     for model_path in model_list:
         model_name = model_path.split("/")[-1]
-        # TODO add skip list fpr fp16
-        if args.fp16 and ("MaskRCNN" in model_name or "FasterRCNN" in model_name):
-            continue
         print("==============Testing {}==============".format(model_name))
 
         try:
@@ -122,14 +134,10 @@ def main():
                     print("[PASS] {} is checked by onnx. ".format(model_name))
                 # Step 3 check models with migraphx backend
                 if args.target == "migraphx" or args.target == "all":
-                    # Skip models with below opset 7
                     opset = mgx_stats.get_opset(model_path_from_tar)
-                    if opset < 7:
+                    skip = check_migraphx_skip(model_name, args.fp16, opset)
+                    if skip:
                         skipped_models.append(model_path)
-                        clean_up()
-                        continue
-                    # Skip prequantized models for fp16
-                    if args.fp16 and ("int8" in model_name or "qdq" in model_name):
                         clean_up()
                         continue
                     try:
