@@ -193,7 +193,7 @@ def run_test_dir(model_or_dir, tar_gz_path, fp16, save_results):
                     mismatch_message = f"{mismatch_message} '{output_name}': {max_diff},"
                     print(f"Mismatch for {tar_gz_path}, output:{output_name}, max diff: {max_diff}")
                     if save_results:
-                        save_outputs(tar_gz_path, expected, actual, output_name)
+                        save_outputs(tar_gz_path, expected, actual, output_name, fp16)
             if mismatch:
                 stats.set_invalid(mismatch_message)
 
