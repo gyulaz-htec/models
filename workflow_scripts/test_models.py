@@ -54,9 +54,6 @@ def check_migraphx_skip(model_name, fp16, opset):
         print("Skipping model because it has mislabeled input/output proto buffer files.")
         return True
     if fp16:
-        if ("MaskRCNN" in model_name or "FasterRCNN" in model_name):
-            print("Skipping model because MaskRCNN and FasterRCNN models are crashing with --fp16.")
-            return True
         if "int8" in model_name or "qdq" in model_name:
             print("Skipping model for --fp16 because it's already quantized.")
             return True
