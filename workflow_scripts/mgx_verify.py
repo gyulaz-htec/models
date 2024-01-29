@@ -4,6 +4,30 @@ import subprocess
 import signal
 from pathlib import Path
 
+INT_MODEL_INPUTS = {
+    "text/machine_comprehension/bert-squad/model/bertsquad-12.onnx": "--fill1 unique_ids_raw_output___9:0 --fill1 segment_ids:0 --fill1 input_mask:0 --fill1 input_ids:0".split(
+        " "
+    ),
+    "text/machine_comprehension/bert-squad/model/bertsquad-10.onnx": "--fill1 unique_ids_raw_output___9:0 --fill1 segment_ids:0 --fill1 input_mask:0 --fill1 input_ids:0".split(
+        " "
+    ),
+    "text/machine_comprehension/roberta/model/roberta-sequence-classification-9.onnx": "--fill1 input".split(
+        " "
+    ),
+    "text/machine_comprehension/gpt-2/model/gpt2-10.onnx": "--fill1 input1 --input-dim @input1 1 1 8".split(
+        " "
+    ),
+    "text/machine_comprehension/gpt-2/model/gpt2-lm-head-10.onnx": "--fill1 input1 --input-dim @input1 1 1 8".split(
+        " "
+    ),
+    "text/machine_comprehension/t5/model/t5-encoder-12.onnx": "-fill1 input_ids --input-dim @input_ids 8 8".split(
+        " "
+    ),
+    "text/machine_comprehension/t5/model/t5-decoder-with-lm-head-12.onnx": "-fill1 input_ids --input-dim @input_ids 8 8".split(
+        " "
+    ),
+}
+
 
 def get_models_with_accuracy_issue(onnx_zoo_path, file):
     models = {}
@@ -34,7 +58,7 @@ def pull_models(models):
 
 def process_verify_log(output):
     result = []
-    relevant_stat = ["FAILED", "RMS Error", "ref:", "target:", "Max diff", "Mismatch at"]
+    relevant_stat = ["FAILED", "RMS Error", "Max diff", "Mismatch at"]
     passed = True
     for line in output:
         line = line.decode("UTF-8")
@@ -54,6 +78,8 @@ def verify_models(mgx_path, fp16, models):
     for model in models:
         model = model.strip("/")
         cmd = [mgx_path, "verify", model]
+        if model in INT_MODEL_INPUTS:
+            cmd = cmd + INT_MODEL_INPUTS[model]
         if fp16:
             # skipping arcfaceresnet100-8 because it hangs
             if "arcfaceresnet100-8" in model:
