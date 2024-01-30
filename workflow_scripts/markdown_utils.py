@@ -1,6 +1,6 @@
 from py_markdown_table.markdown_table import markdown_table
 
-ONNX_ZOO_URL_START = 'https://github.com/gyulaz-htec/models/tree/migraphx_testing/'
+ONNX_ZOO_URL_START = "https://github.com/gyulaz-htec/models/tree/migraphx_testing/"
 
 CATEGORY_DICT = {
     "machine_comprehension": "Machine Comprehension",
@@ -8,8 +8,9 @@ CATEGORY_DICT = {
     "object_detection": "Object Detection & Image Segmentation",
     "body_analysis": "Body, Face & Gesture Analysis",
     "style_transfer": "Image Manipulation",
-    "super_resolution": "Image Manipulation"
+    "super_resolution": "Image Manipulation",
 }
+
 
 def get_category_from_path(path):
     for k, v in CATEGORY_DICT.items():
@@ -17,21 +18,29 @@ def get_category_from_path(path):
             return v
     raise ValueError(f"No category found for {path}")
 
+
 def group_statistics(statistics, fp16):
     grouped_data = {}
     for path, stats in statistics.items():
         category = get_category_from_path(path)
-        tar_file_name = path.split('/')[-1]
-        model = tar_file_name.replace('.tar.gz', '')
+        tar_file_name = path.split("/")[-1]
+        model = tar_file_name.replace(".tar.gz", "")
         url = f"{ONNX_ZOO_URL_START}{path}"
         link = f"[{model}.onnx]({url})"
-        compiles = ':green_heart:' if stats.compiles else ':broken_heart:'
-        valid = ':green_heart:' if stats.valid else ':broken_heart:'
-        repro_command = ''
+        compiles = ":green_heart:" if stats.compiles else ":broken_heart:"
+        valid = ":green_heart:" if stats.valid else ":broken_heart:"
+        repro_command = ""
         if not stats.valid:
             fp16_option = "--fp16" if fp16 else ""
             repro_command = f"python3 workflow_scripts/test_models.py --target migraphx --model {path} {fp16_option}"
-        record = {'Model': link, 'Opset': stats.opset, 'Compilation': compiles, 'Validation': valid, 'Error': stats.error, 'Reproduce step': repro_command}
+        record = {
+            "Model": link,
+            "Opset": stats.opset,
+            "Compilation": compiles,
+            "Validation": valid,
+            "Error": stats.error,
+            "Reproduce step": repro_command,
+        }
         if category in grouped_data:
             grouped_data[category].append(record)
         else:
@@ -39,13 +48,18 @@ def group_statistics(statistics, fp16):
 
     return grouped_data
 
+
 def save_to_markdown(statistics, fp16=False):
     grouped_data = group_statistics(statistics, fp16)
     if len(grouped_data) == 0:
         return
-    file_name_ending = "_FP16" if fp16 else '';
+    file_name_ending = "_FP16" if fp16 else ""
     with open(f"MIGRAPHX{file_name_ending}.md", "w") as f:
-        for group, records in grouped_data.items():
+        for group, records in sorted(grouped_data.items()):
             f.write(f"## {group}\n\n")
-            table = markdown_table(records).set_params(row_sep = 'markdown', quote = False).get_markdown()
+            table = (
+                markdown_table(records)
+                .set_params(row_sep="markdown", quote=False)
+                .get_markdown()
+            )
             f.write(f"{table}\n")
