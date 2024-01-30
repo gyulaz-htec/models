@@ -19,9 +19,21 @@ def get_category_from_path(path):
     raise ValueError(f"No category found for {path}")
 
 
-def group_statistics(statistics, fp16):
+def process_statistics(statistics, fp16):
     grouped_data = {}
+    passing = 0
+    accuracy_issue = 0
+    compile_issue = 0
+    runtime_issue = 0
     for path, stats in statistics.items():
+        if stats.valid:
+            passing += 1
+        elif "Max diff(s)" in stats.error:
+            accuracy_issue += 1
+        elif stats.compiles:
+            runtime_issue += 1
+        else:
+            compile_issue += 1
         category = get_category_from_path(path)
         tar_file_name = path.split("/")[-1]
         model = tar_file_name.replace(".tar.gz", "")
@@ -46,16 +58,23 @@ def group_statistics(statistics, fp16):
         else:
             grouped_data[category] = [record]
 
-    return grouped_data
+    return grouped_data, passing, accuracy_issue, compile_issue, runtime_issue
 
 
 def save_to_markdown(statistics, fp16=False):
-    grouped_data = group_statistics(statistics, fp16)
+    (
+        grouped_data,
+        passing,
+        accuracy_issue,
+        compile_issue,
+        runtime_issue,
+    ) = process_statistics(statistics, fp16)
     if len(grouped_data) == 0:
         return
     file_name_ending = "_FP16" if fp16 else ""
     with open(f"MIGRAPHX{file_name_ending}.md", "w") as f:
         for group, records in sorted(grouped_data.items()):
+            records.sort(key=lambda r: r["Model"])
             f.write(f"## {group}\n\n")
             table = (
                 markdown_table(records)
@@ -63,3 +82,8 @@ def save_to_markdown(statistics, fp16=False):
                 .get_markdown()
             )
             f.write(f"{table}\n")
+        f.write(f"## Satistics:\n")
+        f.write(f"Passing models: {passing}\n")
+        f.write(f"Accuracy issue(s): {accuracy_issue}\n")
+        f.write(f"Compile issue(s): {compile_issue}\n")
+        f.write(f"Runtime issue(s): {runtime_issue}\n")
