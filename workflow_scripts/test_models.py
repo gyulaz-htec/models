@@ -57,6 +57,9 @@ def check_migraphx_skip(model_name, fp16, opset):
         if "int8" in model_name or "qdq" in model_name:
             print("Skipping model for --fp16 because it's already quantized.")
             return True
+        if "arcfaceresnet100" in model_name:
+            print("Skipping model for --fp16 because it can hang.")
+            return True
     if opset < 7:
         print("Skipping model because it has opset older than 7.")
         return True
