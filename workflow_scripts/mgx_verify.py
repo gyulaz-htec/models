@@ -58,14 +58,18 @@ def pull_models(models):
 
 def process_verify_log(output):
     result = []
-    relevant_stat = ["FAILED", "RMS Error", "Max diff", "Mismatch at"]
-    passed = True
+    relevant_stat = ["FAILED", "RMS Error", "Max diff", "Mismatch at", "Shape mismatch"]
+    passed_message = "MIGraphX verification passed successfully"
+    passed = False
     for line in output:
         line = line.decode("UTF-8")
         for stat in relevant_stat:
             if stat in line:
-                passed = False
                 result.append(line)
+
+        if passed_message in line and len(result) == 0:
+            passed = True
+
 
     if passed:
         return ["PASS"]
