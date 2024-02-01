@@ -1,0 +1,904 @@
+Run instruction: @0 = check_context::migraphx::gpu::context -> float_type, {}, {}, target_id=0
+Time: 0.00747ms, 0.00804ms
+Run instruction: @1 = hip::hip_allocate_memory[shape=int8_type, {6021120}, {1},id=main:scratch] -> int8_type, {6021120}, {1}, target_id=0
+Time: 0.00758ms, 0.00784ms
+Output has normal
+Output: �, �, �, �, �, ..., �, �, �, �, �
+Min value: �, Max value: �, Mean: -66, StdDev: 0
+Run instruction: @2 = hip::hip_copy_literal[id=main:@literal:34] -> float_type, {32, 3, 3, 3}, {27, 9, 3, 1}, target_id=0
+Time: 0.00916ms, 0.00956ms
+Output has zero, normal
+Output: 0.00285564, 0, 0.00285564, 0.00571129, -0.00285564, ..., 0.00285564, 0.00856693, 0, 0.00571129, 0.0171339
+Min value: -0.362667, Max value: 0.33411, Mean: -0.00108739, StdDev: 0.059855
+Run instruction: @3 = load[offset=0,end=0](@1) -> int8_type, {0}, {1}, target_id=0
+Time: 0.01249ms, 0.01276ms
+Run instruction: @4 = load[offset=1605632,end=3211264](@1) -> float_type, {1, 32, 112, 112}, {401408, 12544, 112, 1}, target_id=0
+Time: 0.00062ms, 0.00088ms
+Run instruction: input = @param:input -> float_type, {1, 3, 224, 224}, {150528, 50176, 224, 1}, target_id=0
+Time: 0.001251ms, 0.001831ms
+*********************************************
+Run instruction: @6 = gpu::convolution[op={padding={1, 1, 1, 1},stride={2, 2},dilation={1, 1},group=1,padding_mode=0},solution_object={binary_object: 493},algo=0,solution_id=0](input,@2,@3,@4) -> float_type, {1, 32, 112, 112}, {401408, 12544, 112, 1}, target_id=0
+Time: 0.103942ms, 0.141002ms
+Output has zero, normal
+Output: 0.00107087, 0.0107087, 0.000356955, -0.00945932, -0.0148136, ..., -0.0410499, 0.051937, -0.0405144, -0.0117795, 0.000535432
+Min value: -1.56989, Max value: 1.37249, Mean: 0.000796949, StdDev: 0.179553
+*********************************************
+Run instruction: @7 = hip::hip_copy_literal[id=main:@literal:45] -> float_type, {32, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+Time: 0.00149ms, 0.0018ms
+Output has zero, normal
+Output: -0.118684, -0.118684, -0.118684, -0.118684, 0, ..., -0.237367, -3.67919, 0.830786, -0.237367, -0.474735
+Min value: -15.0728, Max value: 10.5628, Mean: 0.0370886, StdDev: 2.02795
+Run instruction: @8 = load[offset=0,end=1605632](@1) -> float_type, {1, 32, 112, 112}, {401408, 12544, 112, 1}, target_id=0
+Time: 0.00092ms, 0.00118ms
+Run instruction: @9 = gpu::code_object[code_object=5304,symbol_name=mlir_convolution,global=401408,local=64,](@6,@7,@8) -> float_type, {1, 32, 112, 112}, {401408, 12544, 112, 1}, target_id=0
+Time: 0.01058ms, 0.058561ms
+Output has zero, normal
+Output: 0.00912961, 0.000910843, -0.0114173, -0.0112902, 0.00152513, ..., -0.287254, -0.0197632, 0.265648, -0.17234, -0.0927153
+Min value: -7.33385, Max value: 6.84127, Mean: -0.000142545, StdDev: 0.746851
+Run instruction: @10 = hip::hip_copy_literal[id=main:@literal:32] -> float_type, {16, 32, 1, 1}, {32, 1, 1, 1}, target_id=0
+Time: 0.00107ms, 0.00134ms
+Output has zero, normal
+Output: -0.00815303, 0.0652243, -0.0733773, 0.179367, -0.0163061, ..., 0.758232, -0.0244591, -0.0326121, -0.472876, 0.138602
+Min value: -1.03544, Max value: 0.823456, Mean: 0.0082008, StdDev: 0.256341
+Run instruction: @11 = load[offset=4816896,end=5619712](@1) -> float_type, {1, 16, 112, 112}, {200704, 12544, 112, 1}, target_id=0
+Time: 0.00077ms, 0.00102ms
+Run instruction: @12 = gpu::code_object[code_object=4472,symbol_name=mlir_convolution,global=50176,local=64,](@9,@10,@11) -> float_type, {1, 16, 112, 112}, {200704, 12544, 112, 1}, target_id=0
+Time: 0.00586ms, 0.03256ms
+Output has normal
+Output: -1.07962, 1.7575, -1.49915, 0.0301083, -0.0612476, ..., -1.20467, 2.24513, 0.1349, -0.571074, -0.335924
+Min value: -7.48377, Max value: 6.1596, Mean: -0.00227453, StdDev: 1.2884
+Run instruction: @13 = hip::hip_copy_literal[id=main:@literal:30] -> float_type, {96, 16, 1, 1}, {16, 1, 1, 1}, target_id=0
+Time: 0.00097ms, 0.00124ms
+Output has zero, normal
+Output: 0.132869, 0.0237266, 0.113888, -0.0949065, -0.0949065, ..., -0.0332173, -0.0949065, -0.00474532, -0.0189813, 0.00949065
+Min value: -0.488768, Max value: 0.602656, Mean: 0.00015447, StdDev: 0.122288
+Run instruction: @14 = load[offset=0,end=4816896](@1) -> float_type, {1, 96, 112, 112}, {1204224, 12544, 112, 1}, target_id=0
+Time: 0.00075ms, 0.00099ms
+Run instruction: @15 = gpu::code_object[code_object=4920,symbol_name=mlir_convolution,global=150528,local=256,](@12,@13,@14) -> float_type, {1, 96, 112, 112}, {1204224, 12544, 112, 1}, target_id=0
+Time: 0.00496ms, 0.035931ms
+Output has normal
+Output: 0.226215, 0.735717, -1.30107, 0.828654, -0.426514, ..., -0.447912, 0.328813, -0.0591933, -0.0491203, 0.0618357
+Min value: -6.21026, Max value: 6.18362, Mean: 0.000298429, StdDev: 0.637391
+Run instruction: @16 = hip::hip_copy_literal[id=main:@literal:29] -> float_type, {96, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+Time: 0.00092ms, 0.00121ms
+Output has zero, normal
+Output: -0.250317, -0.450571, -0.250317, -0.500634, -0.500634, ..., -1.55197, -1.00127, -0.200254, -0.300381, -0.0500634
+Min value: -6.35805, Max value: 4.75602, Mean: -0.016456, StdDev: 0.910013
+Run instruction: @17 = load[offset=4816896,end=6021120](@1) -> float_type, {1, 96, 56, 56}, {301056, 3136, 56, 1}, target_id=0
+Time: 0.00083ms, 0.00108ms
+Run instruction: @18 = gpu::code_object[code_object=5048,symbol_name=mlir_convolution,global=614400,local=256,](@15,@16,@17) -> float_type, {1, 96, 56, 56}, {301056, 3136, 56, 1}, target_id=0
+Time: 0.00603ms, 0.050461ms
+Output has normal
+Output: -0.844957, 0.0556632, 0.340281, -0.00608501, 1.07382, ..., 0.427684, 1.12763, -0.38858, -0.568034, -0.445142
+Min value: -10.2495, Max value: 9.84518, Mean: -4.73603e-05, StdDev: 0.914921
+Run instruction: @19 = hip::hip_copy_literal[id=main:@literal:36] -> float_type, {24, 96, 1, 1}, {96, 1, 1, 1}, target_id=0
+Time: 0.00122ms, 0.00151ms
+Output has zero, normal
+Output: 0.2319, 0.243792, -0.0237846, -0.0297307, 0.475692, ..., 0.0772999, -0.410284, 0.291361, 0.368661, 0.0832461
+Min value: -0.749215, Max value: 0.755161, Mean: 0.00361053, StdDev: 0.196272
+Run instruction: @20 = load[offset=1806336,end=2107392](@1) -> float_type, {1, 24, 56, 56}, {75264, 3136, 56, 1}, target_id=0
+Time: 0.00087ms, 0.00113ms
+Run instruction: @21 = gpu::code_object[code_object=5176,symbol_name=mlir_convolution,global=25088,local=256,](@18,@19,@20) -> float_type, {1, 24, 56, 56}, {75264, 3136, 56, 1}, target_id=0
+Time: 0.00539ms, 0.03125ms
+Output has normal
+Output: 0.664712, 1.98961, -1.69714, -1.85928, 0.166327, ..., 0.463552, 0.761214, -0.0294008, -0.331529, 0.296322
+Min value: -4.27397, Max value: 4.25999, Mean: 0.00222211, StdDev: 0.947563
+Run instruction: @22 = hip::hip_copy_literal[id=main:@literal:40] -> float_type, {144, 24, 1, 1}, {24, 1, 1, 1}, target_id=0
+Time: 0.00083ms, 0.00111ms
+Output has zero, normal
+Output: -0.00790099, -0.00263366, -0.223861, -0.110614, 0.0131683, ..., -0.105347, -0.00790099, -0.0447723, -0.0763763, 0.031604
+Min value: -0.334475, Max value: 0.305505, Mean: 0.00239819, StdDev: 0.0729264
+Run instruction: @23 = load[offset=3913728,end=5720064](@1) -> float_type, {1, 144, 56, 56}, {451584, 3136, 56, 1}, target_id=0
+Time: 0.00075ms, 0.001ms
+Run instruction: @24 = gpu::code_object[code_object=4600,symbol_name=mlir_convolution,global=125440,local=256,](@21,@22,@23) -> float_type, {1, 144, 56, 56}, {451584, 3136, 56, 1}, target_id=0
+Time: 0.00494ms, 0.0239ms
+Output has normal
+Output: 0.0812858, -0.55177, 0.925, -0.912928, -0.611926, ..., -0.596399, 0.26969, -0.399818, 0.0931975, -0.0485946
+Min value: -3.07491, Max value: 3.90879, Mean: -0.000694287, StdDev: 0.335387
+Run instruction: @25 = hip::hip_copy_literal[id=main:@literal:42] -> float_type, {144, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+Time: 0.00119ms, 0.00146ms
+Output has zero, normal
+Output: 0.718817, -1.24847, 0.983644, -0.832314, -0.113497, ..., -0.983644, 2.26995, -0.226995, -0.340492, 0.113497
+Min value: -4.80472, Max value: 4.80472, Mean: 0.0211932, StdDev: 1.08342
+Run instruction: @26 = load[offset=2107392,end=3913728](@1) -> float_type, {1, 144, 56, 56}, {451584, 3136, 56, 1}, target_id=0
+Time: 0.00093ms, 0.00128ms
+Run instruction: @27 = gpu::code_object[code_object=5304,symbol_name=mlir_convolution,global=451584,local=64,](@24,@25,@26) -> float_type, {1, 144, 56, 56}, {451584, 3136, 56, 1}, target_id=0
+Time: 0.00556ms, 0.053981ms
+Output has normal
+Output: -3.19868, 1.59809, 0.676673, 0.734298, -0.675377, ..., 1.34348, -1.35372, 0.594607, -0.291252, 0.119813
+Min value: -15.899, Max value: 13.126, Mean: -0.00114382, StdDev: 1.08376
+Run instruction: @28 = hip::hip_copy_literal[id=main:@literal:1] -> float_type, {1, 24, 56, 56}, {75264, 3136, 56, 1}, target_id=0
+Time: 0.00102ms, 0.00129ms
+Output has normal
+Output: -2.25968, 0.997592, -0.832029, -0.832029, -0.832029, ..., -0.151605, -0.151605, -0.151605, 0.589031, -3.65882
+Min value: -10.0125, Max value: 11.1524, Mean: 0.333688, StdDev: 1.56575
+Run instruction: @29 = hip::hip_copy_literal[id=main:@literal:21] -> float_type, {24, 144, 1, 1}, {144, 1, 1, 1}, target_id=0
+Time: 0.00082ms, 0.00109ms
+Output has zero, normal
+Output: -0.0190846, -0.0477114, -0.200388, 0.276726, -0.171761, ..., -0.267184, 0.190846, 0.41986, -0.171761, -0.257641
+Min value: -0.96377, Max value: 1.21187, Mean: 0.0100917, StdDev: 0.223649
+Run instruction: @30 = load[offset=0,end=301056](@1) -> float_type, {1, 24, 56, 56}, {75264, 3136, 56, 1}, target_id=0
+Time: 0.00067ms, 0.00093ms
+Run instruction: @31 = gpu::code_object[code_object=5896,symbol_name=mlir_convolution_add_add,global=25088,local=256,](@28,@21,@27,@29,@30) -> float_type, {1, 24, 56, 56}, {75264, 3136, 56, 1}, target_id=0
+Time: 0.00684ms, 0.036331ms
+Output has normal
+Output: -2.48102, 1.48444, -4.50472, -6.81627, -9.37432e-05, ..., 5.7544, -0.0675765, -1.50932, -2.3938, -3.3254
+Min value: -18.2188, Max value: 20.4459, Mean: 0.333676, StdDev: 3.83305
+
+*end*
+
+Run instruction: @32 = hip::hip_copy_literal[id=main:@literal:44] -> float_type, {144, 24, 1, 1}, {24, 1, 1, 1}, target_id=0
+Time: 0.00107ms, 0.00136ms
+Output has zero, normal
+Output: -0.0322422, -0.0620043, 0.0719249, -0.0198414, -0.00496034, ..., -0.0744051, 0.0421629, 0.0471232, 0.0744051, -0.0173612
+Min value: -0.312501, Max value: 0.314982, Mean: -0.000707595, StdDev: 0.0584994
+Run instruction: @33 = load[offset=451584,end=2257920](@1) -> float_type, {1, 144, 56, 56}, {451584, 3136, 56, 1}, target_id=0
+Time: 0.00072ms, 0.00097ms
+Run instruction: @34 = gpu::code_object[code_object=4600,symbol_name=mlir_convolution,global=125440,local=256,](@31,@32,@33) -> float_type, {1, 144, 56, 56}, {451584, 3136, 56, 1}, target_id=0
+Time: 0.00521ms, 0.0246ms
+Output has normal
+Output: -0.372387, -0.861422, -1.46032, -0.416016, 1.56525, ..., 0.963712, 0.506136, 0.0200017, -2.06821, 0.642066
+Min value: -10.4931, Max value: 9.034, Mean: -0.110747, StdDev: 1.16345
+Run instruction: @35 = hip::hip_copy_literal[id=main:@literal:46] -> float_type, {144, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+Time: 0.00102ms, 0.00128ms
+Output has zero, normal
+Output: -0.139498, -0.278996, -0.185997, -0.278996, -0.464993, ..., 0.604491, 0.418494, 0.139498, 0.371994, 0.232497
+Min value: -5.44042, Max value: 5.90541, Mean: 0.0260482, StdDev: 0.739153
+Run instruction: @36 = load[offset=2257920,end=2709504](@1) -> float_type, {1, 144, 28, 28}, {112896, 784, 28, 1}, target_id=0
+Time: 0.00076ms, 0.00102ms
+Run instruction: @37 = gpu::code_object[code_object=5304,symbol_name=mlir_convolution,global=119808,local=64,](@34,@35,@36) -> float_type, {1, 144, 28, 28}, {112896, 784, 28, 1}, target_id=0
+Time: 0.00551ms, 0.040451ms
+Output has normal
+Output: 0.514675, 1.1217, 0.308565, 0.843663, 1.29211, ..., -0.592339, 1.2081, -0.323518, -0.449737, -1.78619
+Min value: -12.5803, Max value: 12.7015, Mean: -0.220525, StdDev: 2.07518
+Run instruction: @38 = hip::hip_copy_literal[id=main:@literal:47] -> float_type, {32, 144, 1, 1}, {144, 1, 1, 1}, target_id=0
+Time: 0.001ms, 0.00128ms
+Output has zero, normal
+Output: -0.211888, 0.191383, -0.0820212, 0.280239, 0.170877, ..., 0.0820212, -0.0478457, 0.355425, 0.109362, -0.102526
+Min value: -0.704015, Max value: 0.868057, Mean: 0.000981952, StdDev: 0.176895
+Run instruction: @39 = load[offset=1204224,end=1304576](@1) -> float_type, {1, 32, 28, 28}, {25088, 784, 28, 1}, target_id=0
+Time: 0.00075ms, 0.001ms
+Run instruction: @40 = gpu::code_object[code_object=5816,symbol_name=mlir_convolution,global=6400,local=128,](@37,@38,@39) -> float_type, {1, 32, 28, 28}, {25088, 784, 28, 1}, target_id=0
+Time: 0.00538ms, 0.034491ms
+Output has normal
+Output: -0.121823, -0.539947, 0.168293, -1.31423, -2.43188, ..., 2.57321, 2.32379, -1.83493, 5.11469, -4.38702
+Min value: -13.3086, Max value: 17.0146, Mean: -0.814371, StdDev: 3.80128
+Run instruction: @41 = hip::hip_copy_literal[id=main:@literal:37] -> float_type, {192, 32, 1, 1}, {32, 1, 1, 1}, target_id=0
+Time: 0.00082ms, 0.00111ms
+Output has zero, normal
+Output: 0.00605444, -0.0166497, 0.0423811, 0.0257314, 0.027245, ..., 0.0393539, -0.0151361, 0.131684, -0.0802214, -0.0787078
+Min value: -0.184661, Max value: 0.192229, Mean: -5.66619e-05, StdDev: 0.03806
+Run instruction: @42 = load[offset=0,end=602112](@1) -> float_type, {1, 192, 28, 28}, {150528, 784, 28, 1}, target_id=0
+Time: 0.0007ms, 0.00096ms
+Run instruction: @43 = gpu::code_object[code_object=4536,symbol_name=mlir_convolution,global=38400,local=256,](@40,@41,@42) -> float_type, {1, 192, 28, 28}, {150528, 784, 28, 1}, target_id=0
+Time: 0.00498ms, 0.02315ms
+Output has normal
+Output: 1.57406, 0.196599, 0.492026, 0.0026096, 0.321008, ..., -0.674416, -1.29943, -0.113033, -0.831771, -0.197117
+Min value: -5.6942, Max value: 6.95954, Mean: -0.0296141, StdDev: 0.77261
+Run instruction: @44 = hip::hip_copy_literal[id=main:@literal:38] -> float_type, {192, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+Time: 0.00106ms, 0.00134ms
+Output has zero, normal
+Output: 0.827493, -0.103437, -0.206873, 0.258592, -2.68935, ..., 0.31031, 1.08608, -0.206873, -0.155155, 0.258592
+Min value: -6.15448, Max value: 6.56823, Mean: -0.0216391, StdDev: 1.03571
+Run instruction: @45 = load[offset=1304576,end=1906688](@1) -> float_type, {1, 192, 28, 28}, {150528, 784, 28, 1}, target_id=0
+Time: 0.00069ms, 0.00094ms
+Run instruction: @46 = gpu::code_object[code_object=5304,symbol_name=mlir_convolution,global=159744,local=64,](@43,@44,@45) -> float_type, {1, 192, 28, 28}, {150528, 784, 28, 1}, target_id=0
+Time: 0.00464ms, 0.03866ms
+Output has normal
+Output: -1.58178, 1.7019, -0.442177, 1.34514, 0.562453, ..., -0.782099, -0.354466, 0.462053, -0.548106, 1.11492
+Min value: -18.5273, Max value: 15.0522, Mean: -0.0578121, StdDev: 1.61107
+Run instruction: @47 = hip::hip_copy_literal[id=main:@literal:2] -> float_type, {1, 32, 28, 28}, {25088, 784, 28, 1}, target_id=0
+Time: 0.00102ms, 0.0013ms
+Output has normal
+Output: -0.8636, 3.27229, 1.98875, 1.98875, 1.98875, ..., 7.15596, 7.15596, 7.15596, 5.43998, 8.30369
+Min value: -14.6246, Max value: 11.9636, Mean: 0.12622, StdDev: 2.60711
+Run instruction: @48 = hip::hip_copy_literal[id=main:@literal:31] -> float_type, {32, 192, 1, 1}, {192, 1, 1, 1}, target_id=0
+Time: 0.00073ms, 0.00099ms
+Output has zero, normal
+Output: -0.156453, 0.221641, -0.0977829, -0.110821, 0.143415, ..., -0.208603, -0.28683, 0.0391131, 0.110821, 0.319424
+Min value: -0.827895, Max value: 0.795301, Mean: 0.00105889, StdDev: 0.178423
+Run instruction: @49 = load[offset=602112,end=702464](@1) -> float_type, {1, 32, 28, 28}, {25088, 784, 28, 1}, target_id=0
+Time: 0.00075ms, 0.001ms
+Run instruction: @50 = gpu::code_object[code_object=6408,symbol_name=mlir_convolution_add_add,global=6272,local=64,](@47,@40,@46,@48,@49) -> float_type, {1, 32, 28, 28}, {25088, 784, 28, 1}, target_id=0
+Time: 0.00674ms, 0.037431ms
+Output has normal
+Output: -6.09593, 1.32583, 0.611766, -3.11686, -4.24939, ..., 7.7475, 9.63212, 4.92053, 9.34008, 4.20783
+Min value: -48.5946, Max value: 31.1507, Mean: -0.839555, StdDev: 5.52912
+Run instruction: @51 = hip::hip_copy_literal[id=main:@literal:49] -> float_type, {192, 32, 1, 1}, {32, 1, 1, 1}, target_id=0
+Time: 0.00098ms, 0.00126ms
+Output has zero, normal
+Output: -0.0547613, -0.014603, 0.0158199, 0.0462429, -0.0279891, ..., 0.0328568, 0.0352906, -0.0170368, 0.0328568, -0.0474598
+Min value: -0.126559, Max value: 0.154549, Mean: -0.000400093, StdDev: 0.0310406
+Run instruction: @52 = load[offset=1304576,end=1906688](@1) -> float_type, {1, 192, 28, 28}, {150528, 784, 28, 1}, target_id=0
+Time: 0.00069ms, 0.00096ms
+Run instruction: @53 = gpu::code_object[code_object=4536,symbol_name=mlir_convolution,global=38400,local=256,](@50,@51,@52) -> float_type, {1, 192, 28, 28}, {150528, 784, 28, 1}, target_id=0
+Time: 0.00504ms, 0.02371ms
+Output has normal
+Output: 0.412189, -1.0182, 0.0736085, 0.133784, 0.0297224, ..., -1.04412, -1.07666, -1.61321, -1.15219, -0.305402
+Min value: -10.1109, Max value: 7.61517, Mean: 0.104544, StdDev: 0.967661
+Run instruction: @54 = hip::hip_copy_literal[id=main:@literal:28] -> float_type, {32, 192, 1, 1}, {192, 1, 1, 1}, target_id=0
+Time: 0.00092ms, 0.00121ms
+Output has zero, normal
+Output: -0.111617, 0.13394, -0.208352, 0.0223234, 0.0446468, ..., -0.0148823, -0.409262, 0.0520879, -0.0669702, -0.208352
+Min value: -0.945024, Max value: 0.900377, Mean: -0.00155871, StdDev: 0.198373
+Run instruction: @55 = hip::hip_copy_literal[id=main:@literal:41] -> float_type, {192, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+Time: 0.00091ms, 0.00116ms
+Output has zero, normal
+Output: -0.357389, -0.675068, -0.277969, 0.0397099, -1.03246, ..., 0.0397099, 0.913327, 0.11913, 1.07217, -0.635358
+Min value: -5.04315, Max value: 4.40779, Mean: -0.00627361, StdDev: 0.916082
+Run instruction: @56 = load[offset=702464,end=1304576](@1) -> float_type, {1, 192, 28, 28}, {150528, 784, 28, 1}, target_id=0
+Time: 0.0007ms, 0.00095ms
+Run instruction: @57 = gpu::code_object[code_object=5304,symbol_name=mlir_convolution,global=159744,local=64,](@53,@55,@56) -> float_type, {1, 192, 28, 28}, {150528, 784, 28, 1}, target_id=0
+Time: 0.004891ms, 0.038931ms
+Output has normal
+Output: 0.20163, 0.870372, 1.11612, 1.36422, 1.06924, ..., 0.836137, 0.264046, -0.455834, 2.19713, 1.06414
+Min value: -16.1964, Max value: 23.1022, Mean: 0.0868467, StdDev: 2.15877
+Run instruction: @58 = hip::hip_copy_literal[id=main:@literal:48] -> float_type, {192, 32, 1, 1}, {32, 1, 1, 1}, target_id=0
+Time: 0.00076ms, 0.00104ms
+Output has zero, normal
+Output: 0.0376899, 0.174744, 0.0770929, 0.0068527, -0.0308372, ..., -0.0513953, 0.131915, 0.0736666, -0.039403, 0.0668138
+Min value: -0.179883, Max value: 0.217573, Mean: -0.00109862, StdDev: 0.0419587
+Run instruction: @59 = hip::hip_copy_literal[id=main:@literal:3] -> float_type, {1, 32, 28, 28}, {25088, 784, 28, 1}, target_id=0
+Time: 0.00072ms, 0.00099ms
+Output has normal
+Output: 3.84017, 3.63447, 1.99507, 1.99507, 1.99507, ..., 0.00912534, 0.00912534, 0.00912534, 0.43442, 0.768653
+Min value: -8.67286, Max value: 8.59442, Mean: 0.0793545, StdDev: 2.99298
+Run instruction: @60 = hip::hip_copy_literal[id=main:@literal:23] -> float_type, {192, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+Time: 0.00084ms, 0.00112ms
+Output has normal
+Output: 0.0964853, 0.154376, 0.135079, 0.173674, 0.385941, ..., 1.2929, 1.08064, 0.385941, 0.887665, 0.733288
+Min value: -2.45073, Max value: 2.00689, Mean: 0.015288, StdDev: 0.473604
+Run instruction: @61 = hip::hip_copy_literal[id=main:@literal:22] -> float_type, {64, 192, 1, 1}, {192, 1, 1, 1}, target_id=0
+Time: 0.00055ms, 0.00081ms
+Output has zero, normal
+Output: 0.141522, -0.141522, 0.201396, -0.114306, 0.375577, ..., 0.141522, -0.0272157, -0.0217726, 0.473554, -0.141522
+Min value: -0.576973, Max value: 0.691279, Mean: 0.000649386, StdDev: 0.136727
+Run instruction: @62 = load[offset=0,end=100352](@1) -> float_type, {1, 32, 28, 28}, {25088, 784, 28, 1}, target_id=0
+Time: 0.00077ms, 0.00102ms
+Run instruction: @63 = gpu::code_object[code_object=6408,symbol_name=mlir_convolution_add_add,global=6272,local=64,](@59,@50,@57,@54,@62) -> float_type, {1, 32, 28, 28}, {25088, 784, 28, 1}, target_id=0
+Time: 0.00681ms, 0.0368ms
+Output has normal
+Output: 4.93156, -1.04598, 6.68354, -1.30266, -2.99091, ..., 8.89361, 7.17641, 7.70968, 8.99025, 5.03116
+Min value: -54.6039, Max value: 36.9465, Mean: -0.620043, StdDev: 7.74182
+Run instruction: @64 = load[offset=200704,end=802816](@1) -> float_type, {1, 192, 28, 28}, {150528, 784, 28, 1}, target_id=0
+Time: 0.00066ms, 0.00092ms
+Run instruction: @65 = gpu::code_object[code_object=4536,symbol_name=mlir_convolution,global=38400,local=256,](@63,@58,@64) -> float_type, {1, 192, 28, 28}, {150528, 784, 28, 1}, target_id=0
+Time: 0.00519ms, 0.02245ms
+Output has normal
+Output: 3.20315, 3.61957, -0.450203, 0.75864, 0.0645725, ..., 0.523092, -1.25648, -0.592366, -0.924247, 1.895
+Min value: -17.9902, Max value: 14.8028, Mean: -0.353951, StdDev: 1.82457
+Run instruction: @66 = load[offset=0,end=150528](@1) -> float_type, {1, 192, 14, 14}, {37632, 196, 14, 1}, target_id=0
+Time: 0.00077ms, 0.00105ms
+Run instruction: @67 = gpu::code_object[code_object=5048,symbol_name=mlir_convolution,global=98304,local=256,](@65,@60,@66) -> float_type, {1, 192, 14, 14}, {37632, 196, 14, 1}, target_id=0
+Time: 0.00633ms, 0.033681ms
+Output has normal
+Output: 5.49671, 3.15244, 1.62494, 2.71725, 1.18944, ..., -9.02556, -8.77794, -7.1242, -8.89197, -3.3642
+Min value: -20.6097, Max value: 17.8706, Mean: -0.394673, StdDev: 3.48891
+Run instruction: @68 = load[offset=652288,end=702464](@1) -> float_type, {1, 64, 14, 14}, {12544, 196, 14, 1}, target_id=0
+Time: 0.00075ms, 0.00102ms
+Run instruction: @69 = gpu::code_object[code_object=6136,symbol_name=mlir_convolution,global=3328,local=64,](@67,@61,@68) -> float_type, {1, 64, 14, 14}, {12544, 196, 14, 1}, target_id=0
+Time: 0.00511ms, 0.02657ms
+Output has normal
+Output: 4.25708, -3.21703, -1.4546, 0.0977994, -2.29306, ..., 5.96506, 8.26737, 7.06743, 6.65633, 6.87207
+Min value: -31.1537, Max value: 32.3691, Mean: 0.519838, StdDev: 8.33571
+Run instruction: @70 = hip::hip_copy_literal[id=main:@literal:6] -> float_type, {1, 64, 14, 14}, {12544, 196, 14, 1}, target_id=0
+Time: 0.00134ms, 0.00161ms
+Output has normal
+Output: -3.20868, -4.28086, -3.06699, -3.06699, -3.06699, ..., 3.24355, 3.24355, 3.24355, 3.14969, -0.828964
+Min value: -19.7324, Max value: 14.6633, Mean: 0.853171, StdDev: 4.79372
+Run instruction: @71 = hip::hip_copy_literal[id=main:@literal:20] -> float_type, {384, 64, 1, 1}, {64, 1, 1, 1}, target_id=0
+Time: 0.00064ms, 0.0009ms
+Output has zero, normal
+Output: 0.0100564, 0.0335214, 0.0178781, 0.0245823, 0.00335214, ..., -0.00782166, 0.0290519, -0.023465, -0.0201128, -0.0592211
+Min value: -0.129616, Max value: 0.141907, Mean: 3.13718e-06, StdDev: 0.0244799
+Run instruction: @72 = hip::hip_copy_literal[id=main:@literal:19] -> float_type, {384, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+Time: 0.00077ms, 0.00104ms
+Output has zero, normal
+Output: -0.696659, -1.34978, -0.653118, 0.566035, 3.26559, ..., -0.348329, -0.174165, -0.174165, -0.261247, -0.130624
+Min value: -3.78808, Max value: 5.52973, Mean: -0.00918447, StdDev: 0.83953
+Run instruction: @73 = hip::hip_copy_literal[id=main:@literal:25] -> float_type, {64, 384, 1, 1}, {384, 1, 1, 1}, target_id=0
+Time: 0.00061ms, 0.00087ms
+Output has zero, normal
+Output: -0.0219576, 0.0054894, -0.0658728, -0.0054894, 0.126256, ..., 0.0494046, 0.126256, 0.137235, 0.115277, -0.0713622
+Min value: -0.576387, Max value: 0.697154, Mean: -0.00132142, StdDev: 0.11558
+Run instruction: @74 = load[offset=301056,end=602112](@1) -> float_type, {1, 384, 14, 14}, {75264, 196, 14, 1}, target_id=0
+Time: 0.00088ms, 0.00115ms
+Run instruction: @75 = gpu::code_object[code_object=4984,symbol_name=mlir_convolution,global=21504,local=256,](@69,@71,@74) -> float_type, {1, 384, 14, 14}, {75264, 196, 14, 1}, target_id=0
+Time: 0.0053ms, 0.02324ms
+Output has normal
+Output: -0.859548, 0.32079, 0.210125, 0.0915407, 0.13765, ..., 3.09836, 2.87862, 2.68043, 3.35545, 1.89874
+Min value: -9.27678, Max value: 8.39123, Mean: 0.0370102, StdDev: 1.5872
+Run instruction: @76 = load[offset=0,end=301056](@1) -> float_type, {1, 384, 14, 14}, {75264, 196, 14, 1}, target_id=0
+Time: 0.00079ms, 0.00112ms
+Run instruction: @77 = gpu::code_object[code_object=5560,symbol_name=mlir_convolution,global=98304,local=64,](@75,@72,@76) -> float_type, {1, 384, 14, 14}, {75264, 196, 14, 1}, target_id=0
+Time: 0.00583ms, 0.027991ms
+Output has normal
+Output: -0.767137, 2.22572, 3.45593, 2.53947, 2.4202, ..., -3.34365, -3.3589, -3.69492, -3.38066, -1.92653
+Min value: -20.8129, Max value: 18.2913, Mean: 0.0298046, StdDev: 2.95166
+Run instruction: @78 = load[offset=602112,end=652288](@1) -> float_type, {1, 64, 14, 14}, {12544, 196, 14, 1}, target_id=0
+Time: 0.00078ms, 0.00105ms
+Run instruction: @79 = gpu::code_object[code_object=6344,symbol_name=mlir_convolution_add_add,global=3328,local=64,](@70,@69,@77,@73,@78) -> float_type, {1, 64, 14, 14}, {12544, 196, 14, 1}, target_id=0
+Time: 0.00583ms, 0.029241ms
+Output has normal
+Output: -4.6831, -5.14014, -1.40125, -4.53411, -2.3743, ..., 1.23964, 4.85963, 3.34052, 2.96463, 9.73931
+Min value: -39.1395, Max value: 39.0492, Mean: 0.336919, StdDev: 9.91771
+Run instruction: @80 = hip::hip_copy_literal[id=main:@literal:14] -> float_type, {384, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+Time: 0.00102ms, 0.00128ms
+Output has normal, zero
+Output: 0, -0.0889717, -0.177943, -0.0889717, 1.2456, ..., -0.800745, -0.0889717, 0.177943, -0.444858, 0.0889717
+Min value: -7.91848, Max value: 11.2994, Mean: 0.0235301, StdDev: 0.930316
+Run instruction: @81 = hip::hip_copy_literal[id=main:@literal:7] -> float_type, {1, 64, 14, 14}, {12544, 196, 14, 1}, target_id=0
+Time: 0.00096ms, 0.00122ms
+Output has normal
+Output: 0.430365, 2.86174, 3.80919, 3.80919, 3.80919, ..., -6.07164, -6.07164, -6.07164, -5.28509, -4.35905
+Min value: -14.8145, Max value: 12.4248, Mean: -1.38552, StdDev: 5.55292
+Run instruction: @82 = hip::hip_copy_literal[id=main:@literal:54] -> float_type, {64, 384, 1, 1}, {384, 1, 1, 1}, target_id=0
+Time: 0.00074ms, 0.001ms
+Output has zero, normal
+Output: 0.02535, -0.114075, -0.0760499, -0.00633749, 0.0633749, ..., -0.0190125, -0.196462, 0.0887248, 0.0506999, -0.0190125
+Min value: -0.804861, Max value: 0.608399, Mean: 0.00410276, StdDev: 0.113338
+Run instruction: @83 = hip::hip_copy_literal[id=main:@literal:53] -> float_type, {384, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+Time: 0.00063ms, 0.0009ms
+Output has zero, normal
+Output: -0.0799521, 0.039976, 0.0799521, -0.039976, -0.159904, ..., 1.27923, 0.359784, -0.799521, -0.919449, -0.119928
+Min value: -5.07696, Max value: 4.75715, Mean: 0.0905244, StdDev: 0.832818
+Run instruction: @84 = hip::hip_copy_literal[id=main:@literal:12] -> float_type, {64, 384, 1, 1}, {384, 1, 1, 1}, target_id=0
+Time: 0.00063ms, 0.00089ms
+Output has zero, normal
+Output: 0.287553, 0.132717, -0.121657, -0.121657, -0.110597, ..., 0.0995376, -0.243314, -0.0940077, 0.143777, 0.171426
+Min value: -0.702293, Max value: 0.674644, Mean: -0.00185094, StdDev: 0.114512
+Run instruction: @85 = hip::hip_copy_literal[id=main:@literal:26] -> float_type, {96, 384, 1, 1}, {384, 1, 1, 1}, target_id=0
+Time: 0.00059ms, 0.00086ms
+Output has zero, normal
+Output: -0.0731856, 0.00487904, 0.0536694, -0.0487904, -0.0683066, ..., -0.0536694, 0.0585485, 0.0146371, -0.0927018, 0.136613
+Min value: -0.45863, Max value: 0.619638, Mean: 0.000708218, StdDev: 0.0871054
+Run instruction: @86 = hip::hip_copy_literal[id=main:@literal:52] -> float_type, {384, 64, 1, 1}, {64, 1, 1, 1}, target_id=0
+Time: 0.00076ms, 0.00104ms
+Output has zero, normal
+Output: -0.000829322, 0.000829322, -0.000829322, -0.000829322, -0.000829322, ..., 0, -0.0165864, 0.046442, -0.0190744, 0.00829322
+Min value: -0.0962014, Max value: 0.105324, Mean: 0.000248601, StdDev: 0.021616
+Run instruction: @87 = hip::hip_copy_literal[id=main:@literal:50] -> float_type, {384, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+Time: 0.0006ms, 0.00087ms
+Output has zero, normal
+Output: 0.0513085, 0, -0.256542, 0.66701, 0.564393, ..., 0.256542, 1.69318, -0.102617, -0.615702, -0.0513085
+Min value: -6.51617, Max value: 5.18215, Mean: 0.065442, StdDev: 0.751135
+Run instruction: @88 = hip::hip_copy_literal[id=main:@literal:9] -> float_type, {1, 64, 14, 14}, {12544, 196, 14, 1}, target_id=0
+Time: 0.00061ms, 0.00087ms
+Output has normal
+Output: -2.70076, 3.71088, 4.34069, 4.34069, 4.34069, ..., 0.733123, 0.733123, 0.733123, 1.48732, -5.11909
+Min value: -22.3385, Max value: 28.8788, Mean: 1.63966, StdDev: 9.1147
+Run instruction: @89 = hip::hip_copy_literal[id=main:@literal:17] -> float_type, {384, 64, 1, 1}, {64, 1, 1, 1}, target_id=0
+Time: 0.00074ms, 0.00099ms
+Output has zero, normal
+Output: -0.00084922, -0.0212305, -0.0297227, 0.0118891, 0.0297227, ..., 0.0441594, 0.0254766, -0.00254766, 0.00509532, -0.0339688
+Min value: -0.0917158, Max value: 0.107851, Mean: 0.000144543, StdDev: 0.021436
+Run instruction: @90 = hip::hip_copy_literal[id=main:@literal:16] -> float_type, {384, 64, 1, 1}, {64, 1, 1, 1}, target_id=0
+Time: 0.00066ms, 0.00094ms
+Output has zero, normal
+Output: 0.034461, 0.0122281, 0.0200096, -0.015563, 0.031126, ..., 0.0133397, -0.00778151, -0.0122281, -0.0433541, -0.0489124
+Min value: -0.141179, Max value: 0.127839, Mean: -0.000793883, StdDev: 0.026344
+Run instruction: @91 = load[offset=0,end=301056](@1) -> float_type, {1, 384, 14, 14}, {75264, 196, 14, 1}, target_id=0
+Time: 0.00078ms, 0.00106ms
+Run instruction: @92 = gpu::code_object[code_object=4984,symbol_name=mlir_convolution,global=21504,local=256,](@79,@89,@91) -> float_type, {1, 384, 14, 14}, {75264, 196, 14, 1}, target_id=0
+Time: 0.00569ms, 0.03093ms
+Output has normal
+Output: -3.27391, -1.84748, -1.35494, -2.24164, -1.22027, ..., 1.27961, 1.41478, 0.988222, 1.38193, 2.34845
+Min value: -9.31376, Max value: 8.63703, Mean: 0.0579849, StdDev: 1.59894
+Run instruction: @93 = load[offset=652288,end=953344](@1) -> float_type, {1, 384, 14, 14}, {75264, 196, 14, 1}, target_id=0
+Time: 0.00077ms, 0.00106ms
+Run instruction: @94 = gpu::code_object[code_object=5560,symbol_name=mlir_convolution,global=98304,local=64,](@92,@80,@93) -> float_type, {1, 384, 14, 14}, {75264, 196, 14, 1}, target_id=0
+Time: 0.00518ms, 0.02701ms
+Output has normal
+Output: -4.94435, -5.92949, -3.93748, -4.75053, -3.00933, ..., -2.19076, -2.12946, -3.12091, -0.727025, 0.438474
+Min value: -22.0031, Max value: 26.1738, Mean: 0.336277, StdDev: 3.66899
+Run instruction: @95 = load[offset=301056,end=351232](@1) -> float_type, {1, 64, 14, 14}, {12544, 196, 14, 1}, target_id=0
+Time: 0.00073ms, 0.00099ms
+Run instruction: @96 = gpu::code_object[code_object=6344,symbol_name=mlir_convolution_add_add,global=3328,local=64,](@81,@79,@94,@84,@95) -> float_type, {1, 64, 14, 14}, {12544, 196, 14, 1}, target_id=0
+Time: 0.00549ms, 0.02931ms
+Output has normal
+Output: -21.4084, 4.93381, 0.266656, -5.55564, 3.3994, ..., -4.66592, 0.91767, -0.9628, 0.432838, 9.434
+Min value: -54.7489, Max value: 57.8277, Mean: -0.484203, StdDev: 12.7292
+Run instruction: @97 = load[offset=652288,end=953344](@1) -> float_type, {1, 384, 14, 14}, {75264, 196, 14, 1}, target_id=0
+Time: 0.0006ms, 0.00087ms
+Run instruction: @98 = gpu::code_object[code_object=4984,symbol_name=mlir_convolution,global=21504,local=256,](@96,@86,@97) -> float_type, {1, 384, 14, 14}, {75264, 196, 14, 1}, target_id=0
+Time: 0.00468ms, 0.02344ms
+Output has normal
+Output: -0.0375693, -0.0591478, -0.0724477, -0.0294615, -0.0613305, ..., 0.433801, 0.103891, -0.566004, -0.135884, -1.06132
+Min value: -11.8746, Max value: 15.1722, Mean: -0.0183206, StdDev: 2.15902
+Run instruction: @99 = load[offset=351232,end=652288](@1) -> float_type, {1, 384, 14, 14}, {75264, 196, 14, 1}, target_id=0
+Time: 0.00063ms, 0.00093ms
+Run instruction: @100 = gpu::code_object[code_object=5560,symbol_name=mlir_convolution,global=98304,local=64,](@98,@83,@99) -> float_type, {1, 384, 14, 14}, {75264, 196, 14, 1}, target_id=0
+Time: 0.00517ms, 0.02765ms
+Output has normal
+Output: -0.0109879, -0.018829, -0.000205004, -0.0110718, -0.00187842, ..., -0.0210558, -0.625849, -0.210169, -0.267117, -1.20559
+Min value: -41.9003, Max value: 72.0229, Mean: -0.260011, StdDev: 5.8206
+Run instruction: @101 = load[offset=0,end=50176](@1) -> float_type, {1, 64, 14, 14}, {12544, 196, 14, 1}, target_id=0
+Time: 0.00079ms, 0.00112ms
+Run instruction: @102 = gpu::code_object[code_object=6344,symbol_name=mlir_convolution_add_add,global=3328,local=64,](@88,@96,@100,@82,@101) -> float_type, {1, 64, 14, 14}, {12544, 196, 14, 1}, target_id=0
+Time: 0.00636ms, 0.030561ms
+Output has normal
+Output: -32.9134, 2.62893, -8.21563, -11.4593, -2.86559, ..., -18.0181, -8.52966, -14.8862, -15.2283, -5.83442
+Min value: -109.034, Max value: 58.1858, Mean: -2.05878, StdDev: 19.8647
+Run instruction: @103 = load[offset=50176,end=351232](@1) -> float_type, {1, 384, 14, 14}, {75264, 196, 14, 1}, target_id=0
+Time: 0.00063ms, 0.00089ms
+Run instruction: @104 = gpu::code_object[code_object=4984,symbol_name=mlir_convolution,global=21504,local=256,](@102,@90,@103) -> float_type, {1, 384, 14, 14}, {75264, 196, 14, 1}, target_id=0
+Time: 0.00484ms, 0.023591ms
+Output has normal
+Output: -6.27178, 0.844483, -1.43138, -2.28771, -1.6474, ..., 0.77508, 0.385241, 0.118277, 0.64199, 0.287784
+Min value: -24.849, Max value: 21.2732, Mean: -0.399029, StdDev: 4.43282
+Run instruction: @105 = load[offset=602112,end=903168](@1) -> float_type, {1, 384, 14, 14}, {75264, 196, 14, 1}, target_id=0
+Time: 0.00075ms, 0.00104ms
+Run instruction: @106 = gpu::code_object[code_object=5560,symbol_name=mlir_convolution,global=98304,local=64,](@104,@87,@105) -> float_type, {1, 384, 14, 14}, {75264, 196, 14, 1}, target_id=0
+Time: 0.00541ms, 0.02742ms
+Output has normal
+Output: -3.22967, 0.842891, 4.10444, 1.49308, -1.26265, ..., -0.13088, -1.54062, -1.02347, -0.806585, -0.229364
+Min value: -56.483, Max value: 67.2323, Mean: -0.637204, StdDev: 10.5516
+Run instruction: @107 = load[offset=903168,end=978432](@1) -> float_type, {1, 96, 14, 14}, {18816, 196, 14, 1}, target_id=0
+Time: 0.00064ms, 0.00093ms
+Run instruction: @108 = gpu::code_object[code_object=5880,symbol_name=mlir_convolution,global=4992,local=64,](@106,@85,@107) -> float_type, {1, 96, 14, 14}, {18816, 196, 14, 1}, target_id=0
+Time: 0.00485ms, 0.02804ms
+Output has normal
+Output: 47.7153, 44.1468, 42.3622, 48.5161, 41.2854, ..., 25.0421, 21.8039, 29.2743, 20.5948, 11.025
+Min value: -79.5305, Max value: 99.5786, Mean: -1.90503, StdDev: 21.799
+Run instruction: @109 = hip::hip_copy_literal[id=main:@literal:56] -> float_type, {576, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+Time: 0.00095ms, 0.0012ms
+Output has zero, normal
+Output: -0.622178, -0.855494, -0.388861, -0.622178, 1.24436, ..., 1.24436, 0.466633, 0.388861, 0.777722, 0.466633
+Min value: -9.87707, Max value: 8.01054, Mean: 0.0796925, StdDev: 0.916056
+Run instruction: @110 = hip::hip_copy_literal[id=main:@literal:55] -> float_type, {576, 96, 1, 1}, {96, 1, 1, 1}, target_id=0
+Time: 0.00066ms, 0.0009ms
+Output has zero, normal
+Output: -0.0184014, -0.040746, -0.00394316, -0.00920071, 0.017087, ..., -0.0262878, 0.023659, 0.0276021, 0.0249734, -0.0249734
+Min value: -0.166927, Max value: 0.152469, Mean: -6.54627e-05, StdDev: 0.0293859
+Run instruction: @111 = hip::hip_copy_literal[id=main:@literal:24] -> float_type, {96, 576, 1, 1}, {576, 1, 1, 1}, target_id=0
+Time: 0.00076ms, 0.00106ms
+Output has zero, normal
+Output: -0.019774, -0.209605, 0.0711866, -0.0514125, -0.221469, ..., 0.0988702, -0.0553673, -0.150283, -0.138418, -0.126554
+Min value: -0.502261, Max value: 0.431074, Mean: -0.000146474, StdDev: 0.0958406
+Run instruction: @112 = hip::hip_copy_literal[id=main:@literal:10] -> float_type, {1, 96, 14, 14}, {18816, 196, 14, 1}, target_id=0
+Time: 0.00059ms, 0.00088ms
+Output has normal
+Output: 16.5668, 31.7087, 38.3332, 37.1193, 37.1193, ..., 14.3703, 14.3703, 14.5151, 11.4756, -0.217625
+Min value: -82.002, Max value: 88.0381, Mean: 0.0152189, StdDev: 24.7301
+Run instruction: @113 = load[offset=0,end=451584](@1) -> float_type, {1, 576, 14, 14}, {112896, 196, 14, 1}, target_id=0
+Time: 0.00086ms, 0.00112ms
+Run instruction: @114 = gpu::code_object[code_object=5240,symbol_name=mlir_convolution,global=32256,local=256,](@108,@110,@113) -> float_type, {1, 576, 14, 14}, {112896, 196, 14, 1}, target_id=0
+Time: 0.00546ms, 0.033071ms
+Output has normal
+Output: -5.31058, 4.4666, 0.639876, -0.865001, 0.760506, ..., 1.02926, 3.16461, -0.148331, 4.52452, 4.82457
+Min value: -31.4237, Max value: 52.0177, Mean: 1.1175, StdDev: 7.06031
+Run instruction: @115 = load[offset=978432,end=1430016](@1) -> float_type, {1, 576, 14, 14}, {112896, 196, 14, 1}, target_id=0
+Time: 0.00095ms, 0.00124ms
+Run instruction: @116 = gpu::code_object[code_object=5560,symbol_name=mlir_convolution,global=147456,local=64,](@114,@109,@115) -> float_type, {1, 576, 14, 14}, {112896, 196, 14, 1}, target_id=0
+Time: 0.00529ms, 0.039241ms
+Output has zero, normal
+Output: -10.2593, 5.61384, -8.1097, -5.21641, -2.32249, ..., 18.2529, 15.7723, 15.2507, 21.0463, 16.4169
+Min value: -96.9134, Max value: 244.298, Mean: 5.21871, StdDev: 22.2165
+Run instruction: @117 = load[offset=451584,end=526848](@1) -> float_type, {1, 96, 14, 14}, {18816, 196, 14, 1}, target_id=0
+Time: 0.00075ms, 0.00103ms
+Run instruction: @118 = gpu::code_object[code_object=6344,symbol_name=mlir_convolution_add_add,global=4992,local=64,](@112,@108,@116,@111,@117) -> float_type, {1, 96, 14, 14}, {18816, 196, 14, 1}, target_id=0
+Time: 0.00561ms, 0.044471ms
+Output has normal
+Output: 48.1935, -15.9777, -23.2521, 27.4558, 6.737, ..., 3.13977, -7.03526, 26.0214, -17.1339, -21.6303
+Min value: -186.28, Max value: 175.006, Mean: 4.50789, StdDev: 41.9072
+Run instruction: @119 = hip::hip_copy_literal[id=main:@literal:43] -> float_type, {160, 576, 1, 1}, {576, 1, 1, 1}, target_id=0
+Time: 0.00088ms, 0.00114ms
+Output has zero, normal
+Output: -0.00250798, 0.0351118, -0.0476517, 0.0376198, -0.0451437, ..., -0.0702236, -0.0250798, 0.0376198, -0.0852715, 0.0727315
+Min value: -0.305974, Max value: 0.318514, Mean: -0.000115357, StdDev: 0.0593485
+Run instruction: @120 = hip::hip_copy_literal[id=main:@literal:58] -> float_type, {576, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+Time: 0.0008ms, 0.0011ms
+Output has zero, normal
+Output: -0.337503, -0.472504, -0.405003, -0.742506, -0.810007, ..., 1.01251, 0.877507, 0.135001, 1.28251, 0.405003
+Min value: -8.57257, Max value: 5.67005, Mean: 0.122384, StdDev: 0.871873
+Run instruction: @121 = hip::hip_copy_literal[id=main:@literal:39] -> float_type, {576, 96, 1, 1}, {96, 1, 1, 1}, target_id=0
+Time: 0.00088ms, 0.00113ms
+Output has zero, normal
+Output: 0.0113467, 0.0198568, -0.0156018, -0.0397136, -0.00709171, ..., -0.0156018, 0.0141834, -0.00141834, 0.0312035, 0.00283668
+Min value: -0.163109, Max value: 0.180129, Mean: -0.000558477, StdDev: 0.0264183
+Run instruction: @122 = hip::hip_copy_literal[id=main:@literal:4] -> float_type, {1, 96, 14, 14}, {18816, 196, 14, 1}, target_id=0
+Time: 0.00078ms, 0.00108ms
+Output has normal
+Output: 22.7476, 27.7623, 28.812, 28.1199, 28.1199, ..., -28.0027, -28.0027, -26.8763, -23.6255, -14.594
+Min value: -78.1501, Max value: 87.5533, Mean: -1.91782, StdDev: 23.3114
+Run instruction: @123 = hip::hip_copy_literal[id=main:@literal:57] -> float_type, {576, 96, 1, 1}, {96, 1, 1, 1}, target_id=0
+Time: 0.00073ms, 0.00099ms
+Output has zero, normal
+Output: -0.0154129, 0.037676, -0.0222631, 0.00171254, -0.037676, ..., -0.00856272, 0.037676, 0.00685017, 0.0239756, -0.0274007
+Min value: -0.148991, Max value: 0.217493, Mean: 0.000126948, StdDev: 0.0243536
+Run instruction: @124 = hip::hip_copy_literal[id=main:@literal:59] -> float_type, {96, 576, 1, 1}, {576, 1, 1, 1}, target_id=0
+Time: 0.00047ms, 0.00075ms
+Output has zero, normal
+Output: -0.127928, 0.177131, -0.314899, 0.0590436, -0.0295218, ..., 0.0984059, -0.108247, -0.0393624, 0.157449, 0.0984059
+Min value: -1.24976, Max value: 1.08247, Mean: 0.000321222, StdDev: 0.118352
+Run instruction: @125 = hip::hip_copy_literal[id=main:@literal:60] -> float_type, {576, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+Time: 0.00072ms, 0.001ms
+Output has zero, normal
+Output: -0.127277, -0.290919, -0.236372, -0.272736, -0.381831, ..., -0.345466, -0.309101, -0.163642, -0.290919, -0.254554
+Min value: -1.85461, Max value: 2.30917, Mean: 0.150086, StdDev: 0.42123
+Run instruction: @126 = load[offset=978432,end=1430016](@1) -> float_type, {1, 576, 14, 14}, {112896, 196, 14, 1}, target_id=0
+Time: 0.0008ms, 0.00109ms
+Run instruction: @127 = gpu::code_object[code_object=5240,symbol_name=mlir_convolution,global=32256,local=256,](@118,@123,@126) -> float_type, {1, 576, 14, 14}, {112896, 196, 14, 1}, target_id=0
+Time: 0.0052ms, 0.03264ms
+Output has normal
+Output: -2.3351, 14.0244, 2.74851, 3.98875, 7.47525, ..., -3.55598, 2.6835, -3.31587, -1.06705, 5.59982
+Min value: -118.896, Max value: 196.676, Mean: 0.228739, StdDev: 11.5494
+Run instruction: @128 = load[offset=526848,end=978432](@1) -> float_type, {1, 576, 14, 14}, {112896, 196, 14, 1}, target_id=0
+Time: 0.00092ms, 0.0012ms
+Run instruction: @129 = gpu::code_object[code_object=5560,symbol_name=mlir_convolution,global=147456,local=64,](@127,@120,@128) -> float_type, {1, 576, 14, 14}, {112896, 196, 14, 1}, target_id=0
+Time: 0.00571ms, 0.029591ms
+Output has zero, normal
+Output: -16.2472, -21.6157, -27.3318, -20.5707, -21.0845, ..., 10.3991, 3.09806, 0.925706, 5.99257, 9.84567
+Min value: -196.495, Max value: 454.731, Mean: 3.38193, StdDev: 36.562
+Run instruction: @130 = load[offset=0,end=75264](@1) -> float_type, {1, 96, 14, 14}, {18816, 196, 14, 1}, target_id=0
+Time: 0.00074ms, 0.00103ms
+Run instruction: @131 = gpu::code_object[code_object=6344,symbol_name=mlir_convolution_add_add,global=4992,local=64,](@122,@118,@129,@124,@130) -> float_type, {1, 96, 14, 14}, {18816, 196, 14, 1}, target_id=0
+Time: 0.00558ms, 0.032141ms
+Output has normal
+Output: 41.0131, -101.69, -54.3542, -43.5819, -58.1682, ..., -59.2458, -61.9538, -28.596, -75.7174, -93.0952
+Min value: -573.029, Max value: 598.277, Mean: 10.9698, StdDev: 122.717
+Run instruction: @132 = load[offset=112896,end=564480](@1) -> float_type, {1, 576, 14, 14}, {112896, 196, 14, 1}, target_id=0
+Time: 0.00076ms, 0.00103ms
+Run instruction: @133 = gpu::code_object[code_object=5240,symbol_name=mlir_convolution,global=32256,local=256,](@131,@121,@132) -> float_type, {1, 576, 14, 14}, {112896, 196, 14, 1}, target_id=0
+Time: 0.00494ms, 0.0242ms
+Output has normal
+Output: -10.8866, 26.7781, -1.40569, 6.21267, 4.83162, ..., -4.78731, -9.28465, -18.6325, -14.8056, -2.36413
+Min value: -114.97, Max value: 444.762, Mean: 31.5845, StdDev: 37.1874
+Run instruction: @134 = load[offset=564480,end=677376](@1) -> float_type, {1, 576, 7, 7}, {28224, 49, 7, 1}, target_id=0
+Time: 0.00072ms, 0.00099ms
+Run instruction: @135 = gpu::code_object[code_object=5688,symbol_name=mlir_convolution,global=36864,local=64,](@133,@125,@134) -> float_type, {1, 576, 7, 7}, {28224, 49, 7, 1}, target_id=0
+Time: 0.00582ms, 0.02523ms
+Output has normal
+Output: -4.41229, -14.3505, -6.78224, -7.20146, -8.54459, ..., -11.505, -18.2551, -24.8734, -7.0558, 18.237
+Min value: -446.922, Max value: 1801.68, Mean: 76.9879, StdDev: 158.283
+Run instruction: @136 = load[offset=376320,end=407680](@1) -> float_type, {1, 160, 7, 7}, {7840, 49, 7, 1}, target_id=0
+Time: 0.00063ms, 0.0009ms
+Run instruction: @137 = gpu::code_object[code_object=4984,symbol_name=mlir_convolution,global=2560,local=256,](@135,@119,@136) -> float_type, {1, 160, 7, 7}, {7840, 49, 7, 1}, target_id=0
+Time: 0.00451ms, 0.03538ms
+Output has normal
+Output: -113.664, -107.48, -68.3489, -73.6581, -115.823, ..., 16.3741, -1.3854, 12.8859, 49.1923, 36.9166
+Min value: -967.108, Max value: 1065.05, Mean: -28.4404, StdDev: 205.047
+Run instruction: @138 = hip::hip_copy_literal[id=main:@literal:0] -> float_type, {1, 1000}, {1000, 1}, target_id=0
+Time: 0.00095ms, 0.00121ms
+Output has normal
+Output: 0.047188, 0.00994938, -0.0333951, -0.0513391, 0.0119235, ..., -0.0304659, -0.00101471, -0.0282189, -0.00463512, -0.0032482
+Min value: -0.120803, Max value: 0.155103, Mean: -1.01848e-07, StdDev: 0.0362094
+Run instruction: @139 = hip::hip_copy_literal[id=main:@literal:27] -> float_type, {1280, 320, 1, 1}, {320, 1, 1, 1}, target_id=0
+Time: 0.00068ms, 0.00093ms
+Output has zero, normal
+Output: -0.124332, 0.20722, 0, -0.317738, 0.594032, ..., 0.718364, -0.124332, 0.0552587, -0.20722, -0.345367
+Min value: -1.75447, Max value: 1.68539, Mean: -0.0026259, StdDev: 0.33209
+Run instruction: @140 = hip::hip_copy_literal[id=main:@literal:8] -> float_type, {1, 1280, 7, 7}, {62720, 49, 7, 1}, target_id=0
+Time: 0.00107ms, 0.00144ms
+Output has normal
+Output: -206.601, -344.465, -426.705, -432.746, -432.746, ..., -498.589, -506.945, -506.945, -482.362, -271.927
+Min value: -2751.48, Max value: 2722.59, Mean: 127.758, StdDev: 674.426
+Run instruction: @141 = hip::hip_copy_literal[id=main:@literal:18] -> float_type, {320, 960, 1, 1}, {960, 1, 1, 1}, target_id=0
+Time: 0.00108ms, 0.00136ms
+Output has zero, normal
+Output: 0.0101519, -0.0355318, 0.248723, 0.111671, -0.192887, ..., 0.0862915, 0.182735, 0.0355318, -0.0609116, -0.0862915
+Min value: -0.644648, Max value: 0.593889, Mean: 2.09846e-05, StdDev: 0.1246
+Run instruction: @142 = hip::hip_copy_literal[id=main:@literal:62] -> float_type, {160, 960, 1, 1}, {960, 1, 1, 1}, target_id=0
+Time: 0.00096ms, 0.00121ms
+Output has zero, normal
+Output: 0.0576256, 0.0672299, -0.00480214, 0.100845, 0.196888, ..., -0.0240107, -0.13446, 0.0192085, 0.00480214, 0.216096
+Min value: -0.609871, Max value: 0.537839, Mean: -0.000448418, StdDev: 0.0908778
+Run instruction: @143 = hip::hip_copy_literal[id=main:@literal:35] -> float_type, {160, 960, 1, 1}, {960, 1, 1, 1}, target_id=0
+Time: 0.00092ms, 0.0012ms
+Output has zero, normal
+Output: -0.0720851, 0.0308936, -0.0180213, -0.0514894, -0.0849575, ..., 0.00257447, 0.00514894, -0.0746596, 0.0231702, -0.0180213
+Min value: -0.326958, Max value: 0.296064, Mean: 0.000109884, StdDev: 0.0565542
+Run instruction: @144 = hip::hip_copy_literal[id=main:@literal:13] -> float_type, {960, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+Time: 0.00092ms, 0.0012ms
+Output has zero, normal
+Output: 1.61575, 2.36592, 1.61575, 1.0964, 0.288527, ..., 1.55805, 0.346232, 0.461643, 0.461643, 0.461643
+Min value: -7.27088, Max value: 7.32858, Mean: 0.122924, StdDev: 0.778272
+Run instruction: @145 = hip::hip_copy_literal[id=main:@literal:11] -> float_type, {1, 160, 7, 7}, {7840, 49, 7, 1}, target_id=0
+Time: 0.00073ms, 0.00099ms
+Output has normal
+Output: 19.3629, 26.105, 33.0418, 33.1986, 33.1986, ..., 69.0137, 69.156, 69.156, 69.357, 56.2996
+Min value: -198.295, Max value: 223.19, Mean: 6.38196, StdDev: 60.8431
+Run instruction: @146 = hip::hip_copy_literal[id=main:@literal:63] -> float_type, {960, 160, 1, 1}, {160, 1, 1, 1}, target_id=0
+Time: 0.00068ms, 0.00093ms
+Output has zero, normal
+Output: -0.00830559, 0.00415279, 0, 0, 0, ..., -0.0020764, 0.0010382, 0.00830559, -0.020764, -0.00415279
+Min value: -0.129775, Max value: 0.131851, Mean: 0.000277076, StdDev: 0.0146807
+Run instruction: @147 = hip::hip_copy_literal[id=main:@literal:5] -> float_type, {1, 160, 7, 7}, {7840, 49, 7, 1}, target_id=0
+Time: 0.00079ms, 0.00107ms
+Output has normal
+Output: -23.5111, -26.951, -25.1591, -24.8815, -24.8815, ..., -35.5473, -36.1698, -36.1698, -34.5432, -23.1702
+Min value: -220.349, Max value: 180.321, Mean: 1.93774, StdDev: 49.4014
+Run instruction: @148 = hip::hip_copy_literal[id=main:@literal:61] -> float_type, {960, 160, 1, 1}, {160, 1, 1, 1}, target_id=0
+Time: 0.00093ms, 0.00117ms
+Output has zero, normal
+Output: -0.0319892, 0.0387237, 0.00505092, 0.0202037, 0.0168364, ..., -0.0488256, -0.0117855, -0.0151528, 0.0404074, 0.0117855
+Min value: -0.193619, Max value: 0.213822, Mean: 6.96365e-05, StdDev: 0.0285627
+Run instruction: @149 = hip::hip_copy_literal[id=main:@literal:51] -> float_type, {960, 160, 1, 1}, {160, 1, 1, 1}, target_id=0
+Time: 0.00065ms, 0.00095ms
+Output has zero, normal
+Output: 0.0291253, 0.0378628, -0.055338, 0.0320378, -0.0203877, ..., 0, 0.0262127, -0.0407754, -0.0640756, 0.0116501
+Min value: -0.369891, Max value: 0.233002, Mean: 5.04382e-06, StdDev: 0.0383382
+Run instruction: @150 = hip::hip_copy_literal[id=main:@literal:15] -> float_type, {960, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+Time: 0.00083ms, 0.00111ms
+Output has zero, normal
+Output: 0.845166, 1.19732, 0.493014, -0.0704305, 0.704305, ..., 0.633875, 1.05646, 1.47904, 1.05646, 1.47904
+Min value: -5.9866, Max value: 8.94468, Mean: 0.541353, StdDev: 0.96781
+Run instruction: @151 = hip::hip_copy_literal[id=main:@literal:33] -> float_type, {960, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+Time: 0.00093ms, 0.00121ms
+Output has zero, normal
+Output: 0.0785021, 0.549515, 0.157004, 0.471013, 2.19806, ..., 0.628017, -0.157004, -0.785021, -1.17753, -0.785021
+Min value: -9.96977, Max value: 8.79224, Mean: 0.00815913, StdDev: 0.825647
+Run instruction: @152 = hip::hip_copy_literal[id=main:@literal:64] -> float_type, {1280, 1000}, {1000, 1}, target_id=0
+Time: 0.00095ms, 0.00121ms
+Output has zero, normal
+Output: -0.0312597, -0.0234447, -0.00781492, -0.0130249, 0.0104199, ..., 0.0651243, 0.0625193, 0.0651243, 0, -0.0260497
+Min value: -0.244867, Max value: 0.330831, Mean: 1.8194e-06, StdDev: 0.0552306
+Run instruction: @153 = load[offset=0,end=188160](@1) -> float_type, {1, 960, 7, 7}, {47040, 49, 7, 1}, target_id=0
+Time: 0.00098ms, 0.0014ms
+Run instruction: @154 = gpu::code_object[code_object=5816,symbol_name=mlir_convolution,global=15360,local=256,](@137,@149,@153) -> float_type, {1, 960, 7, 7}, {47040, 49, 7, 1}, target_id=0
+Time: 0.00712ms, 0.035881ms
+Output has normal
+Output: 71.6245, 107.724, 60.7267, 57.0853, 86.8694, ..., 11.2926, 1.89908, -3.63767, 26.8657, 30.2294
+Min value: -906.094, Max value: 638.815, Mean: -3.8527, StdDev: 113.536
+Run instruction: @155 = load[offset=407680,end=595840](@1) -> float_type, {1, 960, 7, 7}, {47040, 49, 7, 1}, target_id=0
+Time: 0.00068ms, 0.00097ms
+Run instruction: @156 = gpu::code_object[code_object=5688,symbol_name=mlir_convolution,global=61440,local=64,](@154,@151,@155) -> float_type, {1, 960, 7, 7}, {47040, 49, 7, 1}, target_id=0
+Time: 0.0053ms, 0.02666ms
+Output has normal
+Output: 398.496, 524.034, 423.064, 401.949, 493.023, ..., -76.9537, -105.337, -124.328, -39.578, 17.4212
+Min value: -5460.32, Max value: 4858.91, Mean: 8.97748, StdDev: 362.751
+Run instruction: @157 = load[offset=188160,end=219520](@1) -> float_type, {1, 160, 7, 7}, {7840, 49, 7, 1}, target_id=0
+Time: 0.00073ms, 0.00101ms
+Run instruction: @158 = gpu::code_object[code_object=6728,symbol_name=mlir_convolution_add_add,global=2560,local=64,](@147,@137,@156,@143,@157) -> float_type, {1, 160, 7, 7}, {7840, 49, 7, 1}, target_id=0
+Time: 0.00618ms, 0.046561ms
+Output has normal
+Output: -176.947, -428.124, -301.527, -285.471, -406.27, ..., -178.229, -175.467, -137.01, -43.8628, -82.2502
+Min value: -2099.85, Max value: 2226.08, Mean: -54.7176, StdDev: 666.11
+Run instruction: @159 = load[offset=407680,end=595840](@1) -> float_type, {1, 960, 7, 7}, {47040, 49, 7, 1}, target_id=0
+Time: 0.00072ms, 0.00099ms
+Run instruction: @160 = gpu::code_object[code_object=5816,symbol_name=mlir_convolution,global=15360,local=256,](@158,@148,@159) -> float_type, {1, 960, 7, 7}, {47040, 49, 7, 1}, target_id=0
+Time: 0.0049ms, 0.026071ms
+Output has normal
+Output: -159.528, -276.221, -244.85, -219.492, -260.043, ..., 40.6966, 37.5307, 58.3803, 48.2398, 59.9834
+Min value: -1585.42, Max value: 1753.67, Mean: 24.6941, StdDev: 301.106
+Run instruction: @161 = load[offset=219520,end=407680](@1) -> float_type, {1, 960, 7, 7}, {47040, 49, 7, 1}, target_id=0
+Time: 0.00065ms, 0.00093ms
+Run instruction: @162 = gpu::code_object[code_object=5688,symbol_name=mlir_convolution,global=61440,local=64,](@160,@144,@161) -> float_type, {1, 960, 7, 7}, {47040, 49, 7, 1}, target_id=0
+Time: 0.00525ms, 0.02553ms
+Output has zero, normal
+Output: -91.6431, -194.195, -413.883, -463.167, -399.732, ..., -20.8203, -40.9946, 2.48836, 30.6621, 75.9055
+Min value: -6685.4, Max value: 7944.84, Mean: 253.025, StdDev: 1017.37
+Run instruction: @163 = load[offset=407680,end=439040](@1) -> float_type, {1, 160, 7, 7}, {7840, 49, 7, 1}, target_id=0
+Time: 0.00076ms, 0.00103ms
+Run instruction: @164 = gpu::code_object[code_object=6728,symbol_name=mlir_convolution_add_add,global=2560,local=64,](@145,@158,@162,@142,@163) -> float_type, {1, 160, 7, 7}, {7840, 49, 7, 1}, target_id=0
+Time: 0.00565ms, 0.045581ms
+Output has normal
+Output: -56.1905, -589.729, -859.182, -862.948, -806.406, ..., -238.844, -176.596, 226.219, 14.1418, -30.6398
+Min value: -11527.5, Max value: 12453.2, Mean: -182.532, StdDev: 2981.42
+Run instruction: @165 = load[offset=0,end=188160](@1) -> float_type, {1, 960, 7, 7}, {47040, 49, 7, 1}, target_id=0
+Time: 0.00074ms, 0.00103ms
+Run instruction: @166 = gpu::code_object[code_object=5816,symbol_name=mlir_convolution,global=15360,local=256,](@164,@146,@165) -> float_type, {1, 960, 7, 7}, {47040, 49, 7, 1}, target_id=0
+Time: 0.00492ms, 0.026601ms
+Output has zero, normal
+Output: -119.003, -272.801, -279.245, -255.606, -278.418, ..., -519.919, -505.124, -534.877, -447.4, -225.365
+Min value: -4918.1, Max value: 4408.42, Mean: -533.838, StdDev: 727.396
+Run instruction: @167 = load[offset=219520,end=407680](@1) -> float_type, {1, 960, 7, 7}, {47040, 49, 7, 1}, target_id=0
+Time: 0.00065ms, 0.00097ms
+Run instruction: @168 = gpu::code_object[code_object=5688,symbol_name=mlir_convolution,global=61440,local=64,](@166,@150,@167) -> float_type, {1, 960, 7, 7}, {47040, 49, 7, 1}, target_id=0
+Time: 0.00484ms, 0.02431ms
+Output has zero, normal
+Output: 413.694, 597.125, 846.855, 900.772, 709.01, ..., -5164.21, -4923.57, -4568.3, -3724.52, -2061.17
+Min value: -57948.6, Max value: 23862.8, Mean: -4239.2, StdDev: 6817.5
+Run instruction: @169 = load[offset=407680,end=470400](@1) -> float_type, {1, 320, 7, 7}, {15680, 49, 7, 1}, target_id=0
+Time: 0.00066ms, 0.00095ms
+Run instruction: @170 = gpu::code_object[code_object=4984,symbol_name=mlir_convolution,global=5120,local=256,](@168,@141,@169) -> float_type, {1, 320, 7, 7}, {15680, 49, 7, 1}, target_id=0
+Time: 0.00496ms, 0.047851ms
+Output has normal
+Output: -10690.5, -15545.8, -16156, -15376.7, -14238.7, ..., -537.934, -732.633, -693.12, -550.999, -265.493
+Min value: -58485.3, Max value: 80290.5, Mean: 1042.82, StdDev: 16188.5
+Run instruction: @171 = load[offset=62720,end=313600](@1) -> float_type, {1, 1280, 7, 7}, {62720, 49, 7, 1}, target_id=0
+Time: 0.00074ms, 0.00102ms
+Run instruction: @172 = gpu::code_object[code_object=5624,symbol_name=mlir_convolution,global=20480,local=256,](@170,@139,@171) -> float_type, {1, 1280, 7, 7}, {62720, 49, 7, 1}, target_id=0
+Time: 0.00527ms, 0.030041ms
+Output has normal
+Output: 22370.1, 40646, 50314.7, 53691.6, 50156.1, ..., 11650.9, 9085.69, 5912.08, -63.4514, -5156.69
+Min value: -566410, Max value: 541314, Mean: -20342.2, StdDev: 101946
+Run instruction: @173 = load[offset=0,end=5120](@1) -> float_type, {1, 1280, 1, 1}, {1280, 1, 1, 1}, target_id=0
+Time: 0.00086ms, 0.00113ms
+Run instruction: @174 = gpu::code_object[code_object=5072,symbol_name=add_reduce_mean_kernel,global=81920,local=64,](@172,@140,@173) -> float_type, {1, 1280, 1, 1}, {1280, 1, 1, 1}, target_id=0
+Time: 0.00583ms, 0.022681ms
+Output has normal
+Output: 75046, 155452, -36352.3, 17167.6, -11538.7, ..., -193801, 78825.8, 185067, 93390.9, 49339.5
+Min value: -337729, Max value: 326309, Mean: -20214.4, StdDev: 93715.3
+Run instruction: @175 = reshape_lazy[dims={1, -1}](@174) -> float_type, {1, 1280}, {1280, 1}, target_id=0
+Time: 0.01164ms, 0.01204ms
+Output has normal
+Output: 75046, 155452, -36352.3, 17167.6, -11538.7, ..., -193801, 78825.8, 185067, 93390.9, 49339.5
+Min value: -337729, Max value: 326309, Mean: -20214.4, StdDev: 93715.3
+Run instruction: main:#output_0 = @param:main:#output_0 -> float_type, {1, 1000}, {1000, 1}, target_id=0
+Time: 0.00073ms, 0.00103ms
+Run instruction: @177 = gpu::gemm[alpha=1,beta=1,compute_fp32=1,trans_batch=0,solution_idx=0](@175,@152,@138,main:#output_0) -> float_type, {1, 1000}, {1000, 1}, target_id=0
+Time: 0.294455ms, 0.317376ms
+Output has normal
+Output: -160776, -757402, -335159, 163239, -262967, ..., -96214, -11665.6, -102662, -136821, -139719
+Min value: -1.75075e+06, Max value: 1.4665e+06, Mean: 109.115, StdDev: 543979
+module: "main"
+@0 = check_context::migraphx::gpu::context -> float_type, {}, {}, target_id=0
+@1 = hip::hip_allocate_memory[shape=int8_type, {6021120}, {1},id=main:scratch] -> int8_type, {6021120}, {1}, target_id=0
+@2 = hip::hip_copy_literal[id=main:@literal:34] -> float_type, {32, 3, 3, 3}, {27, 9, 3, 1}, target_id=0
+@3 = load[offset=0,end=0](@1) -> int8_type, {0}, {1}, target_id=0
+@4 = load[offset=1605632,end=3211264](@1) -> float_type, {1, 32, 112, 112}, {401408, 12544, 112, 1}, target_id=0
+input = @param:input -> float_type, {1, 3, 224, 224}, {150528, 50176, 224, 1}, target_id=0
+@6 = gpu::convolution[op={padding={1, 1, 1, 1},stride={2, 2},dilation={1, 1},group=1,padding_mode=0},solution_object={binary_object: 493},algo=0,solution_id=0](input,@2,@3,@4) -> float_type, {1, 32, 112, 112}, {401408, 12544, 112, 1}, target_id=0
+@7 = hip::hip_copy_literal[id=main:@literal:45] -> float_type, {32, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@8 = load[offset=0,end=1605632](@1) -> float_type, {1, 32, 112, 112}, {401408, 12544, 112, 1}, target_id=0
+@9 = gpu::code_object[code_object=5304,symbol_name=mlir_convolution,global=401408,local=64,](@6,@7,@8) -> float_type, {1, 32, 112, 112}, {401408, 12544, 112, 1}, target_id=0
+@10 = hip::hip_copy_literal[id=main:@literal:32] -> float_type, {16, 32, 1, 1}, {32, 1, 1, 1}, target_id=0
+@11 = load[offset=4816896,end=5619712](@1) -> float_type, {1, 16, 112, 112}, {200704, 12544, 112, 1}, target_id=0
+@12 = gpu::code_object[code_object=4472,symbol_name=mlir_convolution,global=50176,local=64,](@9,@10,@11) -> float_type, {1, 16, 112, 112}, {200704, 12544, 112, 1}, target_id=0
+@13 = hip::hip_copy_literal[id=main:@literal:30] -> float_type, {96, 16, 1, 1}, {16, 1, 1, 1}, target_id=0
+@14 = load[offset=0,end=4816896](@1) -> float_type, {1, 96, 112, 112}, {1204224, 12544, 112, 1}, target_id=0
+@15 = gpu::code_object[code_object=4920,symbol_name=mlir_convolution,global=150528,local=256,](@12,@13,@14) -> float_type, {1, 96, 112, 112}, {1204224, 12544, 112, 1}, target_id=0
+@16 = hip::hip_copy_literal[id=main:@literal:29] -> float_type, {96, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@17 = load[offset=4816896,end=6021120](@1) -> float_type, {1, 96, 56, 56}, {301056, 3136, 56, 1}, target_id=0
+@18 = gpu::code_object[code_object=5048,symbol_name=mlir_convolution,global=614400,local=256,](@15,@16,@17) -> float_type, {1, 96, 56, 56}, {301056, 3136, 56, 1}, target_id=0
+@19 = hip::hip_copy_literal[id=main:@literal:36] -> float_type, {24, 96, 1, 1}, {96, 1, 1, 1}, target_id=0
+@20 = load[offset=1806336,end=2107392](@1) -> float_type, {1, 24, 56, 56}, {75264, 3136, 56, 1}, target_id=0
+@21 = gpu::code_object[code_object=5176,symbol_name=mlir_convolution,global=25088,local=256,](@18,@19,@20) -> float_type, {1, 24, 56, 56}, {75264, 3136, 56, 1}, target_id=0
+@22 = hip::hip_copy_literal[id=main:@literal:40] -> float_type, {144, 24, 1, 1}, {24, 1, 1, 1}, target_id=0
+@23 = load[offset=3913728,end=5720064](@1) -> float_type, {1, 144, 56, 56}, {451584, 3136, 56, 1}, target_id=0
+@24 = gpu::code_object[code_object=4600,symbol_name=mlir_convolution,global=125440,local=256,](@21,@22,@23) -> float_type, {1, 144, 56, 56}, {451584, 3136, 56, 1}, target_id=0
+@25 = hip::hip_copy_literal[id=main:@literal:42] -> float_type, {144, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@26 = load[offset=2107392,end=3913728](@1) -> float_type, {1, 144, 56, 56}, {451584, 3136, 56, 1}, target_id=0
+@27 = gpu::code_object[code_object=5304,symbol_name=mlir_convolution,global=451584,local=64,](@24,@25,@26) -> float_type, {1, 144, 56, 56}, {451584, 3136, 56, 1}, target_id=0
+@28 = hip::hip_copy_literal[id=main:@literal:1] -> float_type, {1, 24, 56, 56}, {75264, 3136, 56, 1}, target_id=0
+@29 = hip::hip_copy_literal[id=main:@literal:21] -> float_type, {24, 144, 1, 1}, {144, 1, 1, 1}, target_id=0
+@30 = load[offset=0,end=301056](@1) -> float_type, {1, 24, 56, 56}, {75264, 3136, 56, 1}, target_id=0
+@31 = gpu::code_object[code_object=5896,symbol_name=mlir_convolution_add_add,global=25088,local=256,](@28,@21,@27,@29,@30) -> float_type, {1, 24, 56, 56}, {75264, 3136, 56, 1}, target_id=0
+@32 = hip::hip_copy_literal[id=main:@literal:44] -> float_type, {144, 24, 1, 1}, {24, 1, 1, 1}, target_id=0
+@33 = load[offset=451584,end=2257920](@1) -> float_type, {1, 144, 56, 56}, {451584, 3136, 56, 1}, target_id=0
+@34 = gpu::code_object[code_object=4600,symbol_name=mlir_convolution,global=125440,local=256,](@31,@32,@33) -> float_type, {1, 144, 56, 56}, {451584, 3136, 56, 1}, target_id=0
+@35 = hip::hip_copy_literal[id=main:@literal:46] -> float_type, {144, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@36 = load[offset=2257920,end=2709504](@1) -> float_type, {1, 144, 28, 28}, {112896, 784, 28, 1}, target_id=0
+@37 = gpu::code_object[code_object=5304,symbol_name=mlir_convolution,global=119808,local=64,](@34,@35,@36) -> float_type, {1, 144, 28, 28}, {112896, 784, 28, 1}, target_id=0
+@38 = hip::hip_copy_literal[id=main:@literal:47] -> float_type, {32, 144, 1, 1}, {144, 1, 1, 1}, target_id=0
+@39 = load[offset=1204224,end=1304576](@1) -> float_type, {1, 32, 28, 28}, {25088, 784, 28, 1}, target_id=0
+@40 = gpu::code_object[code_object=5816,symbol_name=mlir_convolution,global=6400,local=128,](@37,@38,@39) -> float_type, {1, 32, 28, 28}, {25088, 784, 28, 1}, target_id=0
+@41 = hip::hip_copy_literal[id=main:@literal:37] -> float_type, {192, 32, 1, 1}, {32, 1, 1, 1}, target_id=0
+@42 = load[offset=0,end=602112](@1) -> float_type, {1, 192, 28, 28}, {150528, 784, 28, 1}, target_id=0
+@43 = gpu::code_object[code_object=4536,symbol_name=mlir_convolution,global=38400,local=256,](@40,@41,@42) -> float_type, {1, 192, 28, 28}, {150528, 784, 28, 1}, target_id=0
+@44 = hip::hip_copy_literal[id=main:@literal:38] -> float_type, {192, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@45 = load[offset=1304576,end=1906688](@1) -> float_type, {1, 192, 28, 28}, {150528, 784, 28, 1}, target_id=0
+@46 = gpu::code_object[code_object=5304,symbol_name=mlir_convolution,global=159744,local=64,](@43,@44,@45) -> float_type, {1, 192, 28, 28}, {150528, 784, 28, 1}, target_id=0
+@47 = hip::hip_copy_literal[id=main:@literal:2] -> float_type, {1, 32, 28, 28}, {25088, 784, 28, 1}, target_id=0
+@48 = hip::hip_copy_literal[id=main:@literal:31] -> float_type, {32, 192, 1, 1}, {192, 1, 1, 1}, target_id=0
+@49 = load[offset=602112,end=702464](@1) -> float_type, {1, 32, 28, 28}, {25088, 784, 28, 1}, target_id=0
+@50 = gpu::code_object[code_object=6408,symbol_name=mlir_convolution_add_add,global=6272,local=64,](@47,@40,@46,@48,@49) -> float_type, {1, 32, 28, 28}, {25088, 784, 28, 1}, target_id=0
+@51 = hip::hip_copy_literal[id=main:@literal:49] -> float_type, {192, 32, 1, 1}, {32, 1, 1, 1}, target_id=0
+@52 = load[offset=1304576,end=1906688](@1) -> float_type, {1, 192, 28, 28}, {150528, 784, 28, 1}, target_id=0
+@53 = gpu::code_object[code_object=4536,symbol_name=mlir_convolution,global=38400,local=256,](@50,@51,@52) -> float_type, {1, 192, 28, 28}, {150528, 784, 28, 1}, target_id=0
+@54 = hip::hip_copy_literal[id=main:@literal:28] -> float_type, {32, 192, 1, 1}, {192, 1, 1, 1}, target_id=0
+@55 = hip::hip_copy_literal[id=main:@literal:41] -> float_type, {192, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@56 = load[offset=702464,end=1304576](@1) -> float_type, {1, 192, 28, 28}, {150528, 784, 28, 1}, target_id=0
+@57 = gpu::code_object[code_object=5304,symbol_name=mlir_convolution,global=159744,local=64,](@53,@55,@56) -> float_type, {1, 192, 28, 28}, {150528, 784, 28, 1}, target_id=0
+@58 = hip::hip_copy_literal[id=main:@literal:48] -> float_type, {192, 32, 1, 1}, {32, 1, 1, 1}, target_id=0
+@59 = hip::hip_copy_literal[id=main:@literal:3] -> float_type, {1, 32, 28, 28}, {25088, 784, 28, 1}, target_id=0
+@60 = hip::hip_copy_literal[id=main:@literal:23] -> float_type, {192, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@61 = hip::hip_copy_literal[id=main:@literal:22] -> float_type, {64, 192, 1, 1}, {192, 1, 1, 1}, target_id=0
+@62 = load[offset=0,end=100352](@1) -> float_type, {1, 32, 28, 28}, {25088, 784, 28, 1}, target_id=0
+@63 = gpu::code_object[code_object=6408,symbol_name=mlir_convolution_add_add,global=6272,local=64,](@59,@50,@57,@54,@62) -> float_type, {1, 32, 28, 28}, {25088, 784, 28, 1}, target_id=0
+@64 = load[offset=200704,end=802816](@1) -> float_type, {1, 192, 28, 28}, {150528, 784, 28, 1}, target_id=0
+@65 = gpu::code_object[code_object=4536,symbol_name=mlir_convolution,global=38400,local=256,](@63,@58,@64) -> float_type, {1, 192, 28, 28}, {150528, 784, 28, 1}, target_id=0
+@66 = load[offset=0,end=150528](@1) -> float_type, {1, 192, 14, 14}, {37632, 196, 14, 1}, target_id=0
+@67 = gpu::code_object[code_object=5048,symbol_name=mlir_convolution,global=98304,local=256,](@65,@60,@66) -> float_type, {1, 192, 14, 14}, {37632, 196, 14, 1}, target_id=0
+@68 = load[offset=652288,end=702464](@1) -> float_type, {1, 64, 14, 14}, {12544, 196, 14, 1}, target_id=0
+@69 = gpu::code_object[code_object=6136,symbol_name=mlir_convolution,global=3328,local=64,](@67,@61,@68) -> float_type, {1, 64, 14, 14}, {12544, 196, 14, 1}, target_id=0
+@70 = hip::hip_copy_literal[id=main:@literal:6] -> float_type, {1, 64, 14, 14}, {12544, 196, 14, 1}, target_id=0
+@71 = hip::hip_copy_literal[id=main:@literal:20] -> float_type, {384, 64, 1, 1}, {64, 1, 1, 1}, target_id=0
+@72 = hip::hip_copy_literal[id=main:@literal:19] -> float_type, {384, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@73 = hip::hip_copy_literal[id=main:@literal:25] -> float_type, {64, 384, 1, 1}, {384, 1, 1, 1}, target_id=0
+@74 = load[offset=301056,end=602112](@1) -> float_type, {1, 384, 14, 14}, {75264, 196, 14, 1}, target_id=0
+@75 = gpu::code_object[code_object=4984,symbol_name=mlir_convolution,global=21504,local=256,](@69,@71,@74) -> float_type, {1, 384, 14, 14}, {75264, 196, 14, 1}, target_id=0
+@76 = load[offset=0,end=301056](@1) -> float_type, {1, 384, 14, 14}, {75264, 196, 14, 1}, target_id=0
+@77 = gpu::code_object[code_object=5560,symbol_name=mlir_convolution,global=98304,local=64,](@75,@72,@76) -> float_type, {1, 384, 14, 14}, {75264, 196, 14, 1}, target_id=0
+@78 = load[offset=602112,end=652288](@1) -> float_type, {1, 64, 14, 14}, {12544, 196, 14, 1}, target_id=0
+@79 = gpu::code_object[code_object=6344,symbol_name=mlir_convolution_add_add,global=3328,local=64,](@70,@69,@77,@73,@78) -> float_type, {1, 64, 14, 14}, {12544, 196, 14, 1}, target_id=0
+@80 = hip::hip_copy_literal[id=main:@literal:14] -> float_type, {384, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@81 = hip::hip_copy_literal[id=main:@literal:7] -> float_type, {1, 64, 14, 14}, {12544, 196, 14, 1}, target_id=0
+@82 = hip::hip_copy_literal[id=main:@literal:54] -> float_type, {64, 384, 1, 1}, {384, 1, 1, 1}, target_id=0
+@83 = hip::hip_copy_literal[id=main:@literal:53] -> float_type, {384, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@84 = hip::hip_copy_literal[id=main:@literal:12] -> float_type, {64, 384, 1, 1}, {384, 1, 1, 1}, target_id=0
+@85 = hip::hip_copy_literal[id=main:@literal:26] -> float_type, {96, 384, 1, 1}, {384, 1, 1, 1}, target_id=0
+@86 = hip::hip_copy_literal[id=main:@literal:52] -> float_type, {384, 64, 1, 1}, {64, 1, 1, 1}, target_id=0
+@87 = hip::hip_copy_literal[id=main:@literal:50] -> float_type, {384, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@88 = hip::hip_copy_literal[id=main:@literal:9] -> float_type, {1, 64, 14, 14}, {12544, 196, 14, 1}, target_id=0
+@89 = hip::hip_copy_literal[id=main:@literal:17] -> float_type, {384, 64, 1, 1}, {64, 1, 1, 1}, target_id=0
+@90 = hip::hip_copy_literal[id=main:@literal:16] -> float_type, {384, 64, 1, 1}, {64, 1, 1, 1}, target_id=0
+@91 = load[offset=0,end=301056](@1) -> float_type, {1, 384, 14, 14}, {75264, 196, 14, 1}, target_id=0
+@92 = gpu::code_object[code_object=4984,symbol_name=mlir_convolution,global=21504,local=256,](@79,@89,@91) -> float_type, {1, 384, 14, 14}, {75264, 196, 14, 1}, target_id=0
+@93 = load[offset=652288,end=953344](@1) -> float_type, {1, 384, 14, 14}, {75264, 196, 14, 1}, target_id=0
+@94 = gpu::code_object[code_object=5560,symbol_name=mlir_convolution,global=98304,local=64,](@92,@80,@93) -> float_type, {1, 384, 14, 14}, {75264, 196, 14, 1}, target_id=0
+@95 = load[offset=301056,end=351232](@1) -> float_type, {1, 64, 14, 14}, {12544, 196, 14, 1}, target_id=0
+@96 = gpu::code_object[code_object=6344,symbol_name=mlir_convolution_add_add,global=3328,local=64,](@81,@79,@94,@84,@95) -> float_type, {1, 64, 14, 14}, {12544, 196, 14, 1}, target_id=0
+@97 = load[offset=652288,end=953344](@1) -> float_type, {1, 384, 14, 14}, {75264, 196, 14, 1}, target_id=0
+@98 = gpu::code_object[code_object=4984,symbol_name=mlir_convolution,global=21504,local=256,](@96,@86,@97) -> float_type, {1, 384, 14, 14}, {75264, 196, 14, 1}, target_id=0
+@99 = load[offset=351232,end=652288](@1) -> float_type, {1, 384, 14, 14}, {75264, 196, 14, 1}, target_id=0
+@100 = gpu::code_object[code_object=5560,symbol_name=mlir_convolution,global=98304,local=64,](@98,@83,@99) -> float_type, {1, 384, 14, 14}, {75264, 196, 14, 1}, target_id=0
+@101 = load[offset=0,end=50176](@1) -> float_type, {1, 64, 14, 14}, {12544, 196, 14, 1}, target_id=0
+@102 = gpu::code_object[code_object=6344,symbol_name=mlir_convolution_add_add,global=3328,local=64,](@88,@96,@100,@82,@101) -> float_type, {1, 64, 14, 14}, {12544, 196, 14, 1}, target_id=0
+@103 = load[offset=50176,end=351232](@1) -> float_type, {1, 384, 14, 14}, {75264, 196, 14, 1}, target_id=0
+@104 = gpu::code_object[code_object=4984,symbol_name=mlir_convolution,global=21504,local=256,](@102,@90,@103) -> float_type, {1, 384, 14, 14}, {75264, 196, 14, 1}, target_id=0
+@105 = load[offset=602112,end=903168](@1) -> float_type, {1, 384, 14, 14}, {75264, 196, 14, 1}, target_id=0
+@106 = gpu::code_object[code_object=5560,symbol_name=mlir_convolution,global=98304,local=64,](@104,@87,@105) -> float_type, {1, 384, 14, 14}, {75264, 196, 14, 1}, target_id=0
+@107 = load[offset=903168,end=978432](@1) -> float_type, {1, 96, 14, 14}, {18816, 196, 14, 1}, target_id=0
+@108 = gpu::code_object[code_object=5880,symbol_name=mlir_convolution,global=4992,local=64,](@106,@85,@107) -> float_type, {1, 96, 14, 14}, {18816, 196, 14, 1}, target_id=0
+@109 = hip::hip_copy_literal[id=main:@literal:56] -> float_type, {576, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@110 = hip::hip_copy_literal[id=main:@literal:55] -> float_type, {576, 96, 1, 1}, {96, 1, 1, 1}, target_id=0
+@111 = hip::hip_copy_literal[id=main:@literal:24] -> float_type, {96, 576, 1, 1}, {576, 1, 1, 1}, target_id=0
+@112 = hip::hip_copy_literal[id=main:@literal:10] -> float_type, {1, 96, 14, 14}, {18816, 196, 14, 1}, target_id=0
+@113 = load[offset=0,end=451584](@1) -> float_type, {1, 576, 14, 14}, {112896, 196, 14, 1}, target_id=0
+@114 = gpu::code_object[code_object=5240,symbol_name=mlir_convolution,global=32256,local=256,](@108,@110,@113) -> float_type, {1, 576, 14, 14}, {112896, 196, 14, 1}, target_id=0
+@115 = load[offset=978432,end=1430016](@1) -> float_type, {1, 576, 14, 14}, {112896, 196, 14, 1}, target_id=0
+@116 = gpu::code_object[code_object=5560,symbol_name=mlir_convolution,global=147456,local=64,](@114,@109,@115) -> float_type, {1, 576, 14, 14}, {112896, 196, 14, 1}, target_id=0
+@117 = load[offset=451584,end=526848](@1) -> float_type, {1, 96, 14, 14}, {18816, 196, 14, 1}, target_id=0
+@118 = gpu::code_object[code_object=6344,symbol_name=mlir_convolution_add_add,global=4992,local=64,](@112,@108,@116,@111,@117) -> float_type, {1, 96, 14, 14}, {18816, 196, 14, 1}, target_id=0
+@119 = hip::hip_copy_literal[id=main:@literal:43] -> float_type, {160, 576, 1, 1}, {576, 1, 1, 1}, target_id=0
+@120 = hip::hip_copy_literal[id=main:@literal:58] -> float_type, {576, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@121 = hip::hip_copy_literal[id=main:@literal:39] -> float_type, {576, 96, 1, 1}, {96, 1, 1, 1}, target_id=0
+@122 = hip::hip_copy_literal[id=main:@literal:4] -> float_type, {1, 96, 14, 14}, {18816, 196, 14, 1}, target_id=0
+@123 = hip::hip_copy_literal[id=main:@literal:57] -> float_type, {576, 96, 1, 1}, {96, 1, 1, 1}, target_id=0
+@124 = hip::hip_copy_literal[id=main:@literal:59] -> float_type, {96, 576, 1, 1}, {576, 1, 1, 1}, target_id=0
+@125 = hip::hip_copy_literal[id=main:@literal:60] -> float_type, {576, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@126 = load[offset=978432,end=1430016](@1) -> float_type, {1, 576, 14, 14}, {112896, 196, 14, 1}, target_id=0
+@127 = gpu::code_object[code_object=5240,symbol_name=mlir_convolution,global=32256,local=256,](@118,@123,@126) -> float_type, {1, 576, 14, 14}, {112896, 196, 14, 1}, target_id=0
+@128 = load[offset=526848,end=978432](@1) -> float_type, {1, 576, 14, 14}, {112896, 196, 14, 1}, target_id=0
+@129 = gpu::code_object[code_object=5560,symbol_name=mlir_convolution,global=147456,local=64,](@127,@120,@128) -> float_type, {1, 576, 14, 14}, {112896, 196, 14, 1}, target_id=0
+@130 = load[offset=0,end=75264](@1) -> float_type, {1, 96, 14, 14}, {18816, 196, 14, 1}, target_id=0
+@131 = gpu::code_object[code_object=6344,symbol_name=mlir_convolution_add_add,global=4992,local=64,](@122,@118,@129,@124,@130) -> float_type, {1, 96, 14, 14}, {18816, 196, 14, 1}, target_id=0
+@132 = load[offset=112896,end=564480](@1) -> float_type, {1, 576, 14, 14}, {112896, 196, 14, 1}, target_id=0
+@133 = gpu::code_object[code_object=5240,symbol_name=mlir_convolution,global=32256,local=256,](@131,@121,@132) -> float_type, {1, 576, 14, 14}, {112896, 196, 14, 1}, target_id=0
+@134 = load[offset=564480,end=677376](@1) -> float_type, {1, 576, 7, 7}, {28224, 49, 7, 1}, target_id=0
+@135 = gpu::code_object[code_object=5688,symbol_name=mlir_convolution,global=36864,local=64,](@133,@125,@134) -> float_type, {1, 576, 7, 7}, {28224, 49, 7, 1}, target_id=0
+@136 = load[offset=376320,end=407680](@1) -> float_type, {1, 160, 7, 7}, {7840, 49, 7, 1}, target_id=0
+@137 = gpu::code_object[code_object=4984,symbol_name=mlir_convolution,global=2560,local=256,](@135,@119,@136) -> float_type, {1, 160, 7, 7}, {7840, 49, 7, 1}, target_id=0
+@138 = hip::hip_copy_literal[id=main:@literal:0] -> float_type, {1, 1000}, {1000, 1}, target_id=0
+@139 = hip::hip_copy_literal[id=main:@literal:27] -> float_type, {1280, 320, 1, 1}, {320, 1, 1, 1}, target_id=0
+@140 = hip::hip_copy_literal[id=main:@literal:8] -> float_type, {1, 1280, 7, 7}, {62720, 49, 7, 1}, target_id=0
+@141 = hip::hip_copy_literal[id=main:@literal:18] -> float_type, {320, 960, 1, 1}, {960, 1, 1, 1}, target_id=0
+@142 = hip::hip_copy_literal[id=main:@literal:62] -> float_type, {160, 960, 1, 1}, {960, 1, 1, 1}, target_id=0
+@143 = hip::hip_copy_literal[id=main:@literal:35] -> float_type, {160, 960, 1, 1}, {960, 1, 1, 1}, target_id=0
+@144 = hip::hip_copy_literal[id=main:@literal:13] -> float_type, {960, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@145 = hip::hip_copy_literal[id=main:@literal:11] -> float_type, {1, 160, 7, 7}, {7840, 49, 7, 1}, target_id=0
+@146 = hip::hip_copy_literal[id=main:@literal:63] -> float_type, {960, 160, 1, 1}, {160, 1, 1, 1}, target_id=0
+@147 = hip::hip_copy_literal[id=main:@literal:5] -> float_type, {1, 160, 7, 7}, {7840, 49, 7, 1}, target_id=0
+@148 = hip::hip_copy_literal[id=main:@literal:61] -> float_type, {960, 160, 1, 1}, {160, 1, 1, 1}, target_id=0
+@149 = hip::hip_copy_literal[id=main:@literal:51] -> float_type, {960, 160, 1, 1}, {160, 1, 1, 1}, target_id=0
+@150 = hip::hip_copy_literal[id=main:@literal:15] -> float_type, {960, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@151 = hip::hip_copy_literal[id=main:@literal:33] -> float_type, {960, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@152 = hip::hip_copy_literal[id=main:@literal:64] -> float_type, {1280, 1000}, {1000, 1}, target_id=0
+@153 = load[offset=0,end=188160](@1) -> float_type, {1, 960, 7, 7}, {47040, 49, 7, 1}, target_id=0
+@154 = gpu::code_object[code_object=5816,symbol_name=mlir_convolution,global=15360,local=256,](@137,@149,@153) -> float_type, {1, 960, 7, 7}, {47040, 49, 7, 1}, target_id=0
+@155 = load[offset=407680,end=595840](@1) -> float_type, {1, 960, 7, 7}, {47040, 49, 7, 1}, target_id=0
+@156 = gpu::code_object[code_object=5688,symbol_name=mlir_convolution,global=61440,local=64,](@154,@151,@155) -> float_type, {1, 960, 7, 7}, {47040, 49, 7, 1}, target_id=0
+@157 = load[offset=188160,end=219520](@1) -> float_type, {1, 160, 7, 7}, {7840, 49, 7, 1}, target_id=0
+@158 = gpu::code_object[code_object=6728,symbol_name=mlir_convolution_add_add,global=2560,local=64,](@147,@137,@156,@143,@157) -> float_type, {1, 160, 7, 7}, {7840, 49, 7, 1}, target_id=0
+@159 = load[offset=407680,end=595840](@1) -> float_type, {1, 960, 7, 7}, {47040, 49, 7, 1}, target_id=0
+@160 = gpu::code_object[code_object=5816,symbol_name=mlir_convolution,global=15360,local=256,](@158,@148,@159) -> float_type, {1, 960, 7, 7}, {47040, 49, 7, 1}, target_id=0
+@161 = load[offset=219520,end=407680](@1) -> float_type, {1, 960, 7, 7}, {47040, 49, 7, 1}, target_id=0
+@162 = gpu::code_object[code_object=5688,symbol_name=mlir_convolution,global=61440,local=64,](@160,@144,@161) -> float_type, {1, 960, 7, 7}, {47040, 49, 7, 1}, target_id=0
+@163 = load[offset=407680,end=439040](@1) -> float_type, {1, 160, 7, 7}, {7840, 49, 7, 1}, target_id=0
+@164 = gpu::code_object[code_object=6728,symbol_name=mlir_convolution_add_add,global=2560,local=64,](@145,@158,@162,@142,@163) -> float_type, {1, 160, 7, 7}, {7840, 49, 7, 1}, target_id=0
+@165 = load[offset=0,end=188160](@1) -> float_type, {1, 960, 7, 7}, {47040, 49, 7, 1}, target_id=0
+@166 = gpu::code_object[code_object=5816,symbol_name=mlir_convolution,global=15360,local=256,](@164,@146,@165) -> float_type, {1, 960, 7, 7}, {47040, 49, 7, 1}, target_id=0
+@167 = load[offset=219520,end=407680](@1) -> float_type, {1, 960, 7, 7}, {47040, 49, 7, 1}, target_id=0
+@168 = gpu::code_object[code_object=5688,symbol_name=mlir_convolution,global=61440,local=64,](@166,@150,@167) -> float_type, {1, 960, 7, 7}, {47040, 49, 7, 1}, target_id=0
+@169 = load[offset=407680,end=470400](@1) -> float_type, {1, 320, 7, 7}, {15680, 49, 7, 1}, target_id=0
+@170 = gpu::code_object[code_object=4984,symbol_name=mlir_convolution,global=5120,local=256,](@168,@141,@169) -> float_type, {1, 320, 7, 7}, {15680, 49, 7, 1}, target_id=0
+@171 = load[offset=62720,end=313600](@1) -> float_type, {1, 1280, 7, 7}, {62720, 49, 7, 1}, target_id=0
+@172 = gpu::code_object[code_object=5624,symbol_name=mlir_convolution,global=20480,local=256,](@170,@139,@171) -> float_type, {1, 1280, 7, 7}, {62720, 49, 7, 1}, target_id=0
+@173 = load[offset=0,end=5120](@1) -> float_type, {1, 1280, 1, 1}, {1280, 1, 1, 1}, target_id=0
+@174 = gpu::code_object[code_object=5072,symbol_name=add_reduce_mean_kernel,global=81920,local=64,](@172,@140,@173) -> float_type, {1, 1280, 1, 1}, {1280, 1, 1, 1}, target_id=0
+@175 = reshape_lazy[dims={1, -1}](@174) -> float_type, {1, 1280}, {1280, 1}, target_id=0
+main:#output_0 = @param:main:#output_0 -> float_type, {1, 1000}, {1000, 1}, target_id=0
+@177 = gpu::gemm[alpha=1,beta=1,compute_fp32=1,trans_batch=0,solution_idx=0](@175,@152,@138,main:#output_0) -> float_type, {1, 1000}, {1000, 1}, target_id=0
+@178 = @return(@177), target_id=0
