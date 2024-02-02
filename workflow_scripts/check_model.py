@@ -30,6 +30,7 @@ def ort_skip_reason(model_path):
         return f"Skip ORT test for {model_path} because ORT only supports opset version >= 7"
     return None
 
+
 def mgx_skip_reason(model_path):
     return None
 
@@ -71,7 +72,8 @@ def run_backend_ort(model_path, test_data_set=None, tar_gz_path=None):
     # remove the produced test_dir from ORT
     test_utils.remove_onnxruntime_test_dir()
 
-def run_backend_mgx(model_path, test_data_set, tar_gz_path, fp16, save):
+
+def run_backend_mgx(model_path, test_data_set, tar_gz_path, quant, save):
     skip_reason = mgx_skip_reason(model_path)
     if skip_reason:
         print(skip_reason)
@@ -90,7 +92,12 @@ def run_backend_mgx(model_path, test_data_set, tar_gz_path, fp16, save):
             print(f"The model path {model_path} is invalid")
             return
         ort_test_dir_utils.create_test_dir(model_path, "./", test_utils.TEST_ORT_DIR)
-        stats = mgx_test_utils.run_test_dir(test_utils.TEST_ORT_DIR, tar_gz_path, fp16, save)
+        stats = mgx_test_utils.run_test_dir(
+            test_utils.TEST_ORT_DIR,
+            tar_gz_path,
+            fp16=quant == "fp16",
+            save_results=save,
+        )
         if os.path.exists(model_name) and os.path.isdir(model_name):
             rmtree(model_name)
         os.rename(test_utils.TEST_ORT_DIR, model_name)
@@ -99,7 +106,7 @@ def run_backend_mgx(model_path, test_data_set, tar_gz_path, fp16, save):
     # otherwise use the existing "test_data_set_N" as test data
     else:
         test_dir_from_tar = test_utils.get_model_directory(model_path)
-        stats = mgx_test_utils.run_test_dir(test_dir_from_tar, tar_gz_path, fp16, save)
-    # remove the produced test_dir from ORT
-    test_utils.remove_onnxruntime_test_dir()
+        stats = mgx_test_utils.run_test_dir(
+            test_dir_from_tar, tar_gz_path, fp16=quant == "fp16", save_results=save
+        )
     return stats

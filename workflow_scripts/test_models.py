@@ -49,20 +49,32 @@ def clean_up():
     test_utils.remove_tar_dir()
     test_utils.run_lfs_prune()
 
-def check_migraphx_skip(model_name, fp16, opset):
+def check_migraphx_skip(model_name, quant, opset):
     if "bertsquad-8.tar.gz" in model_name:
         print("Skipping model because it has mislabeled input/output proto buffer files.")
         return True
-    if fp16:
-        if "int8" in model_name or "qdq" in model_name:
-            print("Skipping model for --fp16 because it's already quantized.")
-            return True
-        if "arcfaceresnet100" in model_name:
-            print("Skipping model for --fp16 because it can hang.")
-            return True
     if opset < 7:
         print("Skipping model because it has opset older than 7.")
         return True
+    if quant == "fp16":
+        if "int8" in model_name or "qdq" in model_name:
+            print("Skipping model for --fp16 because it's quantized.")
+            return True
+        if "arcfaceresnet100" in model_name:
+            print("Skipping model for fp16 because it can hang.")
+            return True
+    if quant == "fp32":
+        if "int8" in model_name or "qdq" in model_name:
+            print("Skipping model for fp32 because it's quantized.")
+            return True
+    if quant == "fp32-qdq":
+        if  not "qdq" in model_name:
+            print("Skipping model for fp32-qdq because it's not a qdq model.")
+            return True
+    if quant == "fp32-int8":
+        if  not "int8" in model_name:
+            print("Skipping model for fp32-int8 because it's not an int8 model.")
+            return True
     return False
 
 def main():
@@ -79,8 +91,9 @@ def main():
                         help="Test all ONNX Model Zoo models instead of only changed models")
     parser.add_argument("--drop", required=False, default=False, action="store_true",
                         help="Drop downloaded models after verification. (For space limitation in CIs)")
-    parser.add_argument("--fp16", required=False, default=False, action="store_true",
-                        help="Enable fp16 quantization for migraphx")
+    parser.add_argument("--quant", required=False, default="all", type=str,
+                        help="Quantization mode for MIGraphX",
+                        choices=["fp16", "fp32", "fp32-qdq", "fp32-int8", "all"])
     parser.add_argument("--model", required=False, default="", type=str,
                         help="Specify a target .tar.gz to run. Also enables save option.")
     parser.add_argument("--save", required=False, default=False, action="store_true",
@@ -95,9 +108,13 @@ def main():
     clean_up()
 
     print("\n=== Running test on ONNX models ===\n")
-    failed_models = []
     skipped_models = []
+    failed_models = {}
     statistics = {}
+    quantizations = ["fp32", "fp32-qdq", "fp32-int8", "fp16"] #if args.qaunt == "all" else list(args.quant)
+    for q in quantizations:
+        statistics[q] = {}
+        failed_models[q] = []
     for model_path in model_list:
         model_name = model_path.split("/")[-1]
         print("==============Testing {}==============".format(model_name))
@@ -134,27 +151,29 @@ def main():
                     print("[PASS] {} is checked by onnx. ".format(model_name))
                 # Step 3 check models with migraphx backend
                 if args.target == "migraphx" or args.target == "all":
-                    opset = mgx_stats.get_opset(model_path_from_tar)
-                    skip = check_migraphx_skip(model_name, args.fp16, opset)
-                    if skip:
-                        skipped_models.append(model_path)
-                        clean_up()
-                        continue
-                    try:
-                        stats = check_model.run_backend_mgx(model_path_from_tar, test_data_set, model_path, args.fp16, save)
-                        statistics[model_path] = stats
-                    except Exception as e:
-                        print("[FAIL] {}: {}".format(model_name, e))
-                        failed_models.append(model_path)
-                        statistics[model_path] = mgx_stats.MGXRunStats(model_path_from_tar, False, False, f"Error during script execution: {e}")
-                        clean_up()
-                        continue
+                    for quant in quantizations:
+                        print(f"Running testing for {quant}")
+                        opset = mgx_stats.get_opset(model_path_from_tar)
+                        skip = check_migraphx_skip(model_name, quant, opset)
+                        if skip:
+                            skipped_models.append(model_path)
+                            continue
+                        try:
+                            stats = check_model.run_backend_mgx(model_path_from_tar, test_data_set, model_path, quant, save)
+                            statistics[quant].update({model_path: stats})
+                        except Exception as e:
+                            print("[FAIL] {}: {}".format(model_name, e))
+                            stats = mgx_stats.MGXRunStats(model_path_from_tar, False, False, f"Error during script execution: {e}")
+                            statistics[quant].update({model_path: stats})
+                            failed_models[quant].append(model_path)
+                            continue
 
-                    if stats.valid:
-                        print(f"[PASS] {model_name} is checked by migraphx.")
-                    else:
-                        print(f"[FAIL] {model_name}: {stats.error}")
-                        failed_models.append(model_path)
+                        if stats.valid:
+                            print(f"[PASS] {model_name} is checked by migraphx.")
+                        else:
+                            print(f"[FAIL] {model_name}: {stats.error}")
+                            failed_models[quant].append(model_path)
+                    clean_up()
             # check uploaded standalone ONNX model by ONNX
             elif onnx_ext_name in model_name:
                 if args.target == "onnx" or args.target == "all":
@@ -164,7 +183,10 @@ def main():
 
         except Exception as e:
             print("[FAIL] {}: {}".format(model_name, e))
-            failed_models.append(model_path)
+            if "ort" in failed_models:
+                failed_models["ort"].append(model_path)
+            else:
+                failed_models["ort"] = [model_path]
 
         # remove checked models and directories to save space in CIs
         if os.path.exists(model_path) and args.drop:
@@ -172,7 +194,7 @@ def main():
 
         clean_up()
 
-    markdown_utils.save_to_markdown(statistics, args.fp16)
+    markdown_utils.save_to_markdown(statistics)
     print("In all {} models, {} models failed and {} models were skipped. ".format(len(model_list), len(failed_models), len(skipped_models)))
     sys.exit(1)
 
