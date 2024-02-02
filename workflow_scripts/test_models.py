@@ -108,13 +108,16 @@ def main():
     clean_up()
 
     print("\n=== Running test on ONNX models ===\n")
-    skipped_models = []
+    skipped_models = {}
+    processed_models = {}
     failed_models = {}
     statistics = {}
     quantizations = ["fp32", "fp32-qdq", "fp32-int8", "fp16"] #if args.qaunt == "all" else list(args.quant)
     for q in quantizations:
         statistics[q] = {}
         failed_models[q] = []
+        skipped_models[q] = []
+        processed_models[q] = []
     for model_path in model_list:
         model_name = model_path.split("/")[-1]
         print("==============Testing {}==============".format(model_name))
@@ -156,8 +159,10 @@ def main():
                         opset = mgx_stats.get_opset(model_path_from_tar)
                         skip = check_migraphx_skip(model_name, quant, opset)
                         if skip:
-                            skipped_models.append(model_path)
+                            skipped_models[quant].append(model_path)
                             continue
+                        else:
+                            processed_models[quant].append(model_path)
                         try:
                             stats = check_model.run_backend_mgx(model_path_from_tar, test_data_set, model_path, quant, save)
                             statistics[quant].update({model_path: stats})
@@ -195,7 +200,10 @@ def main():
         clean_up()
 
     markdown_utils.save_to_markdown(statistics)
-    print("In all {} models, {} models failed and {} models were skipped. ".format(len(model_list), len(failed_models), len(skipped_models)))
+    print("Run finished. Statistics:")
+    for q in quantizations:
+        print(f"{q.upper()}:")
+        print(f"{len(processed_models[q])} models tested, {len(failed_models[q])} models failed and {len(skipped_models[q])} models were skipped.")
     sys.exit(1)
 
 

@@ -1,4 +1,5 @@
 from py_markdown_table.markdown_table import markdown_table
+import json
 
 ONNX_ZOO_URL_START = "https://github.com/gyulaz-htec/models/tree/migraphx_testing/"
 
@@ -62,7 +63,9 @@ def merge_fp32_fp16_data(fp32_data, fp16_data):
         fp32_fp16_report[category] = []
         fp16_records = fp16_data[category]
         for fp32_record in fp32_records:
-            matching_fp16s = [r for r in fp16_records if r["Model"] == fp32_record["Model"]]
+            matching_fp16s = [
+                r for r in fp16_records if r["Model"] == fp32_record["Model"]
+            ]
             has_fp16 = len(matching_fp16s) > 0
             record = {
                 "Model": fp32_record["Model"],
@@ -103,6 +106,8 @@ def write_markdown_file(file_name, data, passing=0, accuracy=0, compile=0, runti
 
 
 def save_to_markdown(statistics):
+    # with open("bak.json", "w") as bak:
+    #     bak.write(json.dumps(statistics))
     fp32_fp16_stats = {}
     for quant, stats in statistics.items():
         (
