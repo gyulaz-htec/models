@@ -73,7 +73,7 @@ def run_backend_ort(model_path, test_data_set=None, tar_gz_path=None):
     test_utils.remove_onnxruntime_test_dir()
 
 
-def run_backend_mgx(model_path, test_data_set, tar_gz_path, quant, save):
+def run_backend_mgx(model_path, test_data_set, tar_gz_path, quant, save, mgx_backend):
     skip_reason = mgx_skip_reason(model_path)
     if skip_reason:
         print(skip_reason)
@@ -97,6 +97,7 @@ def run_backend_mgx(model_path, test_data_set, tar_gz_path, quant, save):
             tar_gz_path,
             fp16=quant == "fp16",
             save_results=save,
+            target=mgx_backend,
         )
         if os.path.exists(model_name) and os.path.isdir(model_name):
             rmtree(model_name)
@@ -107,6 +108,10 @@ def run_backend_mgx(model_path, test_data_set, tar_gz_path, quant, save):
     else:
         test_dir_from_tar = test_utils.get_model_directory(model_path)
         stats = mgx_test_utils.run_test_dir(
-            test_dir_from_tar, tar_gz_path, fp16=quant == "fp16", save_results=save
+            test_dir_from_tar,
+            tar_gz_path,
+            fp16=quant == "fp16",
+            save_results=save,
+            target=mgx_backend,
         )
     return stats

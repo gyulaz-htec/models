@@ -71,13 +71,17 @@ def merge_fp32_fp16_data(fp32_data, fp16_data):
                 "Model": fp32_record["Model"],
                 "Opset": fp32_record["Opset"],
                 "FP32 Comp": fp32_record["Compilation"],
-                "FP16 Comp": matching_fp16s[0]["Compilation"]
-                if has_fp16
-                else ":heavy_minus_sign:",
+                "FP16 Comp": (
+                    matching_fp16s[0]["Compilation"]
+                    if has_fp16
+                    else ":heavy_minus_sign:"
+                ),
                 "FP32 Acc": fp32_record["Validation"],
-                "FP16 Acc": matching_fp16s[0]["Validation"]
-                if has_fp16
-                else ":heavy_minus_sign:",
+                "FP16 Acc": (
+                    matching_fp16s[0]["Validation"]
+                    if has_fp16
+                    else ":heavy_minus_sign:"
+                ),
                 "FP32 Err": fp32_record["Error"],
                 "FP16 Err": matching_fp16s[0]["Error"] if has_fp16 else "",
             }
@@ -122,7 +126,7 @@ def save_to_markdown(statistics):
         if quant in ["fp32", "fp16"]:
             fp32_fp16_stats[quant] = grouped_data
         write_markdown_file(
-            f"MIGRAPHX_{quant}.md",
+            f"MIGRAPHX_ref_{quant}.md",
             grouped_data,
             passing,
             accuracy_issue,
@@ -134,4 +138,4 @@ def save_to_markdown(statistics):
         fp32_fp16_report = merge_fp32_fp16_data(
             fp32_fp16_stats["fp32"], fp32_fp16_stats["fp16"]
         )
-        write_markdown_file(f"MIGRAPHX_FP32_FP16.md", fp32_fp16_report)
+        write_markdown_file(f"MIGRAPHX_ref_FP32_FP16.md", fp32_fp16_report)

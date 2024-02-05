@@ -98,6 +98,8 @@ def main():
                         help="Specify a target .tar.gz to run. Also enables save option.")
     parser.add_argument("--save", required=False, default=False, action="store_true",
                         help="Save expected and actual outputs for failing models")
+    parser.add_argument("--mgx_backend", required=False, default="gpu", type=str,
+                        choices=["ref", "gpu"])
     args = parser.parse_args()
 
     model_list = [args.model] if args.model else get_all_models() if args.all_models else get_changed_models()
@@ -164,7 +166,7 @@ def main():
                         else:
                             processed_models[quant].append(model_path)
                         try:
-                            stats = check_model.run_backend_mgx(model_path_from_tar, test_data_set, model_path, quant, save)
+                            stats = check_model.run_backend_mgx(model_path_from_tar, test_data_set, model_path, quant, save, args.mgx_backend)
                             statistics[quant].update({model_path: stats})
                         except Exception as e:
                             print("[FAIL] {}: {}".format(model_name, e))
