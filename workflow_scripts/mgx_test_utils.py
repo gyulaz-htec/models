@@ -78,7 +78,7 @@ def save_outputs(tar_gz_path, expected, actual, output_name, fp16):
     np.savetxt(actual_file, actual)
     print("Results written to:\n\tExpected:\t{}\n\tActual:\t\t{}".format(expected_file, actual_file))
 
-def run_test_dir(model_or_dir, tar_gz_path, fp16, save_results):
+def run_test_dir(model_or_dir, tar_gz_path, fp16, save_results, target):
     """
     Run the test/s from a directory in ONNX test format.
     All subdirectories with a prefix of 'test' are considered test input for one test run.
@@ -118,7 +118,7 @@ def run_test_dir(model_or_dir, tar_gz_path, fp16, save_results):
     output_names_from_manifest = get_output_names_from_manifest(tar_gz_path)
     input_names_from_manifest = get_input_names_from_manifest(tar_gz_path)
     try:
-        sess = mgx.session(model_path, fp16)
+        sess = mgx.session(model_path, fp16, target)
     except Exception as e:
         print(f"Fail during compilation: {str(e)}")
         stats.set_not_compiles(str(e))
