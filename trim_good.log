@@ -1,0 +1,1424 @@
+Running [ MIGraphX Version: 2.9.0.352dcea2c ]: /code/AMDMIGraphX/build/bin/migraphx-driver verify vision/classification/shufflenet/model/shufflenet-v2-12.onnx --trim 690
+Reading: vision/classification/shufflenet/model/shufflenet-v2-12.onnx
+module: "main"
+@0 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@1 = @literal{1, -1, 7, 7} -> int64_type, {4}, {1}, target_id=0
+@2 = @literal{1, 2, 232, 7, 7} -> int64_type, {5}, {1}, target_id=0
+@3 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@4 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@5 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@6 = @literal{1, -1, 7, 7} -> int64_type, {4}, {1}, target_id=0
+@7 = @literal{1, 2, 232, 7, 7} -> int64_type, {5}, {1}, target_id=0
+@8 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@9 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@10 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@11 = @literal{1, -1, 7, 7} -> int64_type, {4}, {1}, target_id=0
+@12 = @literal{1, 2, 232, 7, 7} -> int64_type, {5}, {1}, target_id=0
+@13 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@14 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@15 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@16 = @literal{1, -1, 7, 7} -> int64_type, {4}, {1}, target_id=0
+@17 = @literal{1, 2, 232, 7, 7} -> int64_type, {5}, {1}, target_id=0
+@18 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@19 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@20 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@21 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@22 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@23 = @literal{1, -1, 14, 14} -> int64_type, {4}, {1}, target_id=0
+@24 = @literal{1, 2, 116, 14, 14} -> int64_type, {5}, {1}, target_id=0
+@25 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@26 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@27 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@28 = @literal{1, -1, 14, 14} -> int64_type, {4}, {1}, target_id=0
+@29 = @literal{1, 2, 116, 14, 14} -> int64_type, {5}, {1}, target_id=0
+@30 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@31 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@32 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@33 = @literal{1, -1, 14, 14} -> int64_type, {4}, {1}, target_id=0
+@34 = @literal{1, 2, 116, 14, 14} -> int64_type, {5}, {1}, target_id=0
+@35 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@36 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@37 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@38 = @literal{1, -1, 14, 14} -> int64_type, {4}, {1}, target_id=0
+@39 = @literal{1, 2, 116, 14, 14} -> int64_type, {5}, {1}, target_id=0
+@40 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@41 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@42 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@43 = @literal{1, -1, 14, 14} -> int64_type, {4}, {1}, target_id=0
+@44 = @literal{1, 2, 116, 14, 14} -> int64_type, {5}, {1}, target_id=0
+@45 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@46 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@47 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@48 = @literal{1, -1, 14, 14} -> int64_type, {4}, {1}, target_id=0
+@49 = @literal{1, 2, 116, 14, 14} -> int64_type, {5}, {1}, target_id=0
+@50 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@51 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@52 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@53 = @literal{1, -1, 14, 14} -> int64_type, {4}, {1}, target_id=0
+@54 = @literal{1, 2, 116, 14, 14} -> int64_type, {5}, {1}, target_id=0
+@55 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@56 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@57 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@58 = @literal{1, -1, 14, 14} -> int64_type, {4}, {1}, target_id=0
+@59 = @literal{1, 2, 116, 14, 14} -> int64_type, {5}, {1}, target_id=0
+@60 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@61 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@62 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@63 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@64 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@65 = @literal{1, -1, 28, 28} -> int64_type, {4}, {1}, target_id=0
+@66 = @literal{1, 2, 58, 28, 28} -> int64_type, {5}, {1}, target_id=0
+@67 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@68 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@69 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@70 = @literal{1, -1, 28, 28} -> int64_type, {4}, {1}, target_id=0
+@71 = @literal{1, 2, 58, 28, 28} -> int64_type, {5}, {1}, target_id=0
+@72 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@73 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@74 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@75 = @literal{1, -1, 28, 28} -> int64_type, {4}, {1}, target_id=0
+@76 = @literal{1, 2, 58, 28, 28} -> int64_type, {5}, {1}, target_id=0
+@77 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@78 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@79 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@80 = @literal{1, -1, 28, 28} -> int64_type, {4}, {1}, target_id=0
+@81 = @literal{1, 2, 58, 28, 28} -> int64_type, {5}, {1}, target_id=0
+@82 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@83 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@84 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@85 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@86 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@87 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+input = @param:input -> float_type, {1, 3, 224, 224}, {150528, 50176, 224, 1}, target_id=0
+@89 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@90 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@91 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@92 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@93 = @literal{ ... } -> float_type, {232, 232, 1, 1}, {232, 1, 1, 1}, target_id=0
+@94 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@95 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@96 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@97 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@98 = @literal{ ... } -> float_type, {232, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@99 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@100 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@101 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@102 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@103 = @literal{ ... } -> float_type, {232, 232, 1, 1}, {232, 1, 1, 1}, target_id=0
+@104 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@105 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@106 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@107 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@108 = @literal{ ... } -> float_type, {232, 232, 1, 1}, {232, 1, 1, 1}, target_id=0
+@109 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@110 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@111 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@112 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@113 = @literal{ ... } -> float_type, {232, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@114 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@115 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@116 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@117 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@118 = @literal{ ... } -> float_type, {232, 232, 1, 1}, {232, 1, 1, 1}, target_id=0
+@119 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@120 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@121 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@122 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@123 = @literal{ ... } -> float_type, {232, 232, 1, 1}, {232, 1, 1, 1}, target_id=0
+@124 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@125 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@126 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@127 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@128 = @literal{ ... } -> float_type, {232, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@129 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@130 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@131 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@132 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@133 = @literal{ ... } -> float_type, {232, 232, 1, 1}, {232, 1, 1, 1}, target_id=0
+@134 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@135 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@136 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@137 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@138 = @literal{ ... } -> float_type, {232, 232, 1, 1}, {232, 1, 1, 1}, target_id=0
+@139 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@140 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@141 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@142 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@143 = @literal{ ... } -> float_type, {232, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@144 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@145 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@146 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@147 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@148 = @literal{ ... } -> float_type, {232, 232, 1, 1}, {232, 1, 1, 1}, target_id=0
+@149 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@150 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@151 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@152 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@153 = @literal{ ... } -> float_type, {232, 232, 1, 1}, {232, 1, 1, 1}, target_id=0
+@154 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@155 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@156 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@157 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@158 = @literal{ ... } -> float_type, {232, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@159 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@160 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@161 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@162 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@163 = @literal{ ... } -> float_type, {116, 116, 1, 1}, {116, 1, 1, 1}, target_id=0
+@164 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@165 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@166 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@167 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@168 = @literal{ ... } -> float_type, {116, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@169 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@170 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@171 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@172 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@173 = @literal{ ... } -> float_type, {116, 116, 1, 1}, {116, 1, 1, 1}, target_id=0
+@174 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@175 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@176 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@177 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@178 = @literal{ ... } -> float_type, {116, 116, 1, 1}, {116, 1, 1, 1}, target_id=0
+@179 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@180 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@181 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@182 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@183 = @literal{ ... } -> float_type, {116, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@184 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@185 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@186 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@187 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@188 = @literal{ ... } -> float_type, {116, 116, 1, 1}, {116, 1, 1, 1}, target_id=0
+@189 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@190 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@191 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@192 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@193 = @literal{ ... } -> float_type, {116, 116, 1, 1}, {116, 1, 1, 1}, target_id=0
+@194 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@195 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@196 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@197 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@198 = @literal{ ... } -> float_type, {116, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@199 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@200 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@201 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@202 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@203 = @literal{ ... } -> float_type, {116, 116, 1, 1}, {116, 1, 1, 1}, target_id=0
+@204 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@205 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@206 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@207 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@208 = @literal{ ... } -> float_type, {116, 116, 1, 1}, {116, 1, 1, 1}, target_id=0
+@209 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@210 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@211 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@212 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@213 = @literal{ ... } -> float_type, {116, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@214 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@215 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@216 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@217 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@218 = @literal{ ... } -> float_type, {116, 116, 1, 1}, {116, 1, 1, 1}, target_id=0
+@219 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@220 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@221 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@222 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@223 = @literal{ ... } -> float_type, {116, 116, 1, 1}, {116, 1, 1, 1}, target_id=0
+@224 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@225 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@226 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@227 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@228 = @literal{ ... } -> float_type, {116, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@229 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@230 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@231 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@232 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@233 = @literal{ ... } -> float_type, {116, 116, 1, 1}, {116, 1, 1, 1}, target_id=0
+@234 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@235 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@236 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@237 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@238 = @literal{ ... } -> float_type, {116, 116, 1, 1}, {116, 1, 1, 1}, target_id=0
+@239 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@240 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@241 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@242 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@243 = @literal{ ... } -> float_type, {116, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@244 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@245 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@246 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@247 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@248 = @literal{ ... } -> float_type, {116, 116, 1, 1}, {116, 1, 1, 1}, target_id=0
+@249 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@250 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@251 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@252 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@253 = @literal{ ... } -> float_type, {116, 116, 1, 1}, {116, 1, 1, 1}, target_id=0
+@254 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@255 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@256 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@257 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@258 = @literal{ ... } -> float_type, {116, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@259 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@260 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@261 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@262 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@263 = @literal{ ... } -> float_type, {116, 116, 1, 1}, {116, 1, 1, 1}, target_id=0
+@264 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@265 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@266 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@267 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@268 = @literal{ ... } -> float_type, {116, 116, 1, 1}, {116, 1, 1, 1}, target_id=0
+@269 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@270 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@271 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@272 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@273 = @literal{ ... } -> float_type, {116, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@274 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@275 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@276 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@277 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@278 = @literal{ ... } -> float_type, {116, 116, 1, 1}, {116, 1, 1, 1}, target_id=0
+@279 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@280 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@281 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@282 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@283 = @literal{ ... } -> float_type, {116, 116, 1, 1}, {116, 1, 1, 1}, target_id=0
+@284 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@285 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@286 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@287 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@288 = @literal{ ... } -> float_type, {116, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@289 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@290 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@291 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@292 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@293 = @literal{ ... } -> float_type, {58, 58, 1, 1}, {58, 1, 1, 1}, target_id=0
+@294 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@295 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@296 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@297 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@298 = @literal{ ... } -> float_type, {58, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@299 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@300 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@301 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@302 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@303 = @literal{ ... } -> float_type, {58, 58, 1, 1}, {58, 1, 1, 1}, target_id=0
+@304 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@305 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@306 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@307 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@308 = @literal{ ... } -> float_type, {58, 58, 1, 1}, {58, 1, 1, 1}, target_id=0
+@309 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@310 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@311 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@312 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@313 = @literal{ ... } -> float_type, {58, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@314 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@315 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@316 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@317 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@318 = @literal{ ... } -> float_type, {58, 58, 1, 1}, {58, 1, 1, 1}, target_id=0
+@319 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@320 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@321 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@322 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@323 = @literal{ ... } -> float_type, {58, 58, 1, 1}, {58, 1, 1, 1}, target_id=0
+@324 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@325 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@326 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@327 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@328 = @literal{ ... } -> float_type, {58, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@329 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@330 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@331 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@332 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@333 = @literal{ ... } -> float_type, {58, 58, 1, 1}, {58, 1, 1, 1}, target_id=0
+@334 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@335 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@336 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@337 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@338 = @literal{ ... } -> float_type, {58, 58, 1, 1}, {58, 1, 1, 1}, target_id=0
+@339 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@340 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@341 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@342 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@343 = @literal{ ... } -> float_type, {58, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@344 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@345 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@346 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@347 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@348 = @literal{ ... } -> float_type, {58, 24, 1, 1}, {24, 1, 1, 1}, target_id=0
+@349 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@350 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@351 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@352 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@353 = @literal{ ... } -> float_type, {58, 24, 1, 1}, {24, 1, 1, 1}, target_id=0
+@354 = @literal{ ... } -> float_type, {24}, {1}, target_id=0
+@355 = @literal{ ... } -> float_type, {24}, {1}, target_id=0
+@356 = @literal{ ... } -> float_type, {24}, {1}, target_id=0
+@357 = @literal{ ... } -> float_type, {24}, {1}, target_id=0
+@358 = @literal{ ... } -> float_type, {24, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@359 = @literal{ ... } -> float_type, {1000, 1024}, {1024, 1}, target_id=0
+@360 = @literal{ ... } -> float_type, {1000}, {1}, target_id=0
+@361 = @literal{ ... } -> float_type, {1024}, {1}, target_id=0
+@362 = @literal{ ... } -> float_type, {1024}, {1}, target_id=0
+@363 = @literal{ ... } -> float_type, {1024}, {1}, target_id=0
+@364 = @literal{ ... } -> float_type, {1024}, {1}, target_id=0
+@365 = @literal{ ... } -> float_type, {1024, 464, 1, 1}, {464, 1, 1, 1}, target_id=0
+@366 = @literal{ ... } -> float_type, {24}, {1}, target_id=0
+@367 = @literal{ ... } -> float_type, {24}, {1}, target_id=0
+@368 = @literal{ ... } -> float_type, {24}, {1}, target_id=0
+@369 = @literal{ ... } -> float_type, {24}, {1}, target_id=0
+@370 = @literal{ ... } -> float_type, {24, 3, 3, 3}, {27, 9, 3, 1}, target_id=0
+@371 = convolution[padding={1, 1, 1, 1},stride={2, 2},dilation={1, 1},group=1,padding_mode=0](input,@370) -> float_type, {1, 24, 112, 112}, {301056, 12544, 112, 1}, target_id=0
+@372 = unsqueeze[axes={1, 2},steps={}](@366) -> float_type, {24, 1, 1}, {1, 1, 1}, target_id=0
+@373 = unsqueeze[axes={1, 2},steps={}](@369) -> float_type, {24, 1, 1}, {1, 1, 1}, target_id=0
+@374 = unsqueeze[axes={1, 2},steps={}](@368) -> float_type, {24, 1, 1}, {1, 1, 1}, target_id=0
+@375 = unsqueeze[axes={1, 2},steps={}](@367) -> float_type, {24, 1, 1}, {1, 1, 1}, target_id=0
+@376 = multibroadcast[out_lens={1, 24, 112, 112},out_dyn_dims={}](@374) -> float_type, {1, 24, 112, 112}, {0, 1, 0, 0}, target_id=0
+@377 = sub(@371,@376) -> float_type, {1, 24, 112, 112}, {301056, 12544, 112, 1}, target_id=0
+@378 = multibroadcast[out_lens={24, 1, 1},out_dyn_dims={}](@87) -> float_type, {24, 1, 1}, {0, 0, 0}, target_id=0
+@379 = add(@375,@378) -> float_type, {24, 1, 1}, {1, 1, 1}, target_id=0
+@380 = rsqrt(@379) -> float_type, {24, 1, 1}, {1, 1, 1}, target_id=0
+@381 = mul(@372,@380) -> float_type, {24, 1, 1}, {1, 1, 1}, target_id=0
+@382 = multibroadcast[out_lens={1, 24, 112, 112},out_dyn_dims={}](@381) -> float_type, {1, 24, 112, 112}, {0, 1, 0, 0}, target_id=0
+@383 = mul(@377,@382) -> float_type, {1, 24, 112, 112}, {301056, 12544, 112, 1}, target_id=0
+@384 = multibroadcast[out_lens={1, 24, 112, 112},out_dyn_dims={}](@373) -> float_type, {1, 24, 112, 112}, {0, 1, 0, 0}, target_id=0
+@385 = add(@383,@384) -> float_type, {1, 24, 112, 112}, {301056, 12544, 112, 1}, target_id=0
+@386 = relu(@385) -> float_type, {1, 24, 112, 112}, {301056, 12544, 112, 1}, target_id=0
+@387 = pooling[mode=max,padding={1, 1, 1, 1},padding_mode=0,stride={2, 2},lengths={3, 3},dilations={1, 1},ceil_mode=0,lp_order=2,dyn_global=0](@386) -> float_type, {1, 24, 56, 56}, {75264, 3136, 56, 1}, target_id=0
+@388 = convolution[padding={1, 1, 1, 1},stride={2, 2},dilation={1, 1},group=24,padding_mode=0](@387,@358) -> float_type, {1, 24, 28, 28}, {18816, 784, 28, 1}, target_id=0
+@389 = unsqueeze[axes={1, 2},steps={}](@354) -> float_type, {24, 1, 1}, {1, 1, 1}, target_id=0
+@390 = unsqueeze[axes={1, 2},steps={}](@357) -> float_type, {24, 1, 1}, {1, 1, 1}, target_id=0
+@391 = unsqueeze[axes={1, 2},steps={}](@356) -> float_type, {24, 1, 1}, {1, 1, 1}, target_id=0
+@392 = unsqueeze[axes={1, 2},steps={}](@355) -> float_type, {24, 1, 1}, {1, 1, 1}, target_id=0
+@393 = multibroadcast[out_lens={1, 24, 28, 28},out_dyn_dims={}](@391) -> float_type, {1, 24, 28, 28}, {0, 1, 0, 0}, target_id=0
+@394 = sub(@388,@393) -> float_type, {1, 24, 28, 28}, {18816, 784, 28, 1}, target_id=0
+@395 = multibroadcast[out_lens={24, 1, 1},out_dyn_dims={}](@86) -> float_type, {24, 1, 1}, {0, 0, 0}, target_id=0
+@396 = add(@392,@395) -> float_type, {24, 1, 1}, {1, 1, 1}, target_id=0
+@397 = rsqrt(@396) -> float_type, {24, 1, 1}, {1, 1, 1}, target_id=0
+@398 = mul(@389,@397) -> float_type, {24, 1, 1}, {1, 1, 1}, target_id=0
+@399 = multibroadcast[out_lens={1, 24, 28, 28},out_dyn_dims={}](@398) -> float_type, {1, 24, 28, 28}, {0, 1, 0, 0}, target_id=0
+@400 = mul(@394,@399) -> float_type, {1, 24, 28, 28}, {18816, 784, 28, 1}, target_id=0
+@401 = multibroadcast[out_lens={1, 24, 28, 28},out_dyn_dims={}](@390) -> float_type, {1, 24, 28, 28}, {0, 1, 0, 0}, target_id=0
+@402 = add(@400,@401) -> float_type, {1, 24, 28, 28}, {18816, 784, 28, 1}, target_id=0
+@403 = convolution[padding={0, 0, 0, 0},stride={1, 1},dilation={1, 1},group=1,padding_mode=0](@402,@353) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@404 = unsqueeze[axes={1, 2},steps={}](@349) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@405 = unsqueeze[axes={1, 2},steps={}](@352) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@406 = unsqueeze[axes={1, 2},steps={}](@351) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@407 = unsqueeze[axes={1, 2},steps={}](@350) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@408 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@406) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@409 = sub(@403,@408) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@410 = multibroadcast[out_lens={58, 1, 1},out_dyn_dims={}](@85) -> float_type, {58, 1, 1}, {0, 0, 0}, target_id=0
+@411 = add(@407,@410) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@412 = rsqrt(@411) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@413 = mul(@404,@412) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@414 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@413) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@415 = mul(@409,@414) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@416 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@405) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@417 = add(@415,@416) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@418 = relu(@417) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@419 = convolution[padding={0, 0, 0, 0},stride={1, 1},dilation={1, 1},group=1,padding_mode=0](@387,@348) -> float_type, {1, 58, 56, 56}, {181888, 3136, 56, 1}, target_id=0
+@420 = unsqueeze[axes={1, 2},steps={}](@344) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@421 = unsqueeze[axes={1, 2},steps={}](@347) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@422 = unsqueeze[axes={1, 2},steps={}](@346) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@423 = unsqueeze[axes={1, 2},steps={}](@345) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@424 = multibroadcast[out_lens={1, 58, 56, 56},out_dyn_dims={}](@422) -> float_type, {1, 58, 56, 56}, {0, 1, 0, 0}, target_id=0
+@425 = sub(@419,@424) -> float_type, {1, 58, 56, 56}, {181888, 3136, 56, 1}, target_id=0
+@426 = multibroadcast[out_lens={58, 1, 1},out_dyn_dims={}](@84) -> float_type, {58, 1, 1}, {0, 0, 0}, target_id=0
+@427 = add(@423,@426) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@428 = rsqrt(@427) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@429 = mul(@420,@428) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@430 = multibroadcast[out_lens={1, 58, 56, 56},out_dyn_dims={}](@429) -> float_type, {1, 58, 56, 56}, {0, 1, 0, 0}, target_id=0
+@431 = mul(@425,@430) -> float_type, {1, 58, 56, 56}, {181888, 3136, 56, 1}, target_id=0
+@432 = multibroadcast[out_lens={1, 58, 56, 56},out_dyn_dims={}](@421) -> float_type, {1, 58, 56, 56}, {0, 1, 0, 0}, target_id=0
+@433 = add(@431,@432) -> float_type, {1, 58, 56, 56}, {181888, 3136, 56, 1}, target_id=0
+@434 = relu(@433) -> float_type, {1, 58, 56, 56}, {181888, 3136, 56, 1}, target_id=0
+@435 = convolution[padding={1, 1, 1, 1},stride={2, 2},dilation={1, 1},group=58,padding_mode=0](@434,@343) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@436 = unsqueeze[axes={1, 2},steps={}](@339) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@437 = unsqueeze[axes={1, 2},steps={}](@342) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@438 = unsqueeze[axes={1, 2},steps={}](@341) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@439 = unsqueeze[axes={1, 2},steps={}](@340) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@440 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@438) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@441 = sub(@435,@440) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@442 = multibroadcast[out_lens={58, 1, 1},out_dyn_dims={}](@83) -> float_type, {58, 1, 1}, {0, 0, 0}, target_id=0
+@443 = add(@439,@442) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@444 = rsqrt(@443) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@445 = mul(@436,@444) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@446 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@445) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@447 = mul(@441,@446) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@448 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@437) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@449 = add(@447,@448) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@450 = convolution[padding={0, 0, 0, 0},stride={1, 1},dilation={1, 1},group=1,padding_mode=0](@449,@338) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@451 = unsqueeze[axes={1, 2},steps={}](@334) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@452 = unsqueeze[axes={1, 2},steps={}](@337) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@453 = unsqueeze[axes={1, 2},steps={}](@336) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@454 = unsqueeze[axes={1, 2},steps={}](@335) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@455 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@453) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@456 = sub(@450,@455) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@457 = multibroadcast[out_lens={58, 1, 1},out_dyn_dims={}](@82) -> float_type, {58, 1, 1}, {0, 0, 0}, target_id=0
+@458 = add(@454,@457) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@459 = rsqrt(@458) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@460 = mul(@451,@459) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@461 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@460) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@462 = mul(@456,@461) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@463 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@452) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@464 = add(@462,@463) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@465 = relu(@464) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@466 = concat[axis=1](@418,@465) -> float_type, {1, 116, 28, 28}, {90944, 784, 28, 1}, target_id=0
+@467 = reshape[dims={1, 2, 58, 28, 28}](@466) -> float_type, {1, 2, 58, 28, 28}, {90944, 45472, 784, 28, 1}, target_id=0
+@468 = transpose[permutation={0, 2, 1, 3, 4}](@467) -> float_type, {1, 58, 2, 28, 28}, {90944, 784, 45472, 28, 1}, target_id=0
+@469 = reshape[dims={1, -1, 28, 28}](@468) -> float_type, {1, 116, 28, 28}, {90944, 784, 28, 1}, target_id=0
+@470 = slice[axes={1},starts={0},ends={58}](@469) -> float_type, {1, 58, 28, 28}, {90944, 784, 28, 1}, target_id=0
+@471 = slice[axes={1},starts={58},ends={116}](@469) -> float_type, {1, 58, 28, 28}, {90944, 784, 28, 1}, target_id=0
+@472 = convolution[padding={0, 0, 0, 0},stride={1, 1},dilation={1, 1},group=1,padding_mode=0](@471,@333) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@473 = unsqueeze[axes={1, 2},steps={}](@329) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@474 = unsqueeze[axes={1, 2},steps={}](@332) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@475 = unsqueeze[axes={1, 2},steps={}](@331) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@476 = unsqueeze[axes={1, 2},steps={}](@330) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@477 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@475) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@478 = sub(@472,@477) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@479 = multibroadcast[out_lens={58, 1, 1},out_dyn_dims={}](@79) -> float_type, {58, 1, 1}, {0, 0, 0}, target_id=0
+@480 = add(@476,@479) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@481 = rsqrt(@480) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@482 = mul(@473,@481) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@483 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@482) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@484 = mul(@478,@483) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@485 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@474) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@486 = add(@484,@485) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@487 = relu(@486) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@488 = convolution[padding={1, 1, 1, 1},stride={1, 1},dilation={1, 1},group=58,padding_mode=0](@487,@328) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@489 = unsqueeze[axes={1, 2},steps={}](@324) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@490 = unsqueeze[axes={1, 2},steps={}](@327) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@491 = unsqueeze[axes={1, 2},steps={}](@326) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@492 = unsqueeze[axes={1, 2},steps={}](@325) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@493 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@491) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@494 = sub(@488,@493) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@495 = multibroadcast[out_lens={58, 1, 1},out_dyn_dims={}](@78) -> float_type, {58, 1, 1}, {0, 0, 0}, target_id=0
+@496 = add(@492,@495) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@497 = rsqrt(@496) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@498 = mul(@489,@497) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@499 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@498) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@500 = mul(@494,@499) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@501 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@490) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@502 = add(@500,@501) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@503 = convolution[padding={0, 0, 0, 0},stride={1, 1},dilation={1, 1},group=1,padding_mode=0](@502,@323) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@504 = unsqueeze[axes={1, 2},steps={}](@319) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@505 = unsqueeze[axes={1, 2},steps={}](@322) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@506 = unsqueeze[axes={1, 2},steps={}](@321) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@507 = unsqueeze[axes={1, 2},steps={}](@320) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@508 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@506) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@509 = sub(@503,@508) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@510 = multibroadcast[out_lens={58, 1, 1},out_dyn_dims={}](@77) -> float_type, {58, 1, 1}, {0, 0, 0}, target_id=0
+@511 = add(@507,@510) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@512 = rsqrt(@511) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@513 = mul(@504,@512) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@514 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@513) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@515 = mul(@509,@514) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@516 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@505) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@517 = add(@515,@516) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@518 = relu(@517) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@519 = concat[axis=1](@470,@518) -> float_type, {1, 116, 28, 28}, {90944, 784, 28, 1}, target_id=0
+@520 = reshape[dims={1, 2, 58, 28, 28}](@519) -> float_type, {1, 2, 58, 28, 28}, {90944, 45472, 784, 28, 1}, target_id=0
+@521 = transpose[permutation={0, 2, 1, 3, 4}](@520) -> float_type, {1, 58, 2, 28, 28}, {90944, 784, 45472, 28, 1}, target_id=0
+@522 = reshape[dims={1, -1, 28, 28}](@521) -> float_type, {1, 116, 28, 28}, {90944, 784, 28, 1}, target_id=0
+@523 = slice[axes={1},starts={0},ends={58}](@522) -> float_type, {1, 58, 28, 28}, {90944, 784, 28, 1}, target_id=0
+@524 = slice[axes={1},starts={58},ends={116}](@522) -> float_type, {1, 58, 28, 28}, {90944, 784, 28, 1}, target_id=0
+@525 = convolution[padding={0, 0, 0, 0},stride={1, 1},dilation={1, 1},group=1,padding_mode=0](@524,@318) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@526 = unsqueeze[axes={1, 2},steps={}](@314) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@527 = unsqueeze[axes={1, 2},steps={}](@317) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@528 = unsqueeze[axes={1, 2},steps={}](@316) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@529 = unsqueeze[axes={1, 2},steps={}](@315) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@530 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@528) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@531 = sub(@525,@530) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@532 = multibroadcast[out_lens={58, 1, 1},out_dyn_dims={}](@74) -> float_type, {58, 1, 1}, {0, 0, 0}, target_id=0
+@533 = add(@529,@532) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@534 = rsqrt(@533) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@535 = mul(@526,@534) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@536 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@535) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@537 = mul(@531,@536) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@538 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@527) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@539 = add(@537,@538) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@540 = relu(@539) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@541 = convolution[padding={1, 1, 1, 1},stride={1, 1},dilation={1, 1},group=58,padding_mode=0](@540,@313) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@542 = unsqueeze[axes={1, 2},steps={}](@309) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@543 = unsqueeze[axes={1, 2},steps={}](@312) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@544 = unsqueeze[axes={1, 2},steps={}](@311) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@545 = unsqueeze[axes={1, 2},steps={}](@310) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@546 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@544) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@547 = sub(@541,@546) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@548 = multibroadcast[out_lens={58, 1, 1},out_dyn_dims={}](@73) -> float_type, {58, 1, 1}, {0, 0, 0}, target_id=0
+@549 = add(@545,@548) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@550 = rsqrt(@549) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@551 = mul(@542,@550) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@552 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@551) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@553 = mul(@547,@552) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@554 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@543) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@555 = add(@553,@554) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@556 = convolution[padding={0, 0, 0, 0},stride={1, 1},dilation={1, 1},group=1,padding_mode=0](@555,@308) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@557 = unsqueeze[axes={1, 2},steps={}](@304) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@558 = unsqueeze[axes={1, 2},steps={}](@307) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@559 = unsqueeze[axes={1, 2},steps={}](@306) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@560 = unsqueeze[axes={1, 2},steps={}](@305) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@561 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@559) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@562 = sub(@556,@561) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@563 = multibroadcast[out_lens={58, 1, 1},out_dyn_dims={}](@72) -> float_type, {58, 1, 1}, {0, 0, 0}, target_id=0
+@564 = add(@560,@563) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@565 = rsqrt(@564) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@566 = mul(@557,@565) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@567 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@566) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@568 = mul(@562,@567) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@569 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@558) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@570 = add(@568,@569) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@571 = relu(@570) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@572 = concat[axis=1](@523,@571) -> float_type, {1, 116, 28, 28}, {90944, 784, 28, 1}, target_id=0
+@573 = reshape[dims={1, 2, 58, 28, 28}](@572) -> float_type, {1, 2, 58, 28, 28}, {90944, 45472, 784, 28, 1}, target_id=0
+@574 = transpose[permutation={0, 2, 1, 3, 4}](@573) -> float_type, {1, 58, 2, 28, 28}, {90944, 784, 45472, 28, 1}, target_id=0
+@575 = reshape[dims={1, -1, 28, 28}](@574) -> float_type, {1, 116, 28, 28}, {90944, 784, 28, 1}, target_id=0
+@576 = slice[axes={1},starts={0},ends={58}](@575) -> float_type, {1, 58, 28, 28}, {90944, 784, 28, 1}, target_id=0
+@577 = slice[axes={1},starts={58},ends={116}](@575) -> float_type, {1, 58, 28, 28}, {90944, 784, 28, 1}, target_id=0
+@578 = convolution[padding={0, 0, 0, 0},stride={1, 1},dilation={1, 1},group=1,padding_mode=0](@577,@303) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@579 = unsqueeze[axes={1, 2},steps={}](@299) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@580 = unsqueeze[axes={1, 2},steps={}](@302) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@581 = unsqueeze[axes={1, 2},steps={}](@301) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@582 = unsqueeze[axes={1, 2},steps={}](@300) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@583 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@581) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@584 = sub(@578,@583) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@585 = multibroadcast[out_lens={58, 1, 1},out_dyn_dims={}](@69) -> float_type, {58, 1, 1}, {0, 0, 0}, target_id=0
+@586 = add(@582,@585) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@587 = rsqrt(@586) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@588 = mul(@579,@587) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@589 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@588) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@590 = mul(@584,@589) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@591 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@580) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@592 = add(@590,@591) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@593 = relu(@592) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@594 = convolution[padding={1, 1, 1, 1},stride={1, 1},dilation={1, 1},group=58,padding_mode=0](@593,@298) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@595 = unsqueeze[axes={1, 2},steps={}](@294) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@596 = unsqueeze[axes={1, 2},steps={}](@297) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@597 = unsqueeze[axes={1, 2},steps={}](@296) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@598 = unsqueeze[axes={1, 2},steps={}](@295) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@599 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@597) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@600 = sub(@594,@599) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@601 = multibroadcast[out_lens={58, 1, 1},out_dyn_dims={}](@68) -> float_type, {58, 1, 1}, {0, 0, 0}, target_id=0
+@602 = add(@598,@601) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@603 = rsqrt(@602) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@604 = mul(@595,@603) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@605 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@604) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@606 = mul(@600,@605) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@607 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@596) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@608 = add(@606,@607) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@609 = convolution[padding={0, 0, 0, 0},stride={1, 1},dilation={1, 1},group=1,padding_mode=0](@608,@293) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@610 = unsqueeze[axes={1, 2},steps={}](@289) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@611 = unsqueeze[axes={1, 2},steps={}](@292) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@612 = unsqueeze[axes={1, 2},steps={}](@291) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@613 = unsqueeze[axes={1, 2},steps={}](@290) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@614 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@612) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@615 = sub(@609,@614) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@616 = multibroadcast[out_lens={58, 1, 1},out_dyn_dims={}](@67) -> float_type, {58, 1, 1}, {0, 0, 0}, target_id=0
+@617 = add(@613,@616) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@618 = rsqrt(@617) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@619 = mul(@610,@618) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@620 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@619) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@621 = mul(@615,@620) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@622 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@611) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@623 = add(@621,@622) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@624 = relu(@623) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@625 = concat[axis=1](@576,@624) -> float_type, {1, 116, 28, 28}, {90944, 784, 28, 1}, target_id=0
+@626 = reshape[dims={1, 2, 58, 28, 28}](@625) -> float_type, {1, 2, 58, 28, 28}, {90944, 45472, 784, 28, 1}, target_id=0
+@627 = transpose[permutation={0, 2, 1, 3, 4}](@626) -> float_type, {1, 58, 2, 28, 28}, {90944, 784, 45472, 28, 1}, target_id=0
+@628 = reshape[dims={1, -1, 28, 28}](@627) -> float_type, {1, 116, 28, 28}, {90944, 784, 28, 1}, target_id=0
+@629 = convolution[padding={1, 1, 1, 1},stride={2, 2},dilation={1, 1},group=116,padding_mode=0](@628,@288) -> float_type, {1, 116, 14, 14}, {22736, 196, 14, 1}, target_id=0
+@630 = unsqueeze[axes={1, 2},steps={}](@284) -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+@631 = unsqueeze[axes={1, 2},steps={}](@287) -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+@632 = unsqueeze[axes={1, 2},steps={}](@286) -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+@633 = unsqueeze[axes={1, 2},steps={}](@285) -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+@634 = multibroadcast[out_lens={1, 116, 14, 14},out_dyn_dims={}](@632) -> float_type, {1, 116, 14, 14}, {0, 1, 0, 0}, target_id=0
+@635 = sub(@629,@634) -> float_type, {1, 116, 14, 14}, {22736, 196, 14, 1}, target_id=0
+@636 = multibroadcast[out_lens={116, 1, 1},out_dyn_dims={}](@64) -> float_type, {116, 1, 1}, {0, 0, 0}, target_id=0
+@637 = add(@633,@636) -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+@638 = rsqrt(@637) -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+@639 = mul(@630,@638) -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+@640 = multibroadcast[out_lens={1, 116, 14, 14},out_dyn_dims={}](@639) -> float_type, {1, 116, 14, 14}, {0, 1, 0, 0}, target_id=0
+@641 = mul(@635,@640) -> float_type, {1, 116, 14, 14}, {22736, 196, 14, 1}, target_id=0
+@642 = multibroadcast[out_lens={1, 116, 14, 14},out_dyn_dims={}](@631) -> float_type, {1, 116, 14, 14}, {0, 1, 0, 0}, target_id=0
+@643 = add(@641,@642) -> float_type, {1, 116, 14, 14}, {22736, 196, 14, 1}, target_id=0
+@644 = convolution[padding={0, 0, 0, 0},stride={1, 1},dilation={1, 1},group=1,padding_mode=0](@643,@283) -> float_type, {1, 116, 14, 14}, {22736, 196, 14, 1}, target_id=0
+@645 = unsqueeze[axes={1, 2},steps={}](@279) -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+@646 = unsqueeze[axes={1, 2},steps={}](@282) -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+@647 = unsqueeze[axes={1, 2},steps={}](@281) -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+@648 = unsqueeze[axes={1, 2},steps={}](@280) -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+@649 = multibroadcast[out_lens={1, 116, 14, 14},out_dyn_dims={}](@647) -> float_type, {1, 116, 14, 14}, {0, 1, 0, 0}, target_id=0
+@650 = sub(@644,@649) -> float_type, {1, 116, 14, 14}, {22736, 196, 14, 1}, target_id=0
+@651 = multibroadcast[out_lens={116, 1, 1},out_dyn_dims={}](@63) -> float_type, {116, 1, 1}, {0, 0, 0}, target_id=0
+@652 = add(@648,@651) -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+@653 = rsqrt(@652) -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+@654 = mul(@645,@653) -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+@655 = multibroadcast[out_lens={1, 116, 14, 14},out_dyn_dims={}](@654) -> float_type, {1, 116, 14, 14}, {0, 1, 0, 0}, target_id=0
+
+
+module: "main"
+@0 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@1 = @literal{1, -1, 7, 7} -> int64_type, {4}, {1}, target_id=0
+@2 = @literal{1, 2, 232, 7, 7} -> int64_type, {5}, {1}, target_id=0
+@3 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@4 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@5 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@6 = @literal{1, -1, 7, 7} -> int64_type, {4}, {1}, target_id=0
+@7 = @literal{1, 2, 232, 7, 7} -> int64_type, {5}, {1}, target_id=0
+@8 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@9 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@10 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@11 = @literal{1, -1, 7, 7} -> int64_type, {4}, {1}, target_id=0
+@12 = @literal{1, 2, 232, 7, 7} -> int64_type, {5}, {1}, target_id=0
+@13 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@14 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@15 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@16 = @literal{1, -1, 7, 7} -> int64_type, {4}, {1}, target_id=0
+@17 = @literal{1, 2, 232, 7, 7} -> int64_type, {5}, {1}, target_id=0
+@18 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@19 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@20 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@21 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@22 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@23 = @literal{1, -1, 14, 14} -> int64_type, {4}, {1}, target_id=0
+@24 = @literal{1, 2, 116, 14, 14} -> int64_type, {5}, {1}, target_id=0
+@25 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@26 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@27 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@28 = @literal{1, -1, 14, 14} -> int64_type, {4}, {1}, target_id=0
+@29 = @literal{1, 2, 116, 14, 14} -> int64_type, {5}, {1}, target_id=0
+@30 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@31 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@32 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@33 = @literal{1, -1, 14, 14} -> int64_type, {4}, {1}, target_id=0
+@34 = @literal{1, 2, 116, 14, 14} -> int64_type, {5}, {1}, target_id=0
+@35 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@36 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@37 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@38 = @literal{1, -1, 14, 14} -> int64_type, {4}, {1}, target_id=0
+@39 = @literal{1, 2, 116, 14, 14} -> int64_type, {5}, {1}, target_id=0
+@40 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@41 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@42 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@43 = @literal{1, -1, 14, 14} -> int64_type, {4}, {1}, target_id=0
+@44 = @literal{1, 2, 116, 14, 14} -> int64_type, {5}, {1}, target_id=0
+@45 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@46 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@47 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@48 = @literal{1, -1, 14, 14} -> int64_type, {4}, {1}, target_id=0
+@49 = @literal{1, 2, 116, 14, 14} -> int64_type, {5}, {1}, target_id=0
+@50 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@51 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@52 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@53 = @literal{1, -1, 14, 14} -> int64_type, {4}, {1}, target_id=0
+@54 = @literal{1, 2, 116, 14, 14} -> int64_type, {5}, {1}, target_id=0
+@55 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@56 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@57 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@58 = @literal{1, -1, 14, 14} -> int64_type, {4}, {1}, target_id=0
+@59 = @literal{1, 2, 116, 14, 14} -> int64_type, {5}, {1}, target_id=0
+@60 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@61 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@62 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@63 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@64 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@65 = @literal{1, -1, 28, 28} -> int64_type, {4}, {1}, target_id=0
+@66 = @literal{1, 2, 58, 28, 28} -> int64_type, {5}, {1}, target_id=0
+@67 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@68 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@69 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@70 = @literal{1, -1, 28, 28} -> int64_type, {4}, {1}, target_id=0
+@71 = @literal{1, 2, 58, 28, 28} -> int64_type, {5}, {1}, target_id=0
+@72 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@73 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@74 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@75 = @literal{1, -1, 28, 28} -> int64_type, {4}, {1}, target_id=0
+@76 = @literal{1, 2, 58, 28, 28} -> int64_type, {5}, {1}, target_id=0
+@77 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@78 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@79 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@80 = @literal{1, -1, 28, 28} -> int64_type, {4}, {1}, target_id=0
+@81 = @literal{1, 2, 58, 28, 28} -> int64_type, {5}, {1}, target_id=0
+@82 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@83 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@84 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@85 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@86 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+@87 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+input = @param:input -> float_type, {1, 3, 224, 224}, {150528, 50176, 224, 1}, target_id=0
+@89 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@90 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@91 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@92 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@93 = @literal{ ... } -> float_type, {232, 232, 1, 1}, {232, 1, 1, 1}, target_id=0
+@94 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@95 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@96 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@97 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@98 = @literal{ ... } -> float_type, {232, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@99 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@100 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@101 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@102 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@103 = @literal{ ... } -> float_type, {232, 232, 1, 1}, {232, 1, 1, 1}, target_id=0
+@104 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@105 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@106 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@107 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@108 = @literal{ ... } -> float_type, {232, 232, 1, 1}, {232, 1, 1, 1}, target_id=0
+@109 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@110 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@111 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@112 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@113 = @literal{ ... } -> float_type, {232, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@114 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@115 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@116 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@117 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@118 = @literal{ ... } -> float_type, {232, 232, 1, 1}, {232, 1, 1, 1}, target_id=0
+@119 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@120 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@121 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@122 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@123 = @literal{ ... } -> float_type, {232, 232, 1, 1}, {232, 1, 1, 1}, target_id=0
+@124 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@125 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@126 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@127 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@128 = @literal{ ... } -> float_type, {232, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@129 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@130 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@131 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@132 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@133 = @literal{ ... } -> float_type, {232, 232, 1, 1}, {232, 1, 1, 1}, target_id=0
+@134 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@135 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@136 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@137 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@138 = @literal{ ... } -> float_type, {232, 232, 1, 1}, {232, 1, 1, 1}, target_id=0
+@139 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@140 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@141 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@142 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@143 = @literal{ ... } -> float_type, {232, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@144 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@145 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@146 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@147 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@148 = @literal{ ... } -> float_type, {232, 232, 1, 1}, {232, 1, 1, 1}, target_id=0
+@149 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@150 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@151 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@152 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@153 = @literal{ ... } -> float_type, {232, 232, 1, 1}, {232, 1, 1, 1}, target_id=0
+@154 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@155 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@156 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@157 = @literal{ ... } -> float_type, {232}, {1}, target_id=0
+@158 = @literal{ ... } -> float_type, {232, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@159 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@160 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@161 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@162 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@163 = @literal{ ... } -> float_type, {116, 116, 1, 1}, {116, 1, 1, 1}, target_id=0
+@164 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@165 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@166 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@167 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@168 = @literal{ ... } -> float_type, {116, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@169 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@170 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@171 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@172 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@173 = @literal{ ... } -> float_type, {116, 116, 1, 1}, {116, 1, 1, 1}, target_id=0
+@174 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@175 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@176 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@177 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@178 = @literal{ ... } -> float_type, {116, 116, 1, 1}, {116, 1, 1, 1}, target_id=0
+@179 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@180 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@181 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@182 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@183 = @literal{ ... } -> float_type, {116, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@184 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@185 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@186 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@187 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@188 = @literal{ ... } -> float_type, {116, 116, 1, 1}, {116, 1, 1, 1}, target_id=0
+@189 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@190 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@191 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@192 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@193 = @literal{ ... } -> float_type, {116, 116, 1, 1}, {116, 1, 1, 1}, target_id=0
+@194 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@195 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@196 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@197 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@198 = @literal{ ... } -> float_type, {116, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@199 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@200 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@201 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@202 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@203 = @literal{ ... } -> float_type, {116, 116, 1, 1}, {116, 1, 1, 1}, target_id=0
+@204 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@205 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@206 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@207 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@208 = @literal{ ... } -> float_type, {116, 116, 1, 1}, {116, 1, 1, 1}, target_id=0
+@209 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@210 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@211 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@212 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@213 = @literal{ ... } -> float_type, {116, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@214 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@215 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@216 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@217 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@218 = @literal{ ... } -> float_type, {116, 116, 1, 1}, {116, 1, 1, 1}, target_id=0
+@219 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@220 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@221 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@222 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@223 = @literal{ ... } -> float_type, {116, 116, 1, 1}, {116, 1, 1, 1}, target_id=0
+@224 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@225 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@226 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@227 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@228 = @literal{ ... } -> float_type, {116, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@229 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@230 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@231 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@232 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@233 = @literal{ ... } -> float_type, {116, 116, 1, 1}, {116, 1, 1, 1}, target_id=0
+@234 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@235 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@236 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@237 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@238 = @literal{ ... } -> float_type, {116, 116, 1, 1}, {116, 1, 1, 1}, target_id=0
+@239 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@240 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@241 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@242 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@243 = @literal{ ... } -> float_type, {116, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@244 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@245 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@246 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@247 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@248 = @literal{ ... } -> float_type, {116, 116, 1, 1}, {116, 1, 1, 1}, target_id=0
+@249 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@250 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@251 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@252 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@253 = @literal{ ... } -> float_type, {116, 116, 1, 1}, {116, 1, 1, 1}, target_id=0
+@254 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@255 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@256 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@257 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@258 = @literal{ ... } -> float_type, {116, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@259 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@260 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@261 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@262 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@263 = @literal{ ... } -> float_type, {116, 116, 1, 1}, {116, 1, 1, 1}, target_id=0
+@264 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@265 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@266 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@267 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@268 = @literal{ ... } -> float_type, {116, 116, 1, 1}, {116, 1, 1, 1}, target_id=0
+@269 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@270 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@271 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@272 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@273 = @literal{ ... } -> float_type, {116, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@274 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@275 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@276 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@277 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@278 = @literal{ ... } -> float_type, {116, 116, 1, 1}, {116, 1, 1, 1}, target_id=0
+@279 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@280 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@281 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@282 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@283 = @literal{ ... } -> float_type, {116, 116, 1, 1}, {116, 1, 1, 1}, target_id=0
+@284 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@285 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@286 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@287 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@288 = @literal{ ... } -> float_type, {116, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@289 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@290 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@291 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@292 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@293 = @literal{ ... } -> float_type, {58, 58, 1, 1}, {58, 1, 1, 1}, target_id=0
+@294 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@295 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@296 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@297 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@298 = @literal{ ... } -> float_type, {58, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@299 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@300 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@301 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@302 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@303 = @literal{ ... } -> float_type, {58, 58, 1, 1}, {58, 1, 1, 1}, target_id=0
+@304 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@305 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@306 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@307 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@308 = @literal{ ... } -> float_type, {58, 58, 1, 1}, {58, 1, 1, 1}, target_id=0
+@309 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@310 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@311 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@312 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@313 = @literal{ ... } -> float_type, {58, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@314 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@315 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@316 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@317 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@318 = @literal{ ... } -> float_type, {58, 58, 1, 1}, {58, 1, 1, 1}, target_id=0
+@319 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@320 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@321 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@322 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@323 = @literal{ ... } -> float_type, {58, 58, 1, 1}, {58, 1, 1, 1}, target_id=0
+@324 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@325 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@326 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@327 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@328 = @literal{ ... } -> float_type, {58, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@329 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@330 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@331 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@332 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@333 = @literal{ ... } -> float_type, {58, 58, 1, 1}, {58, 1, 1, 1}, target_id=0
+@334 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@335 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@336 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@337 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@338 = @literal{ ... } -> float_type, {58, 58, 1, 1}, {58, 1, 1, 1}, target_id=0
+@339 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@340 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@341 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@342 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@343 = @literal{ ... } -> float_type, {58, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@344 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@345 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@346 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@347 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@348 = @literal{ ... } -> float_type, {58, 24, 1, 1}, {24, 1, 1, 1}, target_id=0
+@349 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@350 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@351 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@352 = @literal{ ... } -> float_type, {58}, {1}, target_id=0
+@353 = @literal{ ... } -> float_type, {58, 24, 1, 1}, {24, 1, 1, 1}, target_id=0
+@354 = @literal{ ... } -> float_type, {24}, {1}, target_id=0
+@355 = @literal{ ... } -> float_type, {24}, {1}, target_id=0
+@356 = @literal{ ... } -> float_type, {24}, {1}, target_id=0
+@357 = @literal{ ... } -> float_type, {24}, {1}, target_id=0
+@358 = @literal{ ... } -> float_type, {24, 1, 3, 3}, {9, 9, 3, 1}, target_id=0
+@359 = @literal{ ... } -> float_type, {1000, 1024}, {1024, 1}, target_id=0
+@360 = @literal{ ... } -> float_type, {1000}, {1}, target_id=0
+@361 = @literal{ ... } -> float_type, {1024}, {1}, target_id=0
+@362 = @literal{ ... } -> float_type, {1024}, {1}, target_id=0
+@363 = @literal{ ... } -> float_type, {1024}, {1}, target_id=0
+@364 = @literal{ ... } -> float_type, {1024}, {1}, target_id=0
+@365 = @literal{ ... } -> float_type, {1024, 464, 1, 1}, {464, 1, 1, 1}, target_id=0
+@366 = @literal{ ... } -> float_type, {24}, {1}, target_id=0
+@367 = @literal{ ... } -> float_type, {24}, {1}, target_id=0
+@368 = @literal{ ... } -> float_type, {24}, {1}, target_id=0
+@369 = @literal{ ... } -> float_type, {24}, {1}, target_id=0
+@370 = @literal{ ... } -> float_type, {24, 3, 3, 3}, {27, 9, 3, 1}, target_id=0
+@371 = convolution[padding={1, 1, 1, 1},stride={2, 2},dilation={1, 1},group=1,padding_mode=0](input,@370) -> float_type, {1, 24, 112, 112}, {301056, 12544, 112, 1}, target_id=0
+@372 = unsqueeze[axes={1, 2},steps={}](@366) -> float_type, {24, 1, 1}, {1, 1, 1}, target_id=0
+@373 = unsqueeze[axes={1, 2},steps={}](@369) -> float_type, {24, 1, 1}, {1, 1, 1}, target_id=0
+@374 = unsqueeze[axes={1, 2},steps={}](@368) -> float_type, {24, 1, 1}, {1, 1, 1}, target_id=0
+@375 = unsqueeze[axes={1, 2},steps={}](@367) -> float_type, {24, 1, 1}, {1, 1, 1}, target_id=0
+@376 = multibroadcast[out_lens={1, 24, 112, 112},out_dyn_dims={}](@374) -> float_type, {1, 24, 112, 112}, {0, 1, 0, 0}, target_id=0
+@377 = sub(@371,@376) -> float_type, {1, 24, 112, 112}, {301056, 12544, 112, 1}, target_id=0
+@378 = multibroadcast[out_lens={24, 1, 1},out_dyn_dims={}](@87) -> float_type, {24, 1, 1}, {0, 0, 0}, target_id=0
+@379 = add(@375,@378) -> float_type, {24, 1, 1}, {1, 1, 1}, target_id=0
+@380 = rsqrt(@379) -> float_type, {24, 1, 1}, {1, 1, 1}, target_id=0
+@381 = mul(@372,@380) -> float_type, {24, 1, 1}, {1, 1, 1}, target_id=0
+@382 = multibroadcast[out_lens={1, 24, 112, 112},out_dyn_dims={}](@381) -> float_type, {1, 24, 112, 112}, {0, 1, 0, 0}, target_id=0
+@383 = mul(@377,@382) -> float_type, {1, 24, 112, 112}, {301056, 12544, 112, 1}, target_id=0
+@384 = multibroadcast[out_lens={1, 24, 112, 112},out_dyn_dims={}](@373) -> float_type, {1, 24, 112, 112}, {0, 1, 0, 0}, target_id=0
+@385 = add(@383,@384) -> float_type, {1, 24, 112, 112}, {301056, 12544, 112, 1}, target_id=0
+@386 = relu(@385) -> float_type, {1, 24, 112, 112}, {301056, 12544, 112, 1}, target_id=0
+@387 = pooling[mode=max,padding={1, 1, 1, 1},padding_mode=0,stride={2, 2},lengths={3, 3},dilations={1, 1},ceil_mode=0,lp_order=2,dyn_global=0](@386) -> float_type, {1, 24, 56, 56}, {75264, 3136, 56, 1}, target_id=0
+@388 = convolution[padding={1, 1, 1, 1},stride={2, 2},dilation={1, 1},group=24,padding_mode=0](@387,@358) -> float_type, {1, 24, 28, 28}, {18816, 784, 28, 1}, target_id=0
+@389 = unsqueeze[axes={1, 2},steps={}](@354) -> float_type, {24, 1, 1}, {1, 1, 1}, target_id=0
+@390 = unsqueeze[axes={1, 2},steps={}](@357) -> float_type, {24, 1, 1}, {1, 1, 1}, target_id=0
+@391 = unsqueeze[axes={1, 2},steps={}](@356) -> float_type, {24, 1, 1}, {1, 1, 1}, target_id=0
+@392 = unsqueeze[axes={1, 2},steps={}](@355) -> float_type, {24, 1, 1}, {1, 1, 1}, target_id=0
+@393 = multibroadcast[out_lens={1, 24, 28, 28},out_dyn_dims={}](@391) -> float_type, {1, 24, 28, 28}, {0, 1, 0, 0}, target_id=0
+@394 = sub(@388,@393) -> float_type, {1, 24, 28, 28}, {18816, 784, 28, 1}, target_id=0
+@395 = multibroadcast[out_lens={24, 1, 1},out_dyn_dims={}](@86) -> float_type, {24, 1, 1}, {0, 0, 0}, target_id=0
+@396 = add(@392,@395) -> float_type, {24, 1, 1}, {1, 1, 1}, target_id=0
+@397 = rsqrt(@396) -> float_type, {24, 1, 1}, {1, 1, 1}, target_id=0
+@398 = mul(@389,@397) -> float_type, {24, 1, 1}, {1, 1, 1}, target_id=0
+@399 = multibroadcast[out_lens={1, 24, 28, 28},out_dyn_dims={}](@398) -> float_type, {1, 24, 28, 28}, {0, 1, 0, 0}, target_id=0
+@400 = mul(@394,@399) -> float_type, {1, 24, 28, 28}, {18816, 784, 28, 1}, target_id=0
+@401 = multibroadcast[out_lens={1, 24, 28, 28},out_dyn_dims={}](@390) -> float_type, {1, 24, 28, 28}, {0, 1, 0, 0}, target_id=0
+@402 = add(@400,@401) -> float_type, {1, 24, 28, 28}, {18816, 784, 28, 1}, target_id=0
+@403 = convolution[padding={0, 0, 0, 0},stride={1, 1},dilation={1, 1},group=1,padding_mode=0](@402,@353) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@404 = unsqueeze[axes={1, 2},steps={}](@349) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@405 = unsqueeze[axes={1, 2},steps={}](@352) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@406 = unsqueeze[axes={1, 2},steps={}](@351) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@407 = unsqueeze[axes={1, 2},steps={}](@350) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@408 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@406) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@409 = sub(@403,@408) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@410 = multibroadcast[out_lens={58, 1, 1},out_dyn_dims={}](@85) -> float_type, {58, 1, 1}, {0, 0, 0}, target_id=0
+@411 = add(@407,@410) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@412 = rsqrt(@411) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@413 = mul(@404,@412) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@414 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@413) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@415 = mul(@409,@414) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@416 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@405) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@417 = add(@415,@416) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@418 = relu(@417) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@419 = convolution[padding={0, 0, 0, 0},stride={1, 1},dilation={1, 1},group=1,padding_mode=0](@387,@348) -> float_type, {1, 58, 56, 56}, {181888, 3136, 56, 1}, target_id=0
+@420 = unsqueeze[axes={1, 2},steps={}](@344) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@421 = unsqueeze[axes={1, 2},steps={}](@347) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@422 = unsqueeze[axes={1, 2},steps={}](@346) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@423 = unsqueeze[axes={1, 2},steps={}](@345) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@424 = multibroadcast[out_lens={1, 58, 56, 56},out_dyn_dims={}](@422) -> float_type, {1, 58, 56, 56}, {0, 1, 0, 0}, target_id=0
+@425 = sub(@419,@424) -> float_type, {1, 58, 56, 56}, {181888, 3136, 56, 1}, target_id=0
+@426 = multibroadcast[out_lens={58, 1, 1},out_dyn_dims={}](@84) -> float_type, {58, 1, 1}, {0, 0, 0}, target_id=0
+@427 = add(@423,@426) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@428 = rsqrt(@427) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@429 = mul(@420,@428) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@430 = multibroadcast[out_lens={1, 58, 56, 56},out_dyn_dims={}](@429) -> float_type, {1, 58, 56, 56}, {0, 1, 0, 0}, target_id=0
+@431 = mul(@425,@430) -> float_type, {1, 58, 56, 56}, {181888, 3136, 56, 1}, target_id=0
+@432 = multibroadcast[out_lens={1, 58, 56, 56},out_dyn_dims={}](@421) -> float_type, {1, 58, 56, 56}, {0, 1, 0, 0}, target_id=0
+@433 = add(@431,@432) -> float_type, {1, 58, 56, 56}, {181888, 3136, 56, 1}, target_id=0
+@434 = relu(@433) -> float_type, {1, 58, 56, 56}, {181888, 3136, 56, 1}, target_id=0
+@435 = convolution[padding={1, 1, 1, 1},stride={2, 2},dilation={1, 1},group=58,padding_mode=0](@434,@343) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@436 = unsqueeze[axes={1, 2},steps={}](@339) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@437 = unsqueeze[axes={1, 2},steps={}](@342) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@438 = unsqueeze[axes={1, 2},steps={}](@341) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@439 = unsqueeze[axes={1, 2},steps={}](@340) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@440 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@438) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@441 = sub(@435,@440) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@442 = multibroadcast[out_lens={58, 1, 1},out_dyn_dims={}](@83) -> float_type, {58, 1, 1}, {0, 0, 0}, target_id=0
+@443 = add(@439,@442) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@444 = rsqrt(@443) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@445 = mul(@436,@444) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@446 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@445) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@447 = mul(@441,@446) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@448 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@437) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@449 = add(@447,@448) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@450 = convolution[padding={0, 0, 0, 0},stride={1, 1},dilation={1, 1},group=1,padding_mode=0](@449,@338) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@451 = unsqueeze[axes={1, 2},steps={}](@334) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@452 = unsqueeze[axes={1, 2},steps={}](@337) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@453 = unsqueeze[axes={1, 2},steps={}](@336) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@454 = unsqueeze[axes={1, 2},steps={}](@335) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@455 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@453) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@456 = sub(@450,@455) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@457 = multibroadcast[out_lens={58, 1, 1},out_dyn_dims={}](@82) -> float_type, {58, 1, 1}, {0, 0, 0}, target_id=0
+@458 = add(@454,@457) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@459 = rsqrt(@458) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@460 = mul(@451,@459) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@461 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@460) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@462 = mul(@456,@461) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@463 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@452) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@464 = add(@462,@463) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@465 = relu(@464) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@466 = concat[axis=1](@418,@465) -> float_type, {1, 116, 28, 28}, {90944, 784, 28, 1}, target_id=0
+@467 = reshape[dims={1, 2, 58, 28, 28}](@466) -> float_type, {1, 2, 58, 28, 28}, {90944, 45472, 784, 28, 1}, target_id=0
+@468 = transpose[permutation={0, 2, 1, 3, 4}](@467) -> float_type, {1, 58, 2, 28, 28}, {90944, 784, 45472, 28, 1}, target_id=0
+@469 = reshape[dims={1, -1, 28, 28}](@468) -> float_type, {1, 116, 28, 28}, {90944, 784, 28, 1}, target_id=0
+@470 = slice[axes={1},starts={0},ends={58}](@469) -> float_type, {1, 58, 28, 28}, {90944, 784, 28, 1}, target_id=0
+@471 = slice[axes={1},starts={58},ends={116}](@469) -> float_type, {1, 58, 28, 28}, {90944, 784, 28, 1}, target_id=0
+@472 = convolution[padding={0, 0, 0, 0},stride={1, 1},dilation={1, 1},group=1,padding_mode=0](@471,@333) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@473 = unsqueeze[axes={1, 2},steps={}](@329) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@474 = unsqueeze[axes={1, 2},steps={}](@332) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@475 = unsqueeze[axes={1, 2},steps={}](@331) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@476 = unsqueeze[axes={1, 2},steps={}](@330) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@477 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@475) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@478 = sub(@472,@477) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@479 = multibroadcast[out_lens={58, 1, 1},out_dyn_dims={}](@79) -> float_type, {58, 1, 1}, {0, 0, 0}, target_id=0
+@480 = add(@476,@479) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@481 = rsqrt(@480) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@482 = mul(@473,@481) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@483 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@482) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@484 = mul(@478,@483) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@485 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@474) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@486 = add(@484,@485) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@487 = relu(@486) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@488 = convolution[padding={1, 1, 1, 1},stride={1, 1},dilation={1, 1},group=58,padding_mode=0](@487,@328) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@489 = unsqueeze[axes={1, 2},steps={}](@324) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@490 = unsqueeze[axes={1, 2},steps={}](@327) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@491 = unsqueeze[axes={1, 2},steps={}](@326) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@492 = unsqueeze[axes={1, 2},steps={}](@325) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@493 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@491) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@494 = sub(@488,@493) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@495 = multibroadcast[out_lens={58, 1, 1},out_dyn_dims={}](@78) -> float_type, {58, 1, 1}, {0, 0, 0}, target_id=0
+@496 = add(@492,@495) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@497 = rsqrt(@496) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@498 = mul(@489,@497) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@499 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@498) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@500 = mul(@494,@499) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@501 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@490) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@502 = add(@500,@501) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@503 = convolution[padding={0, 0, 0, 0},stride={1, 1},dilation={1, 1},group=1,padding_mode=0](@502,@323) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@504 = unsqueeze[axes={1, 2},steps={}](@319) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@505 = unsqueeze[axes={1, 2},steps={}](@322) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@506 = unsqueeze[axes={1, 2},steps={}](@321) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@507 = unsqueeze[axes={1, 2},steps={}](@320) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@508 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@506) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@509 = sub(@503,@508) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@510 = multibroadcast[out_lens={58, 1, 1},out_dyn_dims={}](@77) -> float_type, {58, 1, 1}, {0, 0, 0}, target_id=0
+@511 = add(@507,@510) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@512 = rsqrt(@511) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@513 = mul(@504,@512) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@514 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@513) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@515 = mul(@509,@514) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@516 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@505) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@517 = add(@515,@516) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@518 = relu(@517) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@519 = concat[axis=1](@470,@518) -> float_type, {1, 116, 28, 28}, {90944, 784, 28, 1}, target_id=0
+@520 = reshape[dims={1, 2, 58, 28, 28}](@519) -> float_type, {1, 2, 58, 28, 28}, {90944, 45472, 784, 28, 1}, target_id=0
+@521 = transpose[permutation={0, 2, 1, 3, 4}](@520) -> float_type, {1, 58, 2, 28, 28}, {90944, 784, 45472, 28, 1}, target_id=0
+@522 = reshape[dims={1, -1, 28, 28}](@521) -> float_type, {1, 116, 28, 28}, {90944, 784, 28, 1}, target_id=0
+@523 = slice[axes={1},starts={0},ends={58}](@522) -> float_type, {1, 58, 28, 28}, {90944, 784, 28, 1}, target_id=0
+@524 = slice[axes={1},starts={58},ends={116}](@522) -> float_type, {1, 58, 28, 28}, {90944, 784, 28, 1}, target_id=0
+@525 = convolution[padding={0, 0, 0, 0},stride={1, 1},dilation={1, 1},group=1,padding_mode=0](@524,@318) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@526 = unsqueeze[axes={1, 2},steps={}](@314) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@527 = unsqueeze[axes={1, 2},steps={}](@317) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@528 = unsqueeze[axes={1, 2},steps={}](@316) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@529 = unsqueeze[axes={1, 2},steps={}](@315) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@530 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@528) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@531 = sub(@525,@530) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@532 = multibroadcast[out_lens={58, 1, 1},out_dyn_dims={}](@74) -> float_type, {58, 1, 1}, {0, 0, 0}, target_id=0
+@533 = add(@529,@532) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@534 = rsqrt(@533) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@535 = mul(@526,@534) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@536 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@535) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@537 = mul(@531,@536) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@538 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@527) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@539 = add(@537,@538) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@540 = relu(@539) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@541 = convolution[padding={1, 1, 1, 1},stride={1, 1},dilation={1, 1},group=58,padding_mode=0](@540,@313) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@542 = unsqueeze[axes={1, 2},steps={}](@309) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@543 = unsqueeze[axes={1, 2},steps={}](@312) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@544 = unsqueeze[axes={1, 2},steps={}](@311) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@545 = unsqueeze[axes={1, 2},steps={}](@310) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@546 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@544) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@547 = sub(@541,@546) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@548 = multibroadcast[out_lens={58, 1, 1},out_dyn_dims={}](@73) -> float_type, {58, 1, 1}, {0, 0, 0}, target_id=0
+@549 = add(@545,@548) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@550 = rsqrt(@549) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@551 = mul(@542,@550) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@552 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@551) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@553 = mul(@547,@552) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@554 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@543) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@555 = add(@553,@554) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@556 = convolution[padding={0, 0, 0, 0},stride={1, 1},dilation={1, 1},group=1,padding_mode=0](@555,@308) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@557 = unsqueeze[axes={1, 2},steps={}](@304) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@558 = unsqueeze[axes={1, 2},steps={}](@307) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@559 = unsqueeze[axes={1, 2},steps={}](@306) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@560 = unsqueeze[axes={1, 2},steps={}](@305) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@561 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@559) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@562 = sub(@556,@561) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@563 = multibroadcast[out_lens={58, 1, 1},out_dyn_dims={}](@72) -> float_type, {58, 1, 1}, {0, 0, 0}, target_id=0
+@564 = add(@560,@563) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@565 = rsqrt(@564) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@566 = mul(@557,@565) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@567 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@566) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@568 = mul(@562,@567) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@569 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@558) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@570 = add(@568,@569) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@571 = relu(@570) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@572 = concat[axis=1](@523,@571) -> float_type, {1, 116, 28, 28}, {90944, 784, 28, 1}, target_id=0
+@573 = reshape[dims={1, 2, 58, 28, 28}](@572) -> float_type, {1, 2, 58, 28, 28}, {90944, 45472, 784, 28, 1}, target_id=0
+@574 = transpose[permutation={0, 2, 1, 3, 4}](@573) -> float_type, {1, 58, 2, 28, 28}, {90944, 784, 45472, 28, 1}, target_id=0
+@575 = reshape[dims={1, -1, 28, 28}](@574) -> float_type, {1, 116, 28, 28}, {90944, 784, 28, 1}, target_id=0
+@576 = slice[axes={1},starts={0},ends={58}](@575) -> float_type, {1, 58, 28, 28}, {90944, 784, 28, 1}, target_id=0
+@577 = slice[axes={1},starts={58},ends={116}](@575) -> float_type, {1, 58, 28, 28}, {90944, 784, 28, 1}, target_id=0
+@578 = convolution[padding={0, 0, 0, 0},stride={1, 1},dilation={1, 1},group=1,padding_mode=0](@577,@303) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@579 = unsqueeze[axes={1, 2},steps={}](@299) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@580 = unsqueeze[axes={1, 2},steps={}](@302) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@581 = unsqueeze[axes={1, 2},steps={}](@301) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@582 = unsqueeze[axes={1, 2},steps={}](@300) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@583 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@581) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@584 = sub(@578,@583) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@585 = multibroadcast[out_lens={58, 1, 1},out_dyn_dims={}](@69) -> float_type, {58, 1, 1}, {0, 0, 0}, target_id=0
+@586 = add(@582,@585) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@587 = rsqrt(@586) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@588 = mul(@579,@587) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@589 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@588) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@590 = mul(@584,@589) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@591 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@580) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@592 = add(@590,@591) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@593 = relu(@592) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@594 = convolution[padding={1, 1, 1, 1},stride={1, 1},dilation={1, 1},group=58,padding_mode=0](@593,@298) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@595 = unsqueeze[axes={1, 2},steps={}](@294) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@596 = unsqueeze[axes={1, 2},steps={}](@297) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@597 = unsqueeze[axes={1, 2},steps={}](@296) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@598 = unsqueeze[axes={1, 2},steps={}](@295) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@599 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@597) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@600 = sub(@594,@599) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@601 = multibroadcast[out_lens={58, 1, 1},out_dyn_dims={}](@68) -> float_type, {58, 1, 1}, {0, 0, 0}, target_id=0
+@602 = add(@598,@601) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@603 = rsqrt(@602) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@604 = mul(@595,@603) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@605 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@604) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@606 = mul(@600,@605) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@607 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@596) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@608 = add(@606,@607) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@609 = convolution[padding={0, 0, 0, 0},stride={1, 1},dilation={1, 1},group=1,padding_mode=0](@608,@293) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@610 = unsqueeze[axes={1, 2},steps={}](@289) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@611 = unsqueeze[axes={1, 2},steps={}](@292) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@612 = unsqueeze[axes={1, 2},steps={}](@291) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@613 = unsqueeze[axes={1, 2},steps={}](@290) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@614 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@612) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@615 = sub(@609,@614) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@616 = multibroadcast[out_lens={58, 1, 1},out_dyn_dims={}](@67) -> float_type, {58, 1, 1}, {0, 0, 0}, target_id=0
+@617 = add(@613,@616) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@618 = rsqrt(@617) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@619 = mul(@610,@618) -> float_type, {58, 1, 1}, {1, 1, 1}, target_id=0
+@620 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@619) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@621 = mul(@615,@620) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@622 = multibroadcast[out_lens={1, 58, 28, 28},out_dyn_dims={}](@611) -> float_type, {1, 58, 28, 28}, {0, 1, 0, 0}, target_id=0
+@623 = add(@621,@622) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@624 = relu(@623) -> float_type, {1, 58, 28, 28}, {45472, 784, 28, 1}, target_id=0
+@625 = concat[axis=1](@576,@624) -> float_type, {1, 116, 28, 28}, {90944, 784, 28, 1}, target_id=0
+@626 = reshape[dims={1, 2, 58, 28, 28}](@625) -> float_type, {1, 2, 58, 28, 28}, {90944, 45472, 784, 28, 1}, target_id=0
+@627 = transpose[permutation={0, 2, 1, 3, 4}](@626) -> float_type, {1, 58, 2, 28, 28}, {90944, 784, 45472, 28, 1}, target_id=0
+@628 = reshape[dims={1, -1, 28, 28}](@627) -> float_type, {1, 116, 28, 28}, {90944, 784, 28, 1}, target_id=0
+@629 = convolution[padding={1, 1, 1, 1},stride={2, 2},dilation={1, 1},group=116,padding_mode=0](@628,@288) -> float_type, {1, 116, 14, 14}, {22736, 196, 14, 1}, target_id=0
+@630 = unsqueeze[axes={1, 2},steps={}](@284) -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+@631 = unsqueeze[axes={1, 2},steps={}](@287) -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+@632 = unsqueeze[axes={1, 2},steps={}](@286) -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+@633 = unsqueeze[axes={1, 2},steps={}](@285) -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+@634 = multibroadcast[out_lens={1, 116, 14, 14},out_dyn_dims={}](@632) -> float_type, {1, 116, 14, 14}, {0, 1, 0, 0}, target_id=0
+@635 = sub(@629,@634) -> float_type, {1, 116, 14, 14}, {22736, 196, 14, 1}, target_id=0
+@636 = multibroadcast[out_lens={116, 1, 1},out_dyn_dims={}](@64) -> float_type, {116, 1, 1}, {0, 0, 0}, target_id=0
+@637 = add(@633,@636) -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+@638 = rsqrt(@637) -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+@639 = mul(@630,@638) -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+@640 = multibroadcast[out_lens={1, 116, 14, 14},out_dyn_dims={}](@639) -> float_type, {1, 116, 14, 14}, {0, 1, 0, 0}, target_id=0
+@641 = mul(@635,@640) -> float_type, {1, 116, 14, 14}, {22736, 196, 14, 1}, target_id=0
+@642 = multibroadcast[out_lens={1, 116, 14, 14},out_dyn_dims={}](@631) -> float_type, {1, 116, 14, 14}, {0, 1, 0, 0}, target_id=0
+@643 = add(@641,@642) -> float_type, {1, 116, 14, 14}, {22736, 196, 14, 1}, target_id=0
+@644 = convolution[padding={0, 0, 0, 0},stride={1, 1},dilation={1, 1},group=1,padding_mode=0](@643,@283) -> float_type, {1, 116, 14, 14}, {22736, 196, 14, 1}, target_id=0
+@645 = unsqueeze[axes={1, 2},steps={}](@279) -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+@646 = unsqueeze[axes={1, 2},steps={}](@282) -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+@647 = unsqueeze[axes={1, 2},steps={}](@281) -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+@648 = unsqueeze[axes={1, 2},steps={}](@280) -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+@649 = multibroadcast[out_lens={1, 116, 14, 14},out_dyn_dims={}](@647) -> float_type, {1, 116, 14, 14}, {0, 1, 0, 0}, target_id=0
+@650 = sub(@644,@649) -> float_type, {1, 116, 14, 14}, {22736, 196, 14, 1}, target_id=0
+@651 = multibroadcast[out_lens={116, 1, 1},out_dyn_dims={}](@63) -> float_type, {116, 1, 1}, {0, 0, 0}, target_id=0
+@652 = add(@648,@651) -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+@653 = rsqrt(@652) -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+@654 = mul(@645,@653) -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+@655 = multibroadcast[out_lens={1, 116, 14, 14},out_dyn_dims={}](@654) -> float_type, {1, 116, 14, 14}, {0, 1, 0, 0}, target_id=0
+
+
+rms_tol: 0.001
+atol: 0.001
+rtol: 0.001
+Run instruction: @0 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+Time: 0.00091ms, 0.001ms
+Run instruction: input = @param:input -> float_type, {1, 3, 224, 224}, {150528, 50176, 224, 1}, target_id=0
+Time: 0.00731ms, 0.0075ms
+Run instruction: @2 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+Time: 0.00035ms, 0.0004ms
+Run instruction: @3 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+Time: 0.0002ms, 0.00025ms
+Run instruction: @4 = ref::unsqueeze[axes={1, 2},steps={}](@2) -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+Time: 0.026971ms, 0.027031ms
+Output has normal
+Output: 0.316406, 0.278146, 0.277389, 0.272418, 0.338269, ..., 0.385951, 0.381432, 0.323636, 0.282775, 0.379072
+Min value: 0.224234, Max value: 0.693578, Mean: 0.372075, StdDev: 0.0881075
+Run instruction: @5 = ref::unsqueeze[axes={1, 2},steps={}](@3) -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+Time: 0.00124ms, 0.00128ms
+Output has normal
+Output: 1.79762, 1.80308, 0.935745, 0.941554, 1.20232, ..., 0.35513, 0.274034, 0.711729, 0.267252, 1.62737
+Min value: 0.159315, Max value: 1.80308, Mean: 0.573177, StdDev: 0.388096
+Run instruction: @6 = ref::multibroadcast[out_lens={116, 1, 1},out_dyn_dims={}](@0) -> float_type, {116, 1, 1}, {0, 0, 0}, target_id=0
+Time: 0.00939ms, 0.00944ms
+Output has normal
+Output: 1e-05, 1e-05, 1e-05, 1e-05, 1e-05, ..., 1e-05, 1e-05, 1e-05, 1e-05, 1e-05
+Min value: 1e-05, Max value: 1e-05, Mean: 1e-05, StdDev: 0
+Run instruction: @7 = ref::contiguous(@6) -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+Time: 0.467677ms, 0.467767ms
+Output has normal
+Output: 1e-05, 1e-05, 1e-05, 1e-05, 1e-05, ..., 1e-05, 1e-05, 1e-05, 1e-05, 1e-05
+Min value: 1e-05, Max value: 1e-05, Mean: 1e-05, StdDev: 0
+Run instruction: @8 = ref::add(@5,@7) -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+Time: 0.01851ms, 0.01856ms
+Output has normal
+Output: 1.79763, 1.80309, 0.935755, 0.941564, 1.20233, ..., 0.35514, 0.274044, 0.711739, 0.267262, 1.62738
+Min value: 0.159325, Max value: 1.80309, Mean: 0.573187, StdDev: 0.388096
+Run instruction: @9 = ref::rsqrt(@8) -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+Time: 0.03189ms, 0.03193ms
+Output has normal
+Output: 0.745846, 0.744716, 1.03376, 1.03056, 0.911986, ..., 1.67803, 1.91025, 1.18533, 1.93433, 0.78389
+Min value: 0.744716, Max value: 2.50529, Mean: 1.51116, StdDev: 0.415208
+Run instruction: @10 = ref::mul(@4,@9) -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+Time: 0.02019ms, 0.02024ms
+Output has normal
+Output: 0.23599, 0.20714, 0.286753, 0.280744, 0.308496, ..., 0.647638, 0.72863, 0.383615, 0.546982, 0.29715
+Min value: 0.20714, Max value: 1.0389, Mean: 0.555309, StdDev: 0.181875
+Run instruction: @11 = ref::multibroadcast[out_lens={1, 116, 14, 14},out_dyn_dims={}](@10) -> float_type, {1, 116, 14, 14}, {0, 1, 0, 0}, target_id=0
+Time: 0.00152ms, 0.00156ms
+Output has normal
+Output: 0.23599, 0.23599, 0.23599, 0.23599, 0.23599, ..., 0.29715, 0.29715, 0.29715, 0.29715, 0.29715
+Min value: 0.20714, Max value: 1.0389, Mean: 0.555309, StdDev: 0.181875
+Run instruction: @12 = ref::contiguous(@11) -> float_type, {1, 116, 14, 14}, {22736, 196, 14, 1}, target_id=0
+Time: 0.62219ms, 0.62225ms
+Output has normal
+Output: 0.23599, 0.23599, 0.23599, 0.23599, 0.23599, ..., 0.29715, 0.29715, 0.29715, 0.29715, 0.29715
+Min value: 0.20714, Max value: 1.0389, Mean: 0.555309, StdDev: 0.181875
+module: "main"
+@0 = @literal{1e-05} -> float_type, {1}, {0}, target_id=0
+input = @param:input -> float_type, {1, 3, 224, 224}, {150528, 50176, 224, 1}, target_id=0
+@2 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@3 = @literal{ ... } -> float_type, {116}, {1}, target_id=0
+@4 = ref::unsqueeze[axes={1, 2},steps={}](@2) -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+@5 = ref::unsqueeze[axes={1, 2},steps={}](@3) -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+@6 = ref::multibroadcast[out_lens={116, 1, 1},out_dyn_dims={}](@0) -> float_type, {116, 1, 1}, {0, 0, 0}, target_id=0
+@7 = ref::contiguous(@6) -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+@8 = ref::add(@5,@7) -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+@9 = ref::rsqrt(@8) -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+@10 = ref::mul(@4,@9) -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+@11 = ref::multibroadcast[out_lens={1, 116, 14, 14},out_dyn_dims={}](@10) -> float_type, {1, 116, 14, 14}, {0, 1, 0, 0}, target_id=0
+@12 = ref::contiguous(@11) -> float_type, {1, 116, 14, 14}, {22736, 196, 14, 1}, target_id=0
+
+
+Run instruction: @0 = check_context::migraphx::gpu::context -> float_type, {}, {}, target_id=0
+Time: 0.01243ms, 0.01265ms
+Run instruction: input = @param:input -> float_type, {1, 3, 224, 224}, {150528, 50176, 224, 1}, target_id=0
+Time: 0.00194ms, 0.00215ms
+Run instruction: @2 = hip::hip_copy_literal[id=main:@literal:0] -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+Time: 0.01242ms, 0.01247ms
+Output has normal
+Output: 0.23599, 0.20714, 0.286753, 0.280744, 0.308496, ..., 0.647638, 0.72863, 0.383615, 0.546982, 0.29715
+Min value: 0.20714, Max value: 1.0389, Mean: 0.555309, StdDev: 0.181875
+Run instruction: @3 = multibroadcast[out_lens={1, 116, 14, 14},out_dyn_dims={}](@2) -> float_type, {1, 116, 14, 14}, {0, 1, 0, 0}, target_id=0
+Time: 0.01267ms, 0.01277ms
+Output has normal
+Output: 0.23599, 0.23599, 0.23599, 0.23599, 0.23599, ..., 0.29715, 0.29715, 0.29715, 0.29715, 0.29715
+Min value: 0.20714, Max value: 1.0389, Mean: 0.555309, StdDev: 0.181875
+Run instruction: output = @param:output -> float_type, {1, 116, 14, 14}, {22736, 196, 14, 1}, target_id=0
+Time: 0.00089ms, 0.00095ms
+Run instruction: @5 = gpu::code_object[code_object=4616,symbol_name=contiguous_kernel,global=11368,local=1024,](@3,output) -> float_type, {1, 116, 14, 14}, {22736, 196, 14, 1}, target_id=0
+Time: 11.229ms, 11.2417ms
+Output has normal
+Output: 0.23599, 0.23599, 0.23599, 0.23599, 0.23599, ..., 0.29715, 0.29715, 0.29715, 0.29715, 0.29715
+Min value: 0.20714, Max value: 1.0389, Mean: 0.555309, StdDev: 0.181875
+module: "main"
+@0 = check_context::migraphx::gpu::context -> float_type, {}, {}, target_id=0
+input = @param:input -> float_type, {1, 3, 224, 224}, {150528, 50176, 224, 1}, target_id=0
+@2 = hip::hip_copy_literal[id=main:@literal:0] -> float_type, {116, 1, 1}, {1, 1, 1}, target_id=0
+@3 = multibroadcast[out_lens={1, 116, 14, 14},out_dyn_dims={}](@2) -> float_type, {1, 116, 14, 14}, {0, 1, 0, 0}, target_id=0
+output = @param:output -> float_type, {1, 116, 14, 14}, {22736, 196, 14, 1}, target_id=0
+@5 = gpu::code_object[code_object=4616,symbol_name=contiguous_kernel,global=11368,local=1024,](@3,output) -> float_type, {1, 116, 14, 14}, {22736, 196, 14, 1}, target_id=0
+
+
+MIGraphX verification passed successfully.
+[ MIGraphX Version: 2.9.0.352dcea2c ] Complete: /code/AMDMIGraphX/build/bin/migraphx-driver verify vision/classification/shufflenet/model/shufflenet-v2-12.onnx --trim 690
