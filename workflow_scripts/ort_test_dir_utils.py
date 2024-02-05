@@ -12,8 +12,13 @@ import onnx
 import onnx_test_data_utils
 from onnx import numpy_helper
 
+# import onnxruntime as ort
 import onnxruntime as ort
 
+MGX_PROVIDERS = [
+    'MIGraphXExecutionProvider',
+    'CPUExecutionProvider',
+]
 
 def _get_numpy_type(model_info, name):
     for i in model_info:
@@ -148,7 +153,8 @@ def create_test_dir(
     # save expected output data if provided. run model to create if not.
     if not name_output_map:
         output_names = [o.name for o in model_outputs]
-        sess = ort.InferenceSession(test_model_filename)
+        # sess = ort.InferenceSession(test_model_filename)
+        sess = ort.InferenceSession(test_model_filename, providers=MGX_PROVIDERS)
         outputs = sess.run(output_names, name_input_map)
         name_output_map = {}
         for name, data in zip(output_names, outputs):
@@ -224,7 +230,8 @@ def run_test_dir(model_or_dir):
     test_dirs = [d for d in glob.glob(os.path.join(model_dir, "test*")) if os.path.isdir(d)]
     if not test_dirs:
         raise ValueError("No directories with name starting with 'test' were found in {}.".format(model_dir))
-    sess = ort.InferenceSession(model_path)
+    # sess = ort.InferenceSession(model_path)
+    sess = ort.InferenceSession(model_path, providers=MGX_PROVIDERS)
 
     input_types = [inp.type for inp in sess.get_inputs()]
     output_types = [out.type for out in sess.get_outputs()]

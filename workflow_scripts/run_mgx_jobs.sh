@@ -7,5 +7,5 @@ apt-get install git-lfs
 
 python3 -u workflow_scripts/test_models.py --all_models --target migraphx
 python3 -u workflow_scripts/test_models.py --all_models --target migraphx --fp16
-python3 -u workflow_scripts/mgx_verify.py --mgx-path /code/AMDMIGraphX/build/bin/migraphx-driver --output fp32_verify.txt
-python3 -u workflow_scripts/mgx_verify.py --mgx-path /code/AMDMIGraphX/build/bin/migraphx-driver --fp16 --output fp16_verify.txt
+python3 -u workflow_scripts/mgx_verify.py --mgx-path /code/AMDMIGraphX/build/bin/migraphx-driver --output fp32_verify_ref.txt
+python3 -u workflow_scripts/mgx_verify.py --mgx-path /code/AMDMIGraphX/build/bin/migraphx-driver --fp16 --output fp16_verify_ref.txt

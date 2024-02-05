@@ -145,7 +145,7 @@ def main():
 
     args = parser.parse_args()
     models = get_models_with_accuracy_issue(
-        args.onnx_zoo_path, "MIGRAPHX_FP16.md" if args.fp16 else "MIGRAPHX.md"
+        args.onnx_zoo_path, "MIGRAPHX_REF_FP16.md" if args.fp16 else "MIGRAPHX_REF.md"
     )
     model_names = list(models.keys())
     pull_models(model_names)

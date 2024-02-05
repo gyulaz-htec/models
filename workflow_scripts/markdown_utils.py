@@ -72,7 +72,7 @@ def save_to_markdown(statistics, fp16=False):
     if len(grouped_data) == 0:
         return
     file_name_ending = "_FP16" if fp16 else ""
-    with open(f"MIGRAPHX{file_name_ending}.md", "w") as f:
+    with open(f"MIGRAPHX_REF{file_name_ending}.md", "w") as f:
         for group, records in sorted(grouped_data.items()):
             records.sort(key=lambda r: r["Model"])
             f.write(f"## {group}\n\n")

@@ -10,7 +10,7 @@ def load_mgx_model(path, fp16, shapes={}):
         prog = mgx.parse_onnx(f"{file}.onnx", map_input_dims=shapes)
         if fp16:
             mgx.quantize_fp16(prog)
-        prog.compile(mgx.get_target("gpu"))
+        prog.compile(mgx.get_target("ref"))
     else:
         raise ValueError(f"No .onnx file found on path {path}.")
     return prog

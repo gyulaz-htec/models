@@ -10,6 +10,11 @@ from shutil import rmtree
 import tarfile
 import test_utils
 
+MGX_PROVIDERS = [
+    'MIGraphXExecutionProvider',
+    'CPUExecutionProvider',
+]
+
 
 def has_vnni_support():
     return "avx512vnni" in set(get_cpu_info()["flags"])
@@ -23,7 +28,7 @@ def run_onnx_checker(model_path):
 def ort_skip_reason(model_path):
     if (model_path.endswith("-int8.onnx") or model_path.endswith("-qdq.onnx")) and not has_vnni_support():
         # At least run InferenceSession to test shape inference
-        onnxruntime.InferenceSession(model_path)
+        onnxruntime.InferenceSession(model_path, providers=MGX_PROVIDERS)
         return f"Skip ORT test for {model_path} because this machine lacks avx512vnni support and the output.pb was produced with avx512vnni support."
     model = onnx.load(model_path)
     if model.opset_import[0].version < 7:
@@ -51,7 +56,7 @@ def run_backend_ort(model_path, test_data_set=None, tar_gz_path=None):
         # based on the build flags) when instantiating InferenceSession.
         # For example, if NVIDIA GPU is available and ORT Python package is built with CUDA, then call API as following:
         # onnxruntime.InferenceSession(path/to/model, providers=["CUDAExecutionProvider"])
-        onnxruntime.InferenceSession(model_path)
+        onnxruntime.InferenceSession(model_path, providers=MGX_PROVIDERS)
         # Get model name without .onnx
         model_name = os.path.basename(os.path.splitext(model_path)[0])
         if model_name is None:
@@ -83,7 +88,8 @@ def run_backend_mgx(model_path, test_data_set, tar_gz_path, fp16, save):
         # based on the build flags) when instantiating InferenceSession.
         # For example, if NVIDIA GPU is available and ORT Python package is built with CUDA, then call API as following:
         # onnxruntime.InferenceSession(path/to/model, providers=["CUDAExecutionProvider"])
-        onnxruntime.InferenceSession(model_path)
+        onnxruntime.InferenceSession(model_path, providers=MGX_PROVIDERS)
+        # onnxruntime.InferenceSession(model_path)
         # Get model name without .onnx
         model_name = os.path.basename(os.path.splitext(model_path)[0])
         if model_name is None:

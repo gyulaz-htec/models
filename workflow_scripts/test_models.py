@@ -112,6 +112,10 @@ def main():
                 model_path_from_tar, test_data_set = test_utils.extract_test_data(model_path)
                 # if tar.gz exists, git pull and try to get test data
                 if (args.target == "onnxruntime" or args.target == "all"):
+                    if "fcn-resnet" in model_name or "ssd_mobilenet_v1" in model_name:
+                        print("Skipping {} because it can crash. ".format(model_name))
+                        clean_up()
+                        continue
                     # finally check the ONNX model from .tar.gz by ORT
                     # if the test_data_set does not exist, create the test_data_set
                     try:
