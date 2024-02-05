@@ -1,0 +1,109 @@
+
+vision/classification/alexnet/model/bvlcalexnet-12-qdq.onnx:
+	ONNX Zoo:
+		Max diff(s): 'prob_1': 0.07159364968538284,
+	MIGraphX verify:
+		FAILED: vision/classification/alexnet/model/bvlcalexnet-12-qdq.onnx
+		RMS Error: 0.0313405
+		Max diff: 0.937439
+		Mismatch at 0: 0.00123204 != 2.29693e-11
+vision/classification/efficientnet-lite4/model/efficientnet-lite4-11-qdq.onnx:
+	ONNX Zoo:
+		Max diff(s): 'Softmax:0': 0.9995638728141785,
+	MIGraphX verify:
+		FAILED: vision/classification/efficientnet-lite4/model/efficientnet-lite4-11-qdq.onnx
+		RMS Error: 0.0318415
+		Max diff: 0.999773
+		Mismatch at 0: 0.000183761 != 0
+vision/classification/inception_and_googlenet/googlenet/model/googlenet-12-qdq.onnx:
+	ONNX Zoo:
+		Max diff(s): 'prob_1': 0.9999496340751648,
+	MIGraphX verify:
+		FAILED: vision/classification/inception_and_googlenet/googlenet/model/googlenet-12-qdq.onnx
+		RMS Error: 0.0324794
+		Max diff: 0.999972
+		Mismatch at 0: 0.000929318 != 0
+vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-12-qdq.onnx:
+	ONNX Zoo:
+		Max diff(s): 'prob_1': 0.9999668002128601,
+	MIGraphX verify:
+		FAILED: vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-12-qdq.onnx
+		RMS Error: 0.0322495
+		Max diff: 0.99993
+		Mismatch at 0: 0.000748811 != 0
+vision/classification/mobilenet/model/mobilenetv2-12-qdq.onnx:
+	ONNX Zoo:
+		Max diff(s): 'output': 6641727.0,
+	MIGraphX verify:
+		FAILED: vision/classification/mobilenet/model/mobilenetv2-12-qdq.onnx
+		RMS Error: 0.310712
+		Max diff: 1.75075e+06
+		Mismatch at 0: -0.43521 != -160776
+vision/classification/resnet/model/resnet50-v1-12-qdq.onnx:
+	ONNX Zoo:
+		Max diff(s): 'resnetv17_dense0_fwd': 8492608512.0,
+	MIGraphX verify:
+		FAILED: vision/classification/resnet/model/resnet50-v1-12-qdq.onnx
+		RMS Error: 0.230274
+		Max diff: 9.39427e+08
+		Mismatch at 0: -0.00747727 != -2.52037e+08
+vision/classification/shufflenet/model/shufflenet-v2-12-qdq.onnx:
+	ONNX Zoo:
+		Max diff(s): 'output': 13371404288.0,
+	MIGraphX verify:
+		FAILED: vision/classification/shufflenet/model/shufflenet-v2-12-qdq.onnx
+		RMS Error: 0.337116
+		Max diff: 1.45539e+09
+		Mismatch at 0: -2.89145 != 5.29669e+08
+vision/classification/squeezenet/model/squeezenet1.0-13-qdq.onnx:
+	ONNX Zoo:
+		Max diff(s): 'softmaxout_1': 0.9999786615371704,
+	MIGraphX verify:
+		FAILED: vision/classification/squeezenet/model/squeezenet1.0-13-qdq.onnx
+		RMS Error: 0.0330008
+		Max diff: 0.999988
+		Mismatch at 0: 0.000155355 != 0
+vision/classification/vgg/model/vgg16-12-qdq.onnx:
+	ONNX Zoo:
+		Max diff(s): 'vgg0_dense2_fwd': 171648992.0,
+	MIGraphX verify:
+		FAILED: vision/classification/vgg/model/vgg16-12-qdq.onnx
+		RMS Error: 0.206697
+		Max diff: 7.68712e+06
+		Mismatch at 0: -0.607095 != -769524
+vision/classification/zfnet-512/model/zfnet512-12-qdq.onnx:
+	ONNX Zoo:
+		Max diff(s): 'gpu_0/softmax_1': 0.9524499773979187,
+	MIGraphX verify:
+		FAILED: vision/classification/zfnet-512/model/zfnet512-12-qdq.onnx
+		RMS Error: 0.0379321
+		Max diff: 0.540591
+		Mismatch at 0: 0.000372463 != 2.78355e-29
+vision/object_detection_segmentation/fcn/model/fcn-resnet50-12-qdq.onnx:
+	ONNX Zoo:
+		Max diff(s): 'out': 42159194112.0, 'aux': 89639544.0,
+	MIGraphX verify:
+		FAILED: vision/object_detection_segmentation/fcn/model/fcn-resnet50-12-qdq.onnx
+		RMS Error: 0.410436
+		Max diff: 1517.48
+		Mismatch at 0: 7.7691 != -1509.71
+		FAILED: vision/object_detection_segmentation/fcn/model/fcn-resnet50-12-qdq.onnx
+		RMS Error: 0.360478
+		Max diff: 287.336
+		Mismatch at 0: 6.21395 != -281.122
+vision/object_detection_segmentation/ssd/model/ssd-12-qdq.onnx:
+	ONNX Zoo:
+		Max diff(s): 'bboxes': inf, 'labels': 42, 'scores': 0.948113203048706,
+	MIGraphX verify:
+		FAILED: vision/object_detection_segmentation/ssd/model/ssd-12-qdq.onnx
+		RMS Error: -nan
+		Max diff: inf
+		Mismatch at 0: 0.00336882 != -inf
+		FAILED: vision/object_detection_segmentation/ssd/model/ssd-12-qdq.onnx
+		RMS Error: 0.299546
+		Max diff: 52
+		Mismatch at 0: 1 != 18
+		FAILED: vision/object_detection_segmentation/ssd/model/ssd-12-qdq.onnx
+		RMS Error: 0.982469
+		Max diff: 0.984108
+		Mismatch at 0: 0.0948163 != 1

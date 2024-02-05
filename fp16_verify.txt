@@ -302,3 +302,310 @@ vision/object_detection_segmentation/yolov4/model/yolov4.onnx:
 		Max diff(s): 'Identity:0': 0.9029483795166016, 'Identity_1:0': 0.9279904365539551, 'Identity_2:0': 0.5310830473899841,
 	MIGraphX verify:
 		PASS
+vision/body_analysis/emotion_ferplus/model/emotion-ferplus-7.onnx:
+	ONNX Zoo:
+		Max diff(s): 'Plus692_Output_0': 3.0841503143310547,
+	MIGraphX verify:
+		FAILED: vision/body_analysis/emotion_ferplus/model/emotion-ferplus-7.onnx
+		RMS Error: 0.324727
+		Max diff: 2.4609
+		Mismatch at 0: 4.32907 != 1.86816
+vision/body_analysis/emotion_ferplus/model/emotion-ferplus-8.onnx:
+	ONNX Zoo:
+		Max diff(s): 'Plus692_Output_0': 3.529435634613037,
+	MIGraphX verify:
+		FAILED: vision/body_analysis/emotion_ferplus/model/emotion-ferplus-8.onnx
+		RMS Error: 0.324727
+		Max diff: 2.4609
+		Mismatch at 0: 4.32907 != 1.86816
+vision/style_transfer/fast_neural_style/model/candy-8.onnx:
+	ONNX Zoo:
+		Max diff(s): 'output1': 6.1807708740234375,
+	MIGraphX verify:
+		PASS
+vision/style_transfer/fast_neural_style/model/candy-9.onnx:
+	ONNX Zoo:
+		Max diff(s): 'output1': 1.558349609375,
+	MIGraphX verify:
+		PASS
+vision/style_transfer/fast_neural_style/model/mosaic-8.onnx:
+	ONNX Zoo:
+		Max diff(s): 'output1': 2.086822509765625,
+	MIGraphX verify:
+		PASS
+vision/style_transfer/fast_neural_style/model/mosaic-9.onnx:
+	ONNX Zoo:
+		Max diff(s): 'output1': 1.3714141845703125,
+	MIGraphX verify:
+		PASS
+vision/style_transfer/fast_neural_style/model/pointilism-8.onnx:
+	ONNX Zoo:
+		Max diff(s): 'output1': 0.58489990234375,
+	MIGraphX verify:
+		PASS
+vision/style_transfer/fast_neural_style/model/pointilism-9.onnx:
+	ONNX Zoo:
+		Max diff(s): 'output1': 0.5196380615234375,
+	MIGraphX verify:
+		PASS
+vision/style_transfer/fast_neural_style/model/rain-princess-8.onnx:
+	ONNX Zoo:
+		Max diff(s): 'output1': 0.769927978515625,
+	MIGraphX verify:
+		PASS
+vision/style_transfer/fast_neural_style/model/rain-princess-9.onnx:
+	ONNX Zoo:
+		Max diff(s): 'output1': 0.604278564453125,
+	MIGraphX verify:
+		PASS
+vision/super_resolution/sub_pixel_cnn_2016/model/super-resolution-10.onnx:
+	ONNX Zoo:
+		Max diff(s): 'output': 0.12807464599609375,
+	MIGraphX verify:
+		FAILED: vision/super_resolution/sub_pixel_cnn_2016/model/super-resolution-10.onnx
+		Shape mismatch {float_type, {1, 1, 672, 672}, {451584, 451584, 672, 1}} != {half_type, {1, 1, 672, 672}, {451584, 451584, 672, 1}}
+vision/style_transfer/fast_neural_style/model/udnie-8.onnx:
+	ONNX Zoo:
+		Max diff(s): 'output1': 0.9598846435546875,
+	MIGraphX verify:
+		PASS
+vision/style_transfer/fast_neural_style/model/udnie-9.onnx:
+	ONNX Zoo:
+		Max diff(s): 'output1': 0.7222900390625,
+	MIGraphX verify:
+		PASS
+vision/classification/densenet-121/model/densenet-12.onnx:
+	ONNX Zoo:
+		Max diff(s): 'fc6_1': 0.08322381973266602,
+	MIGraphX verify:
+		PASS
+vision/classification/densenet-121/model/densenet-6.onnx:
+	ONNX Zoo:
+		Max diff(s): 'fc6_1': 0.09195011854171753,
+	MIGraphX verify:
+		PASS
+vision/classification/densenet-121/model/densenet-7.onnx:
+	ONNX Zoo:
+		Max diff(s): 'fc6_1': 0.07680320739746094,
+	MIGraphX verify:
+		PASS
+vision/classification/densenet-121/model/densenet-8.onnx:
+	ONNX Zoo:
+		Max diff(s): 'fc6_1': 0.09424543380737305,
+	MIGraphX verify:
+		PASS
+vision/classification/densenet-121/model/densenet-9.onnx:
+	ONNX Zoo:
+		Max diff(s): 'fc6_1': 0.09333348274230957,
+	MIGraphX verify:
+		PASS
+vision/classification/mnist/model/mnist-8.onnx:
+	ONNX Zoo:
+		Max diff(s): 'Plus214_Output_0': 0.06732368469238281,
+	MIGraphX verify:
+		PASS
+vision/classification/mobilenet/model/mobilenetv2-10.onnx:
+	ONNX Zoo:
+		Max diff(s): 'output': 0.09686565399169922,
+	MIGraphX verify:
+		PASS
+vision/classification/mobilenet/model/mobilenetv2-12.onnx:
+	ONNX Zoo:
+		Max diff(s): 'output': 0.10551118850708008,
+	MIGraphX verify:
+		PASS
+vision/classification/mobilenet/model/mobilenetv2-7.onnx:
+	ONNX Zoo:
+		Max diff(s): 'mobilenetv20_output_flatten0_reshape0': 0.28582000732421875,
+	MIGraphX verify:
+		PASS
+vision/classification/resnet/model/resnet101-v1-7.onnx:
+	ONNX Zoo:
+		Max diff(s): 'resnetv18_dense0_fwd': 0.04035472869873047,
+	MIGraphX verify:
+		PASS
+vision/classification/resnet/model/resnet101-v2-7.onnx:
+	ONNX Zoo:
+		Max diff(s): 'resnetv25_dense0_fwd': 0.04615139961242676,
+	MIGraphX verify:
+		PASS
+vision/classification/resnet/model/resnet152-v1-7.onnx:
+	ONNX Zoo:
+		Max diff(s): 'resnetv19_dense0_fwd': 0.1992940902709961,
+	MIGraphX verify:
+		PASS
+vision/classification/resnet/model/resnet152-v2-7.onnx:
+	ONNX Zoo:
+		Max diff(s): 'resnetv27_dense0_fwd': 0.10672378540039062,
+	MIGraphX verify:
+		PASS
+vision/classification/resnet/model/resnet18-v1-7.onnx:
+	ONNX Zoo:
+		Max diff(s): 'resnetv15_dense0_fwd': 0.048539161682128906,
+	MIGraphX verify:
+		PASS
+vision/classification/resnet/model/resnet18-v2-7.onnx:
+	ONNX Zoo:
+		Max diff(s): 'resnetv22_dense0_fwd': 0.04489302635192871,
+	MIGraphX verify:
+		PASS
+vision/classification/resnet/model/resnet34-v1-7.onnx:
+	ONNX Zoo:
+		Max diff(s): 'resnetv16_dense0_fwd': 0.03194904327392578,
+	MIGraphX verify:
+		PASS
+vision/classification/resnet/model/resnet34-v2-7.onnx:
+	ONNX Zoo:
+		Max diff(s): 'resnetv23_dense0_fwd': 0.046764373779296875,
+	MIGraphX verify:
+		PASS
+vision/classification/resnet/model/resnet50-v1-12.onnx:
+	ONNX Zoo:
+		Max diff(s): 'resnetv17_dense0_fwd': 0.03891420364379883,
+	MIGraphX verify:
+		PASS
+vision/classification/resnet/model/resnet50-v1-7.onnx:
+	ONNX Zoo:
+		Max diff(s): 'resnetv17_dense0_fwd': 0.036373138427734375,
+	MIGraphX verify:
+		PASS
+vision/classification/resnet/model/resnet50-v2-7.onnx:
+	ONNX Zoo:
+		Max diff(s): 'resnetv24_dense0_fwd': 0.12192916870117188,
+	MIGraphX verify:
+		PASS
+vision/classification/shufflenet/model/shufflenet-7.onnx:
+	ONNX Zoo:
+		Max diff(s): 'gpu_0/softmax_1': 1.0,
+	MIGraphX verify:
+		PASS
+vision/classification/shufflenet/model/shufflenet-8.onnx:
+	ONNX Zoo:
+		Max diff(s): 'gpu_0/softmax_1': 1.0,
+	MIGraphX verify:
+		PASS
+vision/classification/shufflenet/model/shufflenet-9.onnx:
+	ONNX Zoo:
+		Max diff(s): 'gpu_0/softmax_1': 1.0,
+	MIGraphX verify:
+		PASS
+vision/classification/shufflenet/model/shufflenet-v2-10.onnx:
+	ONNX Zoo:
+		Max diff(s): 'output': 50.30875015258789,
+	MIGraphX verify:
+		FAILED: vision/classification/shufflenet/model/shufflenet-v2-10.onnx
+		RMS Error: 0.3207
+		Max diff: 40.9183
+		Mismatch at 0: -0.151188 != 5.94141
+vision/classification/shufflenet/model/shufflenet-v2-12.onnx:
+	ONNX Zoo:
+		Max diff(s): 'output': 110.91778564453125,
+	MIGraphX verify:
+		FAILED: vision/classification/shufflenet/model/shufflenet-v2-12.onnx
+		RMS Error: 0.3207
+		Max diff: 40.9183
+		Mismatch at 0: -0.151188 != 5.94141
+vision/classification/squeezenet/model/squeezenet1.1-7.onnx:
+	ONNX Zoo:
+		Max diff(s): 'squeezenet0_flatten0_reshape0': 0.26549530029296875,
+	MIGraphX verify:
+		PASS
+vision/classification/vgg/model/vgg16-bn-7.onnx:
+	ONNX Zoo:
+		Max diff(s): 'vgg0_dense2_fwd': 0.024801015853881836,
+	MIGraphX verify:
+		PASS
+vision/classification/vgg/model/vgg19-bn-7.onnx:
+	ONNX Zoo:
+		Max diff(s): 'vgg0_dense2_fwd': 0.034679412841796875,
+	MIGraphX verify:
+		PASS
+text/machine_comprehension/bert-squad/model/bertsquad-10.onnx:
+	ONNX Zoo:
+		Max diff(s): 'unstack:1': nan, 'unstack:0': nan,
+	MIGraphX verify:
+		PASS
+text/machine_comprehension/bert-squad/model/bertsquad-12.onnx:
+	ONNX Zoo:
+		Max diff(s): 'unstack:1': nan, 'unstack:0': nan,
+	MIGraphX verify:
+		PASS
+text/machine_comprehension/gpt-2/model/gpt2-10.onnx:
+	ONNX Zoo:
+		Max diff(s): 'output1': 0.8856964111328125, 'output6': 0.055858612060546875, 'output7': 0.017154693603515625, 'output11': 0.01986074447631836,
+	MIGraphX verify:
+		PASS
+text/machine_comprehension/gpt-2/model/gpt2-lm-head-10.onnx:
+	ONNX Zoo:
+		Max diff(s): 'output1': 0.5660781860351562, 'output6': 0.0558624267578125, 'output7': 0.01715373992919922, 'output11': 0.01986551284790039,
+	MIGraphX verify:
+		PASS
+text/machine_comprehension/roberta/model/roberta-sequence-classification-9.onnx:
+	ONNX Zoo:
+		Max diff(s): 'output': 1.4171844720840454,
+	MIGraphX verify:
+		FAILED: text/machine_comprehension/roberta/model/roberta-sequence-classification-9.onnx
+		RMS Error: 0.720706
+		Max diff: 1.42339
+		Mismatch at 0: 0.453978 != 1.57129
+text/machine_comprehension/t5/model/t5-decoder-with-lm-head-12.onnx:
+	ONNX Zoo:
+		Max diff(s): 'hidden_states': 27.102432250976562,
+	MIGraphX verify:
+text/machine_comprehension/t5/model/t5-encoder-12.onnx:
+	ONNX Zoo:
+		Max diff(s): 'hidden_states': 1.2851688861846924,
+	MIGraphX verify:
+vision/object_detection_segmentation/duc/model/ResNet101-DUC-12.onnx:
+	ONNX Zoo:
+		Max diff(s): 'seg_loss': 1.0,
+	MIGraphX verify:
+		PASS
+vision/object_detection_segmentation/duc/model/ResNet101-DUC-7.onnx:
+	ONNX Zoo:
+		Max diff(s): 'seg_loss': 1.0,
+	MIGraphX verify:
+		PASS
+vision/object_detection_segmentation/fcn/model/fcn-resnet101-11.onnx:
+	ONNX Zoo:
+		Max diff(s): 'out': 0.2234354019165039, 'aux': 0.2901231050491333,
+	MIGraphX verify:
+		FAILED: vision/object_detection_segmentation/fcn/model/fcn-resnet101-11.onnx
+		RMS Error: 0.167486
+		Max diff: 3.72932
+		Mismatch at 0: 5.67143 != 8.05469
+		FAILED: vision/object_detection_segmentation/fcn/model/fcn-resnet101-11.onnx
+		RMS Error: 0.327052
+		Max diff: 7.21052
+		Mismatch at 0: 4.00074 != 6.64453
+vision/object_detection_segmentation/fcn/model/fcn-resnet50-11.onnx:
+	ONNX Zoo:
+		Max diff(s): 'out': 0.1490316390991211, 'aux': 0.3022959232330322,
+	MIGraphX verify:
+		PASS
+vision/object_detection_segmentation/tiny-yolov2/model/tinyyolov2-7.onnx:
+	ONNX Zoo:
+		Max diff(s): 'grid': 12.625959396362305,
+	MIGraphX verify:
+		FAILED: vision/object_detection_segmentation/tiny-yolov2/model/tinyyolov2-7.onnx
+		RMS Error: 0.161021
+		Max diff: 12.7086
+		Mismatch at 0: -0.0924143 != 0.15686
+vision/object_detection_segmentation/tiny-yolov2/model/tinyyolov2-8.onnx:
+	ONNX Zoo:
+		Max diff(s): 'grid': 12.785423278808594,
+	MIGraphX verify:
+		FAILED: vision/object_detection_segmentation/tiny-yolov2/model/tinyyolov2-8.onnx
+		RMS Error: 0.161021
+		Max diff: 12.7086
+		Mismatch at 0: -0.0924143 != 0.15686
+vision/object_detection_segmentation/yolov2-coco/model/yolov2-coco-9.onnx:
+	ONNX Zoo:
+		Max diff(s): '218': 0.12226295471191406,
+	MIGraphX verify:
+		PASS
+vision/object_detection_segmentation/yolov4/model/yolov4.onnx:
+	ONNX Zoo:
+		Max diff(s): 'Identity:0': 0.9036808013916016, 'Identity_1:0': 0.9299435615539551, 'Identity_2:0': 0.5315713286399841,
+	MIGraphX verify:
+		PASS

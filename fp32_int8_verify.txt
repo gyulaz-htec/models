@@ -1,0 +1,21 @@
+
+vision/body_analysis/ultraface/models/version-RFB-320-int8.onnx:
+	ONNX Zoo:
+		Max diff(s): 'scores': 0.9855307936668396, 'boxes': 0.8844708204269409,
+	MIGraphX verify:
+		FAILED: vision/body_analysis/ultraface/models/version-RFB-320-int8.onnx
+		RMS Error: 0.752205
+		Max diff: 0.999991
+		Mismatch at 1: 3.15373e-05 != 3.15651e-05
+		FAILED: vision/body_analysis/ultraface/models/version-RFB-320-int8.onnx
+		RMS Error: 0.0565364
+		Max diff: 1.32105
+		Mismatch at 0: -0.0155162 != 0.0284471
+vision/classification/densenet-121/model/densenet-12-int8.onnx:
+	ONNX Zoo:
+		Max diff(s): 'fc6_1': 3.869466191655338e+18,
+	MIGraphX verify:
+		FAILED: vision/classification/densenet-121/model/densenet-12-int8.onnx
+		RMS Error: 0.265906
+		Max diff: 3.87521e+18
+		Mismatch at 0: -8.89801 != 7.23018e+17

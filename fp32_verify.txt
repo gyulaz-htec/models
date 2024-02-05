@@ -198,3 +198,74 @@ vision/object_detection_segmentation/yolov4/model/yolov4.onnx:
 		Max diff(s): 'Identity:0': 0.8989889621734619, 'Identity_1:0': 0.93113112449646, 'Identity_2:0': 0.5176280736923218,
 	MIGraphX verify:
 		PASS
+vision/classification/shufflenet/model/shufflenet-7.onnx:
+	ONNX Zoo:
+		Max diff(s): 'gpu_0/softmax_1': 1.0,
+	MIGraphX verify:
+		FAILED: vision/classification/shufflenet/model/shufflenet-7.onnx
+		RMS Error: 0.03176
+		Max diff: 0.999452
+		Mismatch at 0: 0.000537105 != 0
+vision/classification/shufflenet/model/shufflenet-8.onnx:
+	ONNX Zoo:
+		Max diff(s): 'gpu_0/softmax_1': 1.0,
+	MIGraphX verify:
+		FAILED: vision/classification/shufflenet/model/shufflenet-8.onnx
+		RMS Error: 0.03176
+		Max diff: 0.999452
+		Mismatch at 0: 0.000537105 != 0
+vision/classification/shufflenet/model/shufflenet-9.onnx:
+	ONNX Zoo:
+		Max diff(s): 'gpu_0/softmax_1': 1.0,
+	MIGraphX verify:
+		FAILED: vision/classification/shufflenet/model/shufflenet-9.onnx
+		RMS Error: 0.03176
+		Max diff: 0.999452
+		Mismatch at 0: 0.000537105 != 0
+vision/classification/shufflenet/model/shufflenet-v2-10.onnx:
+	ONNX Zoo:
+		Max diff(s): 'output': 50.573204040527344,
+	MIGraphX verify:
+		FAILED: vision/classification/shufflenet/model/shufflenet-v2-10.onnx
+		RMS Error: 0.320288
+		Max diff: 41.1116
+		Mismatch at 0: -0.151188 != 5.93147
+vision/classification/shufflenet/model/shufflenet-v2-12.onnx:
+	ONNX Zoo:
+		Max diff(s): 'output': 111.38352966308594,
+	MIGraphX verify:
+		FAILED: vision/classification/shufflenet/model/shufflenet-v2-12.onnx
+		RMS Error: 0.320288
+		Max diff: 41.1116
+		Mismatch at 0: -0.151188 != 5.93148
+text/machine_comprehension/bert-squad/model/bertsquad-10.onnx:
+	ONNX Zoo:
+		Max diff(s): 'unstack:1': 1.6527633666992188, 'unstack:0': 3.5954432487487793,
+	MIGraphX verify:
+		PASS
+text/machine_comprehension/bert-squad/model/bertsquad-12.onnx:
+	ONNX Zoo:
+		Max diff(s): 'unstack:1': 0.14287996292114258, 'unstack:0': 0.21426916122436523,
+	MIGraphX verify:
+		PASS
+vision/object_detection_segmentation/duc/model/ResNet101-DUC-12.onnx:
+	ONNX Zoo:
+		Max diff(s): 'seg_loss': 0.9999982714653015,
+	MIGraphX verify:
+		FAILED: vision/object_detection_segmentation/duc/model/ResNet101-DUC-12.onnx
+		RMS Error: 0.0616349
+		Max diff: 0.818428
+		Mismatch at 0: 0.0538532 != 0.0657658
+vision/object_detection_segmentation/duc/model/ResNet101-DUC-7.onnx:
+	ONNX Zoo:
+		Max diff(s): 'seg_loss': 0.9999982118606567,
+	MIGraphX verify:
+		FAILED: vision/object_detection_segmentation/duc/model/ResNet101-DUC-7.onnx
+		RMS Error: 0.0616349
+		Max diff: 0.818428
+		Mismatch at 0: 0.0538532 != 0.0657658
+vision/object_detection_segmentation/yolov4/model/yolov4.onnx:
+	ONNX Zoo:
+		Max diff(s): 'Identity:0': 0.8989894390106201, 'Identity_1:0': 0.9311302900314331, 'Identity_2:0': 0.5176289081573486,
+	MIGraphX verify:
+		PASS
