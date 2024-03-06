@@ -11,7 +11,6 @@ import markdown_utils
 import mgx_stats
 
 
-
 tar_ext_name = ".tar.gz"
 onnx_ext_name = ".onnx"
 
@@ -112,7 +111,9 @@ def main():
     processed_models = {}
     failed_models = {}
     statistics = {}
-    quantizations = ["fp32", "fp32-qdq", "fp32-int8", "fp16"] #if args.qaunt == "all" else list(args.quant)
+    quantizations = (
+        ["fp32", "fp32-qdq", "fp32-int8", "fp16"] if args.quant == "all" else [args.quant]
+    )
     for q in quantizations:
         statistics[q] = {}
         failed_models[q] = []
