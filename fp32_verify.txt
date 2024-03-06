@@ -198,3 +198,28 @@ vision/object_detection_segmentation/yolov4/model/yolov4.onnx:
 		Max diff(s): 'Identity:0': 0.8989889621734619, 'Identity_1:0': 0.93113112449646, 'Identity_2:0': 0.5176280736923218,
 	MIGraphX verify:
 		PASS
+text/machine_comprehension/bert-squad/model/bertsquad-10.onnx:
+	ONNX Zoo:
+		Max diff(s): 'unstack:1': 1.622082233428955, 'unstack:0': 3.5954432487487793,
+	MIGraphX verify:
+		PASS
+text/machine_comprehension/bert-squad/model/bertsquad-12.onnx:
+	ONNX Zoo:
+		Max diff(s): 'unstack:0': 0.08578872680664062,
+	MIGraphX verify:
+		PASS
+vision/object_detection_segmentation/duc/model/ResNet101-DUC-12.onnx:
+	ONNX Zoo:
+		Max diff(s): 'seg_loss': 0.9999983310699463,
+	MIGraphX verify:
+		PASS
+vision/object_detection_segmentation/duc/model/ResNet101-DUC-7.onnx:
+	ONNX Zoo:
+		Max diff(s): 'seg_loss': 0.9999984502792358,
+	MIGraphX verify:
+		PASS
+vision/object_detection_segmentation/yolov4/model/yolov4.onnx:
+	ONNX Zoo:
+		Max diff(s): 'Identity:0': 0.8989887237548828, 'Identity_1:0': 0.9311314821243286, 'Identity_2:0': 0.5176264047622681,
+	MIGraphX verify:
+		PASS
